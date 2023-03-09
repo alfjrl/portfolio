@@ -3,6 +3,8 @@ import Navbar from "@/components/navbar";
 import Cursor from "@/components/cursor";
 import ProjectCard from "@/components/projectcard";
 import ArticleCard from "@/components/articlecard";
+import CurrentCard from "@/components/curretcard";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -17,12 +19,16 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
+      {/* <Cursor></Cursor> */}
       <main className="max-auto bg-slate-50 min-h-screen flex flex-col">
-        <Cursor></Cursor>
         <Navbar></Navbar>
-        <ArticleCard link={"/"}></ArticleCard>
         <ProjectCard link={"/404"}></ProjectCard>
+        <ProjectCard link={"/404"}></ProjectCard>
+        <ArticleCard link={"/"}></ArticleCard>
+        <CurrentCard></CurrentCard>
+
         <ProjectCard link={"/"}></ProjectCard>
+        <Footer></Footer>
 
         {/* <div className={styles.description}>
           <p>

@@ -62,9 +62,9 @@ export default function Cursor() {
     <div
       className={`z-auto cursor w-6 h-6 rounded-full border-2 fixed -translate-x-1/2 -translate-y-1/2 border-slate-400 transition-all duration-100 ease ${
         hidden ? "hidden" : "visible"
-      } ${
-        click ? "-translate-x-1/2 -translate-y-1/2 scale-50 bg-sky-500" : ""
-      } ${linkHover ? "hidden" : "visible"}`}
+      } ${click ? "-translate-x-1/2 -translate-y-1/2 scale-50" : ""} ${
+        linkHover ? "hidden" : "visible"
+      }`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,

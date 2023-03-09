@@ -7,16 +7,16 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white/70 sticky top-0 z-50 backdrop-blur-3xl ">
+    <nav className="sticky z-50 pt-5 top-0">
       <div
         onClick={() => setOpen(!open)}
-        className="text-3xl absolute right-8 top-6 cursor-pointer sm:hidden z-50"
+        className="text-3xl absolute right-8 top-10 cursor-pointer sm:hidden z-50"
       >
         <RiMenu5Line className={`${open ? "hidden" : "visible"}`}></RiMenu5Line>
         <RiCloseFill className={`${open ? "visible" : "hidden"}`}></RiCloseFill>
       </div>
-      <nav className="border-b-2 sticky border-slate-200 top-0">
-        <div className="container max-w-screen-lg p-5 sm:flex sm:items-center sm:justify-between ">
+      <div className=" container  max-w-screen-xl px-2 sm:px-5">
+        <div className="p-5 bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between">
           <Link href={"/"} className="flex flex-row items-center">
             <Image src="/al.svg" alt="logo" width={50} height={10}></Image>
             <p className="mx-3 text-xl font-inter font-medium">ALFRED J. LIN</p>
@@ -37,7 +37,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-      </nav>
+      </div>
       <nav
         className={`fixed top-0 sm:hidden h-screen w-screen z-49 bg-white transition-all ease-in duration-200 z-auto ${
           open ? "left-0" : "-left-[700px]"
@@ -64,6 +64,6 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-    </div>
+    </nav>
   );
 }
