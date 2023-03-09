@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "@/components/navbar";
 import ProjectCard from "@/components/projectcard";
 import ArticleCard from "@/components/articlecard";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -17,9 +18,11 @@ export default function Home() {
         />
       </Head>
       <main className="max-auto bg-slate-50 min-h-screen flex flex-col">
-        <Navbar></Navbar>
-        <ProjectCard link={"/"}></ProjectCard>
-        <ArticleCard link={"/"}></ArticleCard>
+        <div className="flex-1">
+          <Navbar></Navbar>
+          <ArticleCard link={"/"}></ArticleCard>
+        </div>
+        <Footer></Footer>
       </main>
     </>
   );
