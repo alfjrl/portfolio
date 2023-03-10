@@ -7,6 +7,8 @@ export default function ArticleCard({ link }) {
     <div className="container max-w-screen-lg max-auto px-5 sm:px-8 py-5 h-full grid justify-items-center">
       <Link
         href={link}
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-full h-[280px] sm:h-[210px] border-2 border-white bg-white transition-all duration-100 ease-in hover:border-slate-400 overflow-hidden"
       >
         <div className="w-full h-full grid content-center p-5 sm:p-8 sm:py-0">

@@ -1,10 +1,13 @@
 import Head from "next/head";
 import Navbar from "@/components/navbar";
-import ProjectCard from "@/components/projectcard";
-import ArticleCard from "@/components/articlecard";
+import CurrentCard from "@/components/curretcard";
 import Footer from "@/components/footer";
+import ProfilePhoto from "@/components/profilephoto";
+import AboutIntro from "@/components/aboutintro";
+import ProjectCard from "@/components/projectcard";
 
 export default function Home() {
+  // px-5 sm:px-8 py-5 h-full grid justify-items-center
   return (
     <>
       <Head>
@@ -17,10 +20,14 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <main className="max-auto bg-slate-50 min-h-screen flex flex-col">
+      <main className="max-auto bg-zinc-50 min-h-screen flex flex-col">
         <div className="flex-1">
           <Navbar></Navbar>
-          <ArticleCard link={"/"}></ArticleCard>
+          <div className="container max-w-screen-xl max-auto">
+            <ProfilePhoto></ProfilePhoto>
+            <AboutIntro></AboutIntro>
+            <CurrentCard></CurrentCard>
+          </div>
         </div>
         <Footer></Footer>
       </main>

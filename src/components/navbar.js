@@ -35,6 +35,16 @@ export default function Navbar() {
                 ABOUT
               </Link>
             </li>
+            <li className="py-1 px-4 rounded-md hover:bg-slate-100">
+              <Link
+                href={"/about"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-inter font-medium text-sm"
+              >
+                RESUME
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -60,6 +70,16 @@ export default function Navbar() {
           <li className="mx-8 my-6">
             <Link href={"/about"} className="font-inter font-medium text-base">
               About
+            </Link>
+          </li>
+          <li className="mx-8 my-6">
+            <Link
+              href={"/about"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-inter font-medium text-base"
+            >
+              Resume
             </Link>
           </li>
         </ul>
