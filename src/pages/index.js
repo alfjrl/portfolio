@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Navbar from "@/components/navbar";
-import Cursor from "@/components/cursor";
 import ProjectCard from "@/components/projectcard";
 import ArticleCard from "@/components/articlecard";
 import Footer from "@/components/footer";
@@ -13,7 +12,10 @@ export default function Home() {
     <>
       <Head>
         <title>Alfred J. Lin</title>
-        <meta name="Alfred J. Lin" content="Product design portfolio" />
+        <meta
+          name="Alfred J. Lin"
+          content="Alfred's product design portfolio"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favi.png" />
         <link
@@ -26,14 +28,14 @@ export default function Home() {
           <Navbar></Navbar>
           <HeroIntro></HeroIntro>
           <section id="project">
-            <SectionTitle title={"selected projects"}></SectionTitle>
+            <SectionTitle title={"project(s)"}></SectionTitle>
             <ProjectCard link={"/404"}></ProjectCard>
           </section>
           <SectionTitle title={"article(s)"}></SectionTitle>
           <ArticleCard></ArticleCard>
-          <SectionTitle title={"exp. & edu"}></SectionTitle>
+          <SectionTitle title={"exp. & edu."}></SectionTitle>
           <ExperienceCard></ExperienceCard>
-          <div className="container max-w-screen-lg pb-16"></div>
+          <div className="container max-w-screen-lg pb-20"></div>
         </div>
         <Footer></Footer>
       </main>

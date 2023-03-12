@@ -14,6 +14,8 @@ export default function ProjectCard({ title, description, image, link }) {
     >
       <Link
         href={data.link}
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-full h-[650px] sm:h-[450px] border-2 border-white bg-white transition-all duration-50 ease-in hover:border-slate-400 overflow-hidden"
       >
         <div className="w-full h-full flex flex-col sm:flex-row">
@@ -39,7 +41,7 @@ export default function ProjectCard({ title, description, image, link }) {
             <Image
               fill
               src={data.src}
-              alt="cover"
+              alt="project cover image"
               className="object-cover sm:object-scale-down"
             ></Image>
           </div>

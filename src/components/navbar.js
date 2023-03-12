@@ -42,9 +42,9 @@ export default function Navbar() {
             </li>
             <li className="py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
               <Link
-                href={"/about"}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={"/"}
+                // target="_blank"
+                // rel="noopener noreferrer"
                 className="font-inter font-medium text-sm text-slate-900"
               >
                 RESUME
@@ -88,9 +88,9 @@ export default function Navbar() {
           </li>
           <li className="mx-8 my-6">
             <Link
-              href={"/about"}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={"/"}
+              // target="_blank"
+              // rel="noopener noreferrer"
               className="font-inter font-medium text-base text-slate-900"
             >
               Resume

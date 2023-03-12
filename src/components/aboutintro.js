@@ -6,7 +6,7 @@ export default function AboutIntro() {
         {`Hey, thanks for coming, I'm Alfred. In Mandarin, my name is 展任(Jhan-Ren).`}
       </p>
       <p className="font-inter flex-grow pt-4 text-lg font-semibold text-slate-900">
-        An HCI Graduate student @ University of Maryland, College Park. An
+        An HCI Graduate Student @ University of Maryland, College Park. An
         Experience Designer, A Product Manager, A Front-end Developer, A
         Problem-solver, and A Cycling Enthusiast.
       </p>
@@ -24,8 +24,8 @@ export default function AboutIntro() {
       <p className="font-inter flex-grow pt-4 text-slate-900">
         In my free time, other than chilling in the backyard reading some books,
         you can find me enjoying cycling which might take up to the whole
-        weekend. Recently, I got addicted to Formula 1, loving the intensity in
-        each race.
+        weekend. Recently, Formula 1 has become my latest obsession, loving the
+        intensity in each race.
       </p>
     </div>
   );

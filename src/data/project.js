@@ -4,21 +4,31 @@ export default function project() {
       id: 1,
       cate: "Product Design - research, conception & prototyping",
       title: "Hyena Software Systems Revamp",
-      link: "/",
-      src: "/tentrr.png",
+      link: "https://alfredjlin.webflow.io/hyena-software-system-revamp",
+      src: "/hyena.png",
       subtitle: "Web system design | Hareware & software integration",
       description:
         "Starting at solving the problem regional e-bike service centers encountered, it ended with a completed software product design review and a brand new information architecture to secure future system expandability.",
     },
     {
       id: 2,
-      cate: "Product Iteration - reserach & prototyping",
+      cate: "Product Iteration - reserach, conception & prototyping",
       title: "Online Postal Service",
-      link: "/",
-      src: "/tentrr.png",
+      link: "https://alfredjlin.webflow.io/online-postal-service",
+      src: "/knst.png",
       subtitle: "Mobile design | E-Commerce",
       description:
         "Starting as an MVP(Minimum Viable Product) product, the online postal service was introduced to people with basic functions without any consideration for user experience. In this project, we started with user research and followed by a redesign aiming at improving the user experience.",
+    },
+    {
+      id: 3,
+      cate: "Evaluation Research - reserach & user testing",
+      title: "Tentrr.com",
+      link: "https://alfredjlin.webflow.io/tentrr-usability-evaluation",
+      src: "/tentrr.png",
+      subtitle: "Web usability analysis | E-Commerce",
+      description:
+        "In this user research project, we created personas for the target users of Tentrr. Based on the persona, we conducted the heuristic evaluation and then followed by a completed usability testing with three participants to discover what would keep users from using this service, and propose the recommended improvements.",
     },
   ];
 }

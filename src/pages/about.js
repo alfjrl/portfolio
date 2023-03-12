@@ -4,7 +4,6 @@ import CurrentCard from "@/components/curretcard";
 import Footer from "@/components/footer";
 import ProfilePhoto from "@/components/profilephoto";
 import AboutIntro from "@/components/aboutintro";
-import ProjectCard from "@/components/projectcard";
 
 export default function Home() {
   // px-5 sm:px-8 py-5 h-full grid justify-items-center
@@ -12,7 +11,10 @@ export default function Home() {
     <>
       <Head>
         <title>About - Alfred J. Lin</title>
-        <meta name="Alfred J. Lin" content="Product design portfolio" />
+        <meta
+          name="Alfred J. Lin"
+          content="Alfred's product design portfolio"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favi.png" />
         <link
@@ -28,7 +30,7 @@ export default function Home() {
             <AboutIntro></AboutIntro>
             <CurrentCard></CurrentCard>
           </div>
-          <div className="container max-w-screen-lg pb-16"></div>
+          <div className="container max-w-screen-lg pb-20"></div>
         </div>
         <Footer></Footer>
       </main>

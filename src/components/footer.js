@@ -9,10 +9,11 @@ export default function Footer() {
       <div className="container max-w-screen-xl p-5 pb-10">
         <div className="pt-8 pb-12 max-w-2xl">
           <p className="font-inter text-slate-900">
-            On the side, I think about systems, design technology and space
-            explorations. I occasionally dabble in acrylic painting, and enjoy
-            reading about architecture and ethics. Currently mentoring on
-            ADPList, watching documentaries like 👀
+            On the side, I always think about how a product design influences
+            users' behaviors and the design mindsets/strategies behind it, which
+            always surprises me. I enjoy talking to random people and learning
+            something new from them, either their life experiences or tips for
+            finding a parking space in an overly crowded city.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
