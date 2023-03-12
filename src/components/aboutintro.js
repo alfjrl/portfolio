@@ -1,25 +1,31 @@
 export default function AboutIntro() {
+  // born and raised in Taiwan
   return (
-    <div className="container max-w-screen-lg max-auto px-5 sm:px-8 py-5 h-full grid justify-items-start">
-      <p className="font-inter flex-grow py-2">
-        A passionate product designer from Cloudflare, Inc. A proud Terp from
-        the University of Maryland, M.S. in Human Computer Interaction.
+    <div className="container max-w-screen-lg max-auto px-5 sm:px-8 pt-10 h-full grid justify-items-start">
+      <p className="font-inter flex-grow text-slate-900">
+        {`Hey, thanks for coming, I'm Alfred. In Mandarin, my name is 展任(Jhan-Ren).`}
       </p>
-      <p className="font-inter flex-grow py-2">
-        Ive worked with clients from various fields including IBM, McDonalds,
-        Morgan Stanley, Stardog, P&G for both B2B and B2C products.
+      <p className="font-inter flex-grow pt-4 text-lg font-semibold text-slate-900">
+        An HCI Graduate student @ University of Maryland, College Park. An
+        Experience Designer, A Product Manager, A Front-end Developer, A
+        Problem-solver, and A Cycling Enthusiast.
       </p>
-      <p className="font-inter flex-grow py-2">
-        Im proficient in qualitative user research, synthesizing research
-        findings by creating graphs such as user flows, user journey maps, and
-        affinity diagrams. I enjoy talking to users and iterating the design
-        based on their insights. As a craftsman bridging the gap between users
-        and technology, my mission is to design delightful and engaging user
-        experiences which make peoples life easier.
+      <p className="font-inter flex-grow pt-4 text-slate-900">
+        With experiences in multiple platforms (web, iOS/Android), B2B / B2C
+        products including internal tools, IoT, SaaS, and so on.
       </p>
-      <p className="font-inter flex-grow py-2">
-        Also a huge volleyball lover, an ambitious snowboard newbie, and an
-        enthusiastic boulderer.
+      <p className="font-inter flex-grow pt-4 text-slate-900">
+        I am always fascinated by the way people interact with their
+        surroundings. It's the reason I am attracted to product design. I enjoy
+        listening to others share their perspective and design approach. This
+        enables me to incorporate diverse backgrounds and ideas into my work,
+        whether it be working with developers or designers.
+      </p>
+      <p className="font-inter flex-grow pt-4 text-slate-900">
+        In my free time, other than chilling in the backyard reading some books,
+        you can find me enjoying cycling which might take up to the whole
+        weekend. Recently, I got addicted to Formula 1, loving the intensity in
+        each race.
       </p>
     </div>
   );

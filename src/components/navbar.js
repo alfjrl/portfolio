@@ -10,7 +10,7 @@ export default function Navbar() {
     <nav className="sticky z-50 pt-5 top-0">
       <div
         onClick={() => setOpen(!open)}
-        className="text-3xl absolute right-8 top-10 cursor-pointer sm:hidden z-50"
+        className="text-3xl absolute right-7 top-9 cursor-pointer sm:hidden z-50"
       >
         <RiMenu5Line className={`${open ? "hidden" : "visible"}`}></RiMenu5Line>
         <RiCloseFill className={`${open ? "visible" : "hidden"}`}></RiCloseFill>
@@ -18,29 +18,34 @@ export default function Navbar() {
       <div className=" container  max-w-screen-xl px-2 sm:px-5">
         <div className="p-5 bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between">
           <Link href={"/"} className="flex flex-row items-center">
-            <Image src="/al.svg" alt="logo" width={50} height={10}></Image>
-            <p className="mx-3 text-xl font-inter font-medium">ALFRED J. LIN</p>
+            <Image src="/al.svg" alt="logo" width={40} height={10}></Image>
+            <p className="mx-3 text-md font-inter font-medium text-slate-900">
+              ALFRED J. LIN
+            </p>
           </Link>
           <ul className={`hidden sm:visible sm:flex sm:items-center`}>
-            <li className="py-1 px-4 rounded-md hover:bg-slate-100">
+            <li className="py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
               <Link
-                href={"/project"}
-                className="font-inter font-medium text-sm"
+                href={"/#project"}
+                className="font-inter font-medium text-sm text-slate-900"
               >
                 PROJECT
               </Link>
             </li>
-            <li className="py-1 px-4 rounded-md hover:bg-slate-100">
-              <Link href={"/about"} className="font-inter font-medium text-sm">
+            <li className="py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
+              <Link
+                href={"/about"}
+                className="font-inter font-medium text-sm text-slate-900"
+              >
                 ABOUT
               </Link>
             </li>
-            <li className="py-1 px-4 rounded-md hover:bg-slate-100">
+            <li className="py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
               <Link
                 href={"/about"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-inter font-medium text-sm"
+                className="font-inter font-medium text-sm text-slate-900"
               >
                 RESUME
               </Link>
@@ -55,20 +60,29 @@ export default function Navbar() {
       >
         <ul className={`w-screen h-screen grid content-center `}>
           <li className="mx-8 my-6">
-            <Link href={"/"} className="font-inter font-medium text-base">
+            <Link
+              href={"/"}
+              className="font-inter font-medium text-base text-slate-900"
+              onClick={() => setOpen(!open)}
+            >
               Home
             </Link>
           </li>
           <li className="mx-8 my-6">
             <Link
-              href={"/project"}
-              className="font-inter font-medium text-base"
+              href={"/#project"}
+              className="font-inter font-medium text-base text-slate-900"
+              onClick={() => setOpen(!open)}
             >
               Project
             </Link>
           </li>
           <li className="mx-8 my-6">
-            <Link href={"/about"} className="font-inter font-medium text-base">
+            <Link
+              href={"/about"}
+              className="font-inter font-medium text-base text-slate-900"
+              onClick={() => setOpen(!open)}
+            >
               About
             </Link>
           </li>
@@ -77,7 +91,7 @@ export default function Navbar() {
               href={"/about"}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-inter font-medium text-base"
+              className="font-inter font-medium text-base text-slate-900"
             >
               Resume
             </Link>

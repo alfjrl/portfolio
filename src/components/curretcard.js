@@ -5,24 +5,26 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export default function CurrentCard(link) {
   return (
-    <div className="container max-w-screen-lg max-auto pt-5 pb-10 px-5 sm:px-8 flex flex-col sm:flex-row justify-between">
+    <div className="container max-w-screen-lg max-auto pt-10 px-5 sm:px-8 flex flex-col sm:flex-row justify-between">
       <Link
         href={
           "https://www.goodreads.com/book/show/51146931-designing-with-data"
         }
         target="_blank"
         rel="noopener noreferrer"
-        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 hover:shadow-lg"
+        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 transition ease-in hover:shadow-lg"
       >
         <div className="flex flex-col justify-center">
-          <div className="flex flex-row items-center pb-2">
-            <p className="font-inter text-sm font-light pr-2">
+          <div className="flex flex-row items-center text-slate-500">
+            <p className="font-inter text-sm font-light pr-2 ">
               Currently Reading
             </p>
             <FiArrowUpRight size={14} className=""></FiArrowUpRight>
           </div>
 
-          <p className="font-inter font-medium">Designing with Data</p>
+          <p className="font-inter font-medium text-slate-900 pt-2">
+            Designing with Data
+          </p>
         </div>
         <div className="h-14 w-14 overflow-hidden">
           <Image
@@ -38,15 +40,17 @@ export default function CurrentCard(link) {
         href={"https://freakonomics.com/series/nsq/"}
         target="_blank"
         rel="noopener noreferrer"
-        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 hover:shadow-lg"
+        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 transition ease-in hover:shadow-lg"
       >
         <div className="flex flex-col justify-center">
-          <div className="flex flex-row items-center pb-2">
-            <p className="font-inter text-sm font-light pr-2">Listening to</p>
+          <div className="flex flex-row items-center text-slate-500">
+            <p className="font-inter text-sm font-light">Listening to</p>
             <FiArrowUpRight size={14} className=""></FiArrowUpRight>
           </div>
 
-          <p className="font-inter font-medium">No Stupid Questions</p>
+          <p className="font-inter font-medium text-slate-900 pt-2">
+            No Stupid Questions
+          </p>
         </div>
         <div className="h-14 w-14 overflow-hidden">
           <Image
@@ -63,15 +67,17 @@ export default function CurrentCard(link) {
         href={"https://www.formula1.com/en.html"}
         target="_blank"
         rel="noopener noreferrer"
-        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 hover:shadow-lg"
+        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 transition ease-in hover:shadow-lg"
       >
         <div className="flex flex-col justify-center">
-          <div className="flex flex-row items-center pb-2">
-            <p className="font-inter text-sm font-light pr-2">Watching</p>
+          <div className="flex flex-row items-center text-slate-500">
+            <p className="font-inter text-sm font-light">Watching</p>
             <FiArrowUpRight size={14} className=""></FiArrowUpRight>
           </div>
 
-          <p className="font-inter font-medium">Formula 1™</p>
+          <p className="font-inter font-medium text-slate-900 pt-2">
+            Formula 1™
+          </p>
         </div>
         <div className="h-14 w-20 overflow-hidden">
           <Image
