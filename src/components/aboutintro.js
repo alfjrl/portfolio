@@ -15,11 +15,11 @@ export default function AboutIntro() {
         products including internal tools, IoT, SaaS, and so on.
       </p>
       <p className="font-inter flex-grow pt-4 text-slate-900">
-        I am always fascinated by the way people interact with their
+        {`I am always fascinated by the way people interact with their
         surroundings. It's the reason I am attracted to product design. I enjoy
         listening to others share their perspective and design approach. This
         enables me to incorporate diverse backgrounds and ideas into my work,
-        whether it be working with developers or designers.
+        whether it be working with developers or designers.`}
       </p>
       <p className="font-inter flex-grow pt-4 text-slate-900">
         In my free time, other than chilling in the backyard reading some books,
