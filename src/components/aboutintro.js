@@ -3,7 +3,7 @@ export default function AboutIntro() {
   return (
     <div className="container max-w-screen-lg max-auto px-5 sm:px-8 pt-10 h-full grid justify-items-start">
       <p className="font-inter flex-grow text-slate-900">
-        {`Hey, thanks for coming, I'm Alfred. In Mandarin, my name is 展任(Jhan-Ren).`}
+        {`Hello there, it's great to have you here! My name is Alfred, I go by 展任 (Jhan-Ren) in Mandarin.`}
       </p>
       <p className="font-inter flex-grow pt-4 text-lg font-semibold text-slate-900">
         An HCI Graduate Student @ University of Maryland, College Park. An
@@ -11,21 +11,18 @@ export default function AboutIntro() {
         Problem-solver, and A Cycling Enthusiast.
       </p>
       <p className="font-inter flex-grow pt-4 text-slate-900">
-        With experiences in multiple platforms (web, iOS/Android), B2B / B2C
-        products including internal tools, IoT, SaaS, and so on.
+        {`With a broad range of experience in multiple platforms (web,
+        iOS/Android) for diffrent B2B / B2C products including internal tools,
+        IoT, SaaS, and so on.`}
       </p>
       <p className="font-inter flex-grow pt-4 text-slate-900">
-        {`I am always fascinated by the way people interact with their
-        surroundings. It's the reason I am attracted to product design. I enjoy
-        listening to others share their perspective and design approach. This
-        enables me to incorporate diverse backgrounds and ideas into my work,
-        whether it be working with developers or designers.`}
+        {`As a product designer, I'm constantly fascinated by how people interact with their surroundings. I enjoy learning about different perspectives and design approaches, which helps me incorporate diverse backgrounds and ideas into my work, whether I'm collaborating with developers or other designers.`}
       </p>
       <p className="font-inter flex-grow pt-4 text-slate-900">
-        In my free time, other than chilling in the backyard reading some books,
-        you can find me enjoying cycling which might take up to the whole
-        weekend. Recently, Formula 1 has become my latest obsession, loving the
-        intensity in each race.
+        {`When I'm not working, you can find me relaxing in my backyard with a
+        good book or spending my weekends cycling. Lately, I've also become
+        obsessed with Formula 1, and I can't get enough of the adrenaline rush
+        that comes with every race.`}
       </p>
     </div>
   );

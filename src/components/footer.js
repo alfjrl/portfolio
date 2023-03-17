@@ -1,6 +1,4 @@
 import React from "react";
-import { BsInstagram, BsLinkedin, BsGithub, BsMedium } from "react-icons/bs";
-import { HiOutlineMail } from "react-icons/hi";
 import Link from "next/link";
 
 export default function Footer() {

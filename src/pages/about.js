@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import ProfilePhoto from "@/components/profilephoto";
 import AboutIntro from "@/components/aboutintro";
 
-export default function Home() {
+export default function about() {
   // px-5 sm:px-8 py-5 h-full grid justify-items-center
   return (
     <>
