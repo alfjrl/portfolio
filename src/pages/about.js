@@ -17,10 +17,10 @@ export default function about() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favi.png" />
-        {/* <link
+        <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
-        /> */}
+        />
       </Head>
       <main className="max-auto bg-zinc-50 min-h-screen flex flex-col">
         <div className="flex-1">
