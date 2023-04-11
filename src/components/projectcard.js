@@ -10,29 +10,31 @@ export default function ProjectCard({ title, description, image, link }) {
   const cards = projects.map((data) => (
     <div
       key={data.id}
-      className="group container max-w-screen-lg max-auto px-5 sm:px-8 pt-10 h-full grid justify-items-center"
+      className="group container max-w-screen-lg max-auto px-5 sm:px-8 pt-5 sm:pt-10 h-full grid justify-items-center"
     >
       <Link
         href={data.link}
-        target="_blank"
-        rel="noopener noreferrer"
+        // target="_blank"
+        // rel="noopener noreferrer"
         className="w-full h-[650px] sm:h-[450px] border-2 border-white bg-white transition-all duration-50 ease-in hover:border-slate-400 overflow-hidden"
       >
         <div className="w-full h-full flex flex-col sm:flex-row">
-          <div className="w-full h-full grid content-center p-5 sm:p-8 sm:py-0 basis-8/12 sm:basis-auto">
-            <p className="font-inter text-sm text-slate-500 transition ease-in group-hover:text-slate-700">
-              {data.cate}
-            </p>
-            <h1 className="font-inter text-xl pt-6 font-semibold text-slate-900">
-              {data.title}
-            </h1>
-            <p className="font-inter font-medium pt-2 text-slate-900">
-              {data.subtitle}
-            </p>
-            <p className="font-inter pt-6 text-slate-500 transition ease-in group-hover:text-slate-700">
-              {data.description}
-            </p>
-            <span className="flex flex-row pt-8 items-center text-slate-500 transition ease-in group-hover:text-slate-900">
+          <div className="w-full h-full p-4 sm:p-8 sm:py-0 basis-8/12 sm:basis-auto grid content-between">
+            <div className="">
+              <p className="font-inter text-sm pt-2 sm:pt-8 text-slate-500 transition ease-in group-hover:text-slate-700">
+                {data.cate}
+              </p>
+              <h1 className="font-inter text-xl pt-6 font-semibold text-slate-900">
+                {data.title}
+              </h1>
+              <p className="font-inter font-medium pt-2 text-slate-900">
+                {data.subtitle}
+              </p>
+              <p className="font-inter pt-2 sm:pt-6 text-slate-500 transition ease-in group-hover:text-slate-700">
+                {data.description}
+              </p>
+            </div>
+            <span className="flex flex-row pb-8 items-center text-slate-500 transition ease-in group-hover:text-slate-900">
               <p className="pr-1 font-inter text-sm font-light">See Project</p>
               <FiArrowUpRight size={20} className=""></FiArrowUpRight>
             </span>

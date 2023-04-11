@@ -7,7 +7,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky z-50 pt-5 top-0">
+    <nav className="sticky w-full z-50 pt-5 top-0">
       <div
         onClick={() => setOpen(!open)}
         className="text-3xl absolute right-7 top-9 cursor-pointer sm:hidden z-50"
