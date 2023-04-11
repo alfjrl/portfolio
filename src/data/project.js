@@ -4,7 +4,7 @@ export default function project() {
       id: 1,
       cate: "Product Design - research, conception & prototyping",
       title: "Hyena Software Systems Revamp",
-      link: "https://alfredjlin.webflow.io/hyena-software-system-revamp",
+      link: "/project/hyena",
       src: "/hyena.png",
       subtitle: "Web system design | Hareware & software integration",
       description:
@@ -24,7 +24,7 @@ export default function project() {
       id: 3,
       cate: "Evaluation Research - reserach & user testing",
       title: "Tentrr.com",
-      link: "https://alfredjlin.webflow.io/tentrr-usability-evaluation",
+      link: "/project/tentrr",
       src: "/tentrr.png",
       subtitle: "Web usability analysis | E-Commerce",
       description:

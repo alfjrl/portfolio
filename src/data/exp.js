@@ -11,7 +11,7 @@ export default function exp() {
       title: "Web Developer/Desinger | Including Disability Global Summit",
       description:
         "Design and manage the Disability Summit website with a focus on accessibility. Develope new website using Next.js, NextUI(React UI Library), and Strapi.",
-      time: "2022 May - Present",
+      time: "2022 May - 2023 April",
     },
     {
       id: 3,
