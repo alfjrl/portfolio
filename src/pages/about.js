@@ -10,16 +10,10 @@ export default function about() {
   return (
     <>
       <Head>
-        <title>About - Alfred J. Lin</title>
+        <title>About | Alfred J. Lin | Portfolio</title>
         <meta
-          name="Alfred J. Lin"
+          name="About | Alfred J. Lin | Portfolio"
           content="Alfred's product design portfolio"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favi.png" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
         />
       </Head>
       <main className="max-auto bg-zinc-50 min-h-screen flex flex-col">
@@ -30,7 +24,7 @@ export default function about() {
             <AboutIntro></AboutIntro>
             <CurrentCard></CurrentCard>
           </div>
-          <div className="container max-w-screen-lg pb-20"></div>
+          <div className="container max-w-screen-xl pb-20"></div>
         </div>
         <Footer></Footer>
       </main>
