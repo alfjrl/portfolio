@@ -6,12 +6,11 @@ export default function AboutIntro() {
         {`Hello there, it's great to have you here! My name is Alfred, I go by 展任 (Jhan-Ren) in Mandarin.`}
       </p>
       <p className="font-inter flex-grow pt-4 text-lg font-semibold text-slate-900">
-        An HCI Graduate Student @ University of Maryland, College Park. An
-        Experience Designer, A Product Manager, A Front-end Developer, A
-        Problem-solver, and A Cycling Enthusiast.
+        An Product Designer, A Product Manager, A Front-End Developer, A
+        Problem-Solver, and A Cycling Enthusiast.
       </p>
       <p className="font-inter flex-grow pt-4 text-slate-900">
-        {`With a broad range of experience in multiple platforms (web,
+        {`I have experiences in multiple platforms (web,
         iOS/Android) for diffrent B2B / B2C products including internal tools,
         IoT, SaaS, and so on.`}
       </p>

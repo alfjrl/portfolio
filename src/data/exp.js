@@ -24,7 +24,7 @@ export default function exp() {
       id: 4,
       title: "Software Product Manager | Hyena Inc.",
       description:
-        "Optimized the system flows and designed e-bike manufacture management systems, solving existing usability issues while making it efficient and scalable",
+        "Redesigned and optimized the system user flows and designed e-bike manufacture management systems, solving existing usability issues while making it efficient and scalable",
       time: "2020 September - 2021 August",
     },
     {

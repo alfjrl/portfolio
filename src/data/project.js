@@ -3,12 +3,12 @@ export default function project() {
     {
       id: 1,
       cate: "Product Design - research, conception & prototyping",
-      title: "Hyena Software Systems Revamp",
+      title: "A Software System Solution for E-bikes",
       link: "/project/hyena",
       src: "/hyena.png",
       subtitle: "Web system design | Hareware & software integration",
       description:
-        "Starting at solving the problem regional e-bike service centers encountered, it ended with a completed software product design review and a brand new information architecture to secure future system expandability.",
+        "Designing a new feature in the bike service tool to serve the need of the regional service center.",
     },
     {
       id: 2,
