@@ -21,7 +21,7 @@ export default function Home() {
         <div className="flex-1">
           <Navbar></Navbar>
           <HeroIntro></HeroIntro>
-          <section id="project">
+          <section id="project" className="scroll-my-10">
             <SectionTitle title={"project(s)"}></SectionTitle>
             <ProjectCard link={"/404"}></ProjectCard>
           </section>
