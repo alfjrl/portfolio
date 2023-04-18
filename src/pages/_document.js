@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import GA from "@/components/ga";
 
 export default function Document() {
   return (
@@ -11,6 +12,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
+      <GA />
       <body>
         <Main />
         <NextScript />
