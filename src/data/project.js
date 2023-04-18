@@ -6,7 +6,7 @@ export default function project() {
       title: "A Software System Solution for E-bikes",
       link: "/project/hyena",
       src: "/hyena.png",
-      subtitle: "Web system design | Hareware & software integration",
+      subtitle: "Hyena Inc. | Web system design",
       description:
         "Designing a new feature in the bike service tool to serve the need of the regional service center.",
     },
@@ -16,19 +16,19 @@ export default function project() {
       title: "Online Postal Service",
       link: "https://alfredjlin.webflow.io/online-postal-service",
       src: "/knst.png",
-      subtitle: "Mobile design | E-Commerce",
+      subtitle: "KNST Co., Ltd. | Mobile application design",
       description:
         "Starting as an MVP(Minimum Viable Product) product, the online postal service was introduced to people with basic functions without any consideration for user experience. In this project, we started with user research and followed by a redesign aiming at improving the user experience.",
     },
     {
       id: 3,
       cate: "Evaluation Research - reserach & user testing",
-      title: "Tentrr.com",
+      title: "An Online Booking Website Designed for Campers.",
       link: "/project/tentrr",
       src: "/tentrr.png",
-      subtitle: "Web usability analysis | E-Commerce",
+      subtitle: "Tentrr.com | Web usability research",
       description:
-        "In this user research project, we created personas for the target users of Tentrr. Based on the persona, we conducted the heuristic evaluation and then followed by a completed usability testing with three participants to discover what would keep users from using this service, and propose the recommended improvements.",
+        "Conducting usability research on the online campsite booking website to discover usability issues and propose possible solutions.",
     },
   ];
 }

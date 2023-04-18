@@ -34,10 +34,12 @@ export default function Hyena() {
       "The regional service center needed a new feature to support their daily task including checking the e-bike status and updating the e-bike configuration fast and efficiently. The original proposal was to customize one of the internal applications, however, after user interviews and system evaluation, we came up with a new design to provide an easy-to-use solution integrated into the existing application for users and lay the foundation for future product development.",
     description:
       "This project demonstrates part of my work during my time in Hyena for the e-bike drivetrain system solution.",
-    problem:
+    subtitle1: "problem",
+    description1:
       "The initial design decision led to not only bad user experiences, but also a complicated product design for maintaining, and adding new features.",
-    solution:
-      " A new product design concept for the internal system to streamline workflows and a new user flow and new interfaces in the existing bike service tool.",
+    subtitle2: "solution",
+    description2:
+      "A new product design concept for the internal system to streamline workflows and a new user flow and new interfaces in the existing bike service tool.",
   };
 
   // list
@@ -565,7 +567,7 @@ export default function Hyena() {
             ></SubTitle>
             <Paragraph
               props={
-                "Here comes my last consideration, what is the perfect solution? Based on the understanding from the previous 2 questions, at the time, we decided, "
+                "Here comes my last consideration, what is the perfect solution? Based on the understanding from the previous 2 questions, we came to the conclusion that, "
               }
             ></Paragraph>
             <HMW
@@ -612,14 +614,16 @@ export default function Hyena() {
           </div>
           <div className="bg-zinc-50">
             <ProjectSectionTitle title={`Takeaways`}></ProjectSectionTitle>
+            <SubTitle props={"Observing the root cause"}></SubTitle>
             <Paragraph
               props={
-                "- When conducting user research on the product involves operation between software and hardware, we need to consider how users are using the product and try to find out what's causing the issue instead of only thinking about how the interface influences users."
+                "When conducting user research on the product involves operation between software and hardware, we need to consider how users are using the product and try to find out what's causing the issue instead of only thinking about how the interface influences users."
               }
             ></Paragraph>
+            <SubTitle props={"Best solution?"}></SubTitle>
             <Paragraph
               props={
-                "- It would be long-term progress to understand how users are using the product, conducting research within a short time frame would sometimes come up with a partial picture of the reality."
+                "What is the best solution? The solution is the one that is feasible, solves the user's real need, and provides business values. Sometimes, we tend to get lost in the user's voice that ignore the value behind that. It is important to find the balance so that the product can move forward. But from time to time, the product would become user-friendly eventually if we are on the right track."
               }
             ></Paragraph>
             <Divider />
