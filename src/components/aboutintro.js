@@ -5,8 +5,8 @@ export default function AboutIntro() {
       <p className="font-inter flex-grow text-slate-900">
         {`Hello there, it's great to have you here! My name is Alfred, I go by 展任 (Jhan-Ren) in Mandarin.`}
       </p>
-      <p className="font-inter flex-grow pt-4 text-lg font-semibold text-slate-900">
-        An Product Designer, A Product Manager, A Front-End Developer, A
+      <p className="font-inter flex-grow pt-4 sm:text-lg font-semibold text-slate-900">
+        A Product Designer, A Product Manager, A Front-End Developer, A
         Problem-Solver, and A Cycling Enthusiast.
       </p>
       <p className="font-inter flex-grow pt-4 text-slate-900">

@@ -5,7 +5,7 @@ export default function HeroIntro() {
         <h1 className="font-inter font-medium text-xl text-slate-900">
           {`Hey there, I'm Alfred.`}
         </h1>
-        <p className="font-inter text-lg text-slate-500 leading-relaxed pt-8 max-w-screen-lg">
+        <p className="font-inter sm:text-lg text-slate-500 leading-relaxed pt-8 max-w-screen-lg">
           A product designer/developer designing and creating{" "}
           <span className="text-slate-900 underline">
             ethically humane digital products

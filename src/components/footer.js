@@ -7,8 +7,8 @@ export default function Footer() {
     <div className="bg-white shadow">
       <div className="container max-w-screen-xl p-5 pb-10">
         <div className="pt-8 pb-12 max-w-2xl">
-          <p className="font-inter text-slate-900">
-            {`On the side, I always think about how a product design influences
+          <p className="font-inter font-light text-slate-900">
+            {`On the side, I always think about how the product design influences
             users' behaviors and the design mindsets/strategies behind it, which
             always surprises me. I enjoy talking to random people and learning
             something new from them, either their life experiences or tips for
@@ -16,7 +16,7 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <p className="flex flex-row font-inter font-light text-sm pt-4 md:pb-1 order-2 md:order-1 text-slate-900">
+          <p className="flex flex-row font-inter text-sm pt-4 md:pb-1 order-2 md:order-1 text-slate-900">
             <span className="hidden sm:block md:hidden lg:block">
               Made with my bear hands&nbsp;
             </span>

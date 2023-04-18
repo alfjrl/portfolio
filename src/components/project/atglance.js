@@ -20,9 +20,12 @@ export default function AtGlance({ props }) {
         </div>
         <div className="flex flex-col md:flex-row">
           <div className="pt-6 lg:pt-8 pr-4 lg:pr-6 basis-1/2">
-            <Link href="#problem" className="group flex flex-row items-center">
+            <Link
+              href={`#${props.subtitle1}`}
+              className="group flex flex-row items-center"
+            >
               <h3 className="text-xl font-medium uppercase pr-1 text-slate-900">
-                Problem
+                {props.subtitle1}
               </h3>
               <FiArrowUpRight
                 size={20}
@@ -30,16 +33,16 @@ export default function AtGlance({ props }) {
               ></FiArrowUpRight>
             </Link>
             <p className="pt-3 pr-4 lg:pr-6 font-light text-slate-700">
-              {props.problem}
+              {props.description1}
             </p>
           </div>
           <div className="pt-6 lg:pt-8 pr-4 lg:pr-6 basis-1/2">
             <Link
-              href="#solution"
+              href={`#${props.subtitle2}`}
               className="group flex flex-row items-center transition ease-in duration-50"
             >
               <h3 className="text-xl font-medium uppercase pr-1 text-slate-900">
-                Solution
+                {props.subtitle2}
               </h3>
               <FiArrowUpRight
                 size={20}
@@ -47,7 +50,7 @@ export default function AtGlance({ props }) {
               ></FiArrowUpRight>
             </Link>
             <p className="pt-3 pr-4 lg:pr-6 font-light text-slate-700">
-              {props.solution}
+              {props.description2}
             </p>
           </div>
         </div>
