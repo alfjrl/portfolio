@@ -10,6 +10,7 @@ import Paragraph from "@/components/project/paragraph";
 import ProjectImg from "@/components/project/projectimg";
 import Image from "next/image";
 import List from "@/components/project/list";
+import GA from "@/components/ga";
 
 export default function Hyena() {
   const metadata = {
@@ -185,6 +186,7 @@ export default function Hyena() {
           content="Alfred's product design portfolio"
         />
       </Head>
+      <GA />
       <main className="max-auto bg-white min-h-screen flex flex-col">
         <div className="flex-1">
           <Navbar></Navbar>

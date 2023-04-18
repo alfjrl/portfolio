@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import HeroIntro from "@/components/herointro";
 import ExperienceCard from "@/components/experiencecard";
 import SectionTitle from "@/components/sectiontitle";
+import GA from "@/components/ga";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           content="Alfred's product design portfolio"
         />
       </Head>
+      <GA />
       <main className="max-auto bg-zinc-50 min-h-screen flex flex-col">
         <div className="flex-1">
           <Navbar></Navbar>

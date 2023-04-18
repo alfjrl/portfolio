@@ -4,6 +4,7 @@ import CurrentCard from "@/components/curretcard";
 import Footer from "@/components/footer";
 import ProfilePhoto from "@/components/profilephoto";
 import AboutIntro from "@/components/aboutintro";
+import GA from "@/components/ga";
 
 export default function about() {
   // px-5 sm:px-8 py-5 h-full grid justify-items-center
@@ -16,6 +17,7 @@ export default function about() {
           content="Alfred's product design portfolio"
         />
       </Head>
+      <GA />
       <main className="max-auto bg-zinc-50 min-h-screen flex flex-col">
         <div className="flex-1">
           <Navbar></Navbar>

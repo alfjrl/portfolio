@@ -12,6 +12,7 @@ import ProjectImg from "@/components/project/projectimg";
 import Insights from "@/components/project/insights";
 import HMW from "@/components/project/hmw";
 import AtGlance from "@/components/project/atglance";
+import GA from "@/components/ga";
 
 export default function Hyena() {
   const metadata = {
@@ -192,6 +193,7 @@ export default function Hyena() {
           content="A Completed Software System Solution for E-bikes | Alfred's Product Design Portfolio"
         />
       </Head>
+      <GA />
       <main className="max-auto bg-white min-h-screen flex flex-col">
         <div className="flex-1">
           <Navbar></Navbar>
