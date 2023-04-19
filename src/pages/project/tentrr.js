@@ -14,7 +14,7 @@ import GA from "@/components/ga";
 
 export default function Hyena() {
   const metadata = {
-    title: "Tentrr.com - An Online Booking Website Designed for Campers.",
+    title: "Tentrr.com - An Online Booking Website Designed for Campers",
     intro:
       "Conducting usability research on the online campsite booking website to discover usability issues and propose possible solutions.",
     role: "UX Researcher",
