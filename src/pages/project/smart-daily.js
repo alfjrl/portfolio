@@ -8,7 +8,6 @@ import Divider from "@/components/project/divider";
 import SubTitle from "@/components/project/subtitle";
 import Paragraph from "@/components/project/paragraph";
 import ProjectImg from "@/components/project/projectimg";
-import Image from "next/image";
 import List from "@/components/project/list";
 import GA from "@/components/ga";
 import HMW from "@/components/project/hmw";
