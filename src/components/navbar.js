@@ -6,6 +6,9 @@ import Link from "next/link";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const resume =
+    "https://drive.google.com/file/d/1F5p7KNA_7CDQNHYzXKSWLj3XBdcxiSQu/view?usp=sharing";
+
   return (
     <nav className="sticky w-full z-50 pt-5 top-0">
       <div
@@ -42,9 +45,7 @@ export default function Navbar() {
             </li>
             <li className="py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
               <Link
-                href={
-                  "https://drive.google.com/file/d/1HvaATfs5hG6EIvhK0EYV399T6fSpbPdJ/view?usp=sharing"
-                }
+                href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-inter font-medium text-sm text-slate-900"
@@ -90,9 +91,7 @@ export default function Navbar() {
           </li>
           <li className="mx-8 my-6">
             <Link
-              href={
-                "https://drive.google.com/file/d/1HvaATfs5hG6EIvhK0EYV399T6fSpbPdJ/view?usp=sharing"
-              }
+              href={resume}
               target="_blank"
               rel="noopener noreferrer"
               className="font-inter font-medium text-base text-slate-900"
