@@ -575,11 +575,15 @@ export default function SmartDaily() {
           <Divider />
           <div className="bg-zinc-50">
             <ProjectSectionTitle title="takeaway"></ProjectSectionTitle>
+            <SubTitle
+              props={"Importance of prioritizing and considering feasibility"}
+            ></SubTitle>
             <Paragraph
               props={
                 "Other than starting from scratch again, it is always impossible to do the completed redesign implementation to the existing product in a short time. You have to consider several factors during the redesign such as the consideration to the existing users, the perspectives from the marketing team, and also how much resources you would get from the development team."
               }
             ></Paragraph>
+            <SubTitle props={"Simple solutions could be effective"}></SubTitle>
             <Paragraph
               props={
                 "Once the key factors are identified, you could improve the overall user experience with small efforts. For instance, you don’t need to completely redesign the interface, it is possible to just change the process of the user flow or even add a couple of words to achieve the same result."
