@@ -1,6 +1,6 @@
 export default function HeroIntro() {
   return (
-    <div className="container max-w-screen-lg max-auto min-h-[50vh] px-5 sm:px-8 flex items-center">
+    <div className="container max-w-screen-lg max-auto min-h-[30vh] px-5 sm:px-8 pt-20 pb-10 flex items-center">
       <div className="flex flex-col">
         <h1 className="font-inter font-medium text-xl text-slate-900">
           {`Hey there, I'm Alfred.`}
