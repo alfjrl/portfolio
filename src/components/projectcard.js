@@ -10,16 +10,17 @@ export default function ProjectCard({ title, description, image, link }) {
   const cards = projects.map((data) => (
     <div
       key={data.id}
-      className="group container max-w-screen-lg max-auto px-5 sm:px-8 pt-5 sm:pt-10 h-full grid justify-items-center"
+      className="relative group container max-w-screen-lg max-auto px-5 sm:px-8 pt-5 sm:pt-10 grid justify-items-center"
     >
+      <div className="absolute bottom-0 px-5 sm:px-8 w-[calc(100%-40px)] sm:w-[calc(100%-64px)] h-[650px] sm:h-[450px] bg-slate-700"></div>
       <Link
         href={data.link}
         // target="_blank"
         // rel="noopener noreferrer"
-        className="w-full h-[650px] sm:h-[450px] border-2 border-white bg-white transition-all duration-50 ease-in hover:border-slate-400 overflow-hidden"
+        className="relative top-0 right-0 w-full h-[650px] sm:h-[450px] border border-slate-700 bg-white transition-all duration-50 ease-in hover:border-slate-900 overflow-hidden group-hover:-translate-y-2 group-hover:-translate-x-2"
       >
         <div className="w-full h-full flex flex-col sm:flex-row">
-          <div className="w-full h-full p-4 sm:p-8 sm:py-0 basis-8/12 sm:basis-auto grid content-between">
+          <div className="w-full h-full p-4 sm:p-8 sm:py-0 basis-7/12 sm:basis-auto grid content-between">
             <div className="">
               <p className="font-inter text-sm pt-2 sm:pt-8 text-slate-500 transition ease-in group-hover:text-slate-700">
                 {data.cate}
@@ -36,10 +37,13 @@ export default function ProjectCard({ title, description, image, link }) {
             </div>
             <span className="flex flex-row pb-8 items-center text-slate-500 transition ease-in group-hover:text-slate-900">
               <p className="pr-1 font-inter text-sm font-light">See Project</p>
-              <FiArrowUpRight size={20} className=""></FiArrowUpRight>
+              <FiArrowUpRight
+                size={20}
+                className="group-hover:rotate-45 transition ease-in"
+              ></FiArrowUpRight>
             </span>
           </div>
-          <div className="w-full h-full relative basis-4/12 transition-all duration-50 ease-in sm:basis-auto group-hover:scale-110">
+          <div className="w-full h-full relative basis-5/12 transition-all duration-50 ease-in sm:basis-auto group-hover:scale-110">
             <Image
               fill
               src={data.src}

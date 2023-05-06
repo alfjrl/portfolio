@@ -18,7 +18,7 @@ export default function about() {
         />
       </Head>
       <GA />
-      <main className="max-auto bg-zinc-50 min-h-screen flex flex-col">
+      <main className="max-auto bg-white min-h-screen flex flex-col">
         <div className="flex-1">
           <Navbar></Navbar>
           <div className="container max-w-screen-xl max-auto">

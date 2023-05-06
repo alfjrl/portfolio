@@ -12,14 +12,17 @@ export default function CurrentCard(link) {
         }
         target="_blank"
         rel="noopener noreferrer"
-        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 transition ease-in hover:shadow-lg"
+        className="group sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center border border-slate-700 rounded-xl p-5 my-2 transition ease-in hover:border-slate-900"
       >
         <div className="flex flex-col justify-center">
           <div className="flex flex-row items-center text-slate-500">
-            <p className="font-inter text-sm font-light pr-2 ">
+            <p className="font-inter text-sm font-light pr-2">
               Currently Reading
             </p>
-            <FiArrowUpRight size={14} className=""></FiArrowUpRight>
+            <FiArrowUpRight
+              size={14}
+              className="group-hover:rotate-45 transition ease-in"
+            ></FiArrowUpRight>
           </div>
 
           <p className="font-inter font-medium text-slate-900 pt-2">
@@ -40,12 +43,15 @@ export default function CurrentCard(link) {
         href={"https://freakonomics.com/series/nsq/"}
         target="_blank"
         rel="noopener noreferrer"
-        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 transition ease-in hover:shadow-lg"
+        className="group sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center  border border-slate-700 rounded-xl p-5 my-2 transition ease-in hover:border-slate-900"
       >
         <div className="flex flex-col justify-center">
           <div className="flex flex-row items-center text-slate-500">
-            <p className="font-inter text-sm font-light">Listening to</p>
-            <FiArrowUpRight size={14} className=""></FiArrowUpRight>
+            <p className="font-inter text-sm font-light pr-2">Listening to</p>
+            <FiArrowUpRight
+              size={14}
+              className="group-hover:rotate-45 transition ease-in"
+            ></FiArrowUpRight>
           </div>
 
           <p className="font-inter font-medium text-slate-900 pt-2">
@@ -67,12 +73,15 @@ export default function CurrentCard(link) {
         href={"https://www.formula1.com/en.html"}
         target="_blank"
         rel="noopener noreferrer"
-        className="sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center rounded-xl p-5 my-2 transition ease-in hover:shadow-lg"
+        className="group sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center  border border-slate-700 rounded-xl p-5 my-2 transition ease-in hover:border-slate-900"
       >
         <div className="flex flex-col justify-center">
           <div className="flex flex-row items-center text-slate-500">
-            <p className="font-inter text-sm font-light">Watching</p>
-            <FiArrowUpRight size={14} className=""></FiArrowUpRight>
+            <p className="font-inter text-sm font-light pr-2">Watching</p>
+            <FiArrowUpRight
+              size={14}
+              className="group-hover:rotate-45 transition ease-in"
+            ></FiArrowUpRight>
           </div>
 
           <p className="font-inter font-medium text-slate-900 pt-2">
