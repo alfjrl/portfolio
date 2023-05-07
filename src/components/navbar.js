@@ -27,7 +27,7 @@ export default function Navbar() {
             </p>
           </Link>
           <ul className={`hidden sm:visible sm:flex sm:items-center`}>
-            <li className="py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
+            <li className="mx-0.5 py-1 px-4 rounded-md transition ease-in border border-white hover:border-slate-900">
               <Link
                 href={"/#project"}
                 className="font-inter font-medium text-sm text-slate-900"
@@ -35,7 +35,7 @@ export default function Navbar() {
                 PROJECT
               </Link>
             </li>
-            <li className="py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
+            <li className="mx-0.5 py-1 px-4 rounded-md  transition ease-in border border-white hover:border-slate-900">
               <Link
                 href={"/about"}
                 className="font-inter font-medium text-sm text-slate-900"
@@ -43,7 +43,7 @@ export default function Navbar() {
                 ABOUT
               </Link>
             </li>
-            <li className="py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
+            <li className="mx-0.5 py-1 px-4 rounded-md  transition ease-in border border-white hover:border-slate-900">
               <Link
                 href={resume}
                 target="_blank"

@@ -28,7 +28,7 @@ export default function Footer() {
                 href={"mailto:alfred.jr.lin@gmail.com"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="-ml-1.5 md:ml-0 px-2 py-1 mr-0.5 rounded-md transition ease-in text-slate-100 hover:bg-slate-100 hover:text-slate-900"
+                className="-ml-1.5 md:ml-0 px-2 py-1 mr-0.5 rounded-md border border-slate-800 transition ease-in text-slate-100 hover:border-slate-100"
               >
                 {/* <HiOutlineMail className="w-6 h-6"></HiOutlineMail> */}
                 <p className="font-inter font-medium text-sm order-2 sm:order-1">
@@ -39,7 +39,7 @@ export default function Footer() {
                 href={"https://www.linkedin.com/in/alfredjrlin/"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-2 py-1 mx-0.5 rounded-md transition ease-in text-slate-100 hover:bg-slate-100 hover:text-slate-900"
+                className="px-2 py-1 mx-0.5 rounded-md border border-slate-800 transition ease-in text-slate-100 hover:border-slate-100"
               >
                 {/* <BsLinkedin className="w-6 h-6"></BsLinkedin> */}
                 <p className="font-inter font-medium text-sm order-2 sm:order-1 ">
@@ -50,7 +50,7 @@ export default function Footer() {
                 href={"https://medium.com/@alfredjlin"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-2 py-1 mx-1 rounded-md  transition ease-in text-slate-100 hover:bg-slate-100 hover:text-slate-900"
+                className="px-2 py-1 mx-1 rounded-md border border-slate-800 transition ease-in text-slate-100 hover:border-slate-100"
               >
                 {/* <BsMedium className="w-6 h-6"></BsMedium> */}
                 <p className="font-inter font-medium text-sm order-2 sm:order-1">
@@ -61,7 +61,7 @@ export default function Footer() {
                 href={"https://github.com/alfjrl"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-2 py-1 mx-0.5 rounded-md  transition ease-in text-slate-100 hover:bg-slate-100 hover:text-slate-900"
+                className="px-2 py-1 mx-0.5 rounded-md  border border-slate-800 transition ease-in text-slate-100 hover:border-slate-100"
               >
                 {/* <BsGithub className="w-6 h-6"></BsGithub> */}
                 <p className="font-inter font-medium text-sm order-2 sm:order-1">
