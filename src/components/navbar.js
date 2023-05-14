@@ -7,7 +7,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const resume =
-    "https://drive.google.com/file/d/1vlc7JDbdaI3U4fIv1j5M_XQV26MOqgl2/view?usp=sharing";
+    "https://drive.google.com/file/d/15lh7tC2WXBCrcqvszjeCFiW6nkDwnX54/view?usp=sharing";
 
   return (
     <nav className="sticky w-full z-50 pt-5 top-0">
@@ -19,7 +19,7 @@ export default function Navbar() {
         <RiCloseFill className={`${open ? "visible" : "hidden"}`}></RiCloseFill>
       </div>
       <div className=" container  max-w-screen-xl px-2 sm:px-5">
-        <div className="p-5 bg-white rounded-2xl border border-slate-700 sm:flex sm:items-center sm:justify-between">
+        <div className="p-5 bg-white rounded-md border border-slate-700 sm:flex sm:items-center sm:justify-between">
           <Link href={"/"} className="flex flex-row items-center">
             <Image src="/al.svg" alt="logo" width={40} height={10}></Image>
             <p className="mx-3 text-md font-inter font-medium text-slate-900">
