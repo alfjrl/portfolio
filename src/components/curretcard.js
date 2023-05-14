@@ -5,7 +5,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export default function CurrentCard(link) {
   return (
-    <div className="container max-w-screen-lg max-auto pt-10 px-5 sm:px-8 flex flex-col sm:flex-row justify-between">
+    <div className="container max-w-lg max-auto pt-10 px-5 sm:px-8 flex flex-col justify-between">
       <Link
         href={
           "https://www.goodreads.com/book/show/51146931-designing-with-data"
@@ -15,7 +15,7 @@ export default function CurrentCard(link) {
         className="group sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center border border-slate-700 rounded-xl p-5 my-2 transition ease-in hover:border-slate-900"
       >
         <div className="flex flex-col justify-center">
-          <div className="flex flex-row items-center text-slate-500">
+          <div className="flex flex-row items-center text-slate-500 group-hover:text-slate-900">
             <p className="font-inter text-sm font-light pr-2">
               Currently Reading
             </p>
@@ -46,7 +46,7 @@ export default function CurrentCard(link) {
         className="group sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center  border border-slate-700 rounded-xl p-5 my-2 transition ease-in hover:border-slate-900"
       >
         <div className="flex flex-col justify-center">
-          <div className="flex flex-row items-center text-slate-500">
+          <div className="flex flex-row items-center text-slate-500 group-hover:text-slate-900">
             <p className="font-inter text-sm font-light pr-2">Listening to</p>
             <FiArrowUpRight
               size={14}
@@ -76,7 +76,7 @@ export default function CurrentCard(link) {
         className="group sm:mx-2 bg-white flex flex-row basis-0 flex-grow justify-between items-center  border border-slate-700 rounded-xl p-5 my-2 transition ease-in hover:border-slate-900"
       >
         <div className="flex flex-col justify-center">
-          <div className="flex flex-row items-center text-slate-500">
+          <div className="flex flex-row items-center text-slate-500 group-hover:text-slate-900">
             <p className="font-inter text-sm font-light pr-2">Watching</p>
             <FiArrowUpRight
               size={14}
