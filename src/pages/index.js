@@ -14,8 +14,9 @@ export default function Home() {
       <Head>
         <title>Alfred J. Lin | Portfolio</title>
         <meta
-          name="Alfred J. Lin | Portfolio"
-          content="Alfred's product design portfolio"
+          name="description"
+          content="Welcome to Alfred's product dsesign portfolio. Alfred is a data-driven product designer, who loves working on complex systems, creating user-centered and ethically humane design."
+          key="desc"
         />
       </Head>
       <GA />
@@ -29,8 +30,8 @@ export default function Home() {
           </section>
           <SectionTitle title={"article(s)"}></SectionTitle>
           <ArticleCard></ArticleCard>
-          <SectionTitle title={"exp. & edu."}></SectionTitle>
-          <ExperienceCard></ExperienceCard>
+          {/* <SectionTitle title={"exp. & edu."}></SectionTitle> */}
+          {/* <ExperienceCard></ExperienceCard> */}
           <div className="container max-w-screen-xl pb-20"></div>
         </div>
         <Footer></Footer>

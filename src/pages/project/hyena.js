@@ -59,7 +59,7 @@ export default function Hyena() {
   ];
 
   const questions = [
-    `What content has to be considered?`,
+    `What should be considered?`,
     `Who are we designing the feature for?`,
     `What is the perfect solution for this situation?`,
   ];
@@ -189,8 +189,9 @@ export default function Hyena() {
       <Head>
         <title>Hyena | Alfred J. Lin | Portfolio</title>
         <meta
-          name="Hyena | Alfred J. Lin | Portfolio"
-          content="A Completed Software System Solution for E-bikes | Alfred's Product Design Portfolio"
+          name="description"
+          content="Welcome to Alfred's product dsesign portfolio. Alfred is a data-driven product designer, who loves working on complex systems, creating user-centered and ethically humane design."
+          key="desc"
         />
       </Head>
       <GA />
@@ -475,7 +476,7 @@ export default function Hyena() {
               }
             ></Paragraph>
             <List props={questions}></List>
-            <SubTitle props={"What content have to be considered?"}></SubTitle>
+            <SubTitle props={"What should be considered?"}></SubTitle>
             <Paragraph
               props={
                 "In the early stage, as we receive the feature request from the regional service center, we started to figure out what they want. But before that, we needed to know the current situation to develop a proper solution. That's why we first started to look into the current system."

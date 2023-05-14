@@ -46,8 +46,9 @@ export default function SmartDaily() {
       <Head>
         <title>Obran OS | Alfred J. Lin | Portfolio</title>
         <meta
-          name="Obran OS | Alfred J. Lin | Portfolio"
-          content="Alfred's product design portfolio"
+          name="description"
+          content="Welcome to Alfred's product dsesign portfolio. Alfred is a data-driven product designer, who loves working on complex systems, creating user-centered and ethically humane design."
+          key="desc"
         />
       </Head>
       <GA />
