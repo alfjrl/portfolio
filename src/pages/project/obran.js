@@ -226,13 +226,13 @@ export default function SmartDaily() {
               "Once we finished the wireframe design, we conduct the expert interview to get insights from people such as product managers to further modify our design."
             }
           ></Paragraph>
-          <div className="container max-auto max-w-screen-xl px-2 sm:px-5">
+          {/* <div className="container max-auto max-w-screen-xl px-2 sm:px-5">
             <div className="flex flex-col sm:flex-row justify-center">
               <ProjectImg props={obranld}></ProjectImg>
               <ProjectImg props={obranss}></ProjectImg>
               <ProjectImg props={obranei}></ProjectImg>
             </div>
-          </div>
+          </div> */}
 
           <Paragraph
             props={
