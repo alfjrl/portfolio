@@ -347,137 +347,208 @@ export default function SmartDaily() {
             ></HMW>
             <Divider></Divider>
           </div>
-          <ProjectSectionTitle title={"The process"}></ProjectSectionTitle>
+          <ProjectSectionTitle title={"The research"}></ProjectSectionTitle>
           <Paragraph
             props={
-              "We started the design for My ICA with Lightning Demos, and based on the inspiration we got from the lightning demos, we developed our own sketch solutions."
-            }
-          ></Paragraph>
-          <Paragraph
-            props={
-              "We would share the sketch solutions with each other, pick the key design decision and combine all of the designs together."
-            }
-          ></Paragraph>
-          <Paragraph
-            props={
-              "Once we finished the wireframe design, we conduct the expert interview to get insights from people such as product managers to further modify our design."
-            }
-          ></Paragraph>
-          <div className="container max-auto max-w-screen-xl px-2 sm:px-5">
-            <div className="flex flex-col sm:flex-row justify-center">
-              <ProjectImg props={obranld}></ProjectImg>
-              <ProjectImg props={obranss}></ProjectImg>
-              <ProjectImg props={obranei}></ProjectImg>
-            </div>
-          </div>
-
-          <Paragraph
-            props={
-              "(how we understand the problem and how to communicate with the client)"
-            }
-          ></Paragraph>
-          <Paragraph
-            props={
-              "1. talk about the expert interviews we had with the Obran people, and then here would show the early insight from the expert interview"
-            }
-          ></Paragraph>
-          <Paragraph
-            props={
-              "2. talk about how we design the ICA prototype here based on the expert interview insight, lighting demo, and solution sketches."
-            }
-          ></Paragraph>
-          <Paragraph
-            props={
-              "3. show the first version of prototype(from sprint 1) here with detailed explanation."
-            }
-          ></Paragraph>
-          <Paragraph
-            props={
-              "4. talk about how we conduct the user testing on the prototype."
-            }
-          ></Paragraph>
-
-          <ProjectSectionTitle title={"The discovery"}></ProjectSectionTitle>
-          <Paragraph
-            props={"1. Talk about the user testing findings"}
-          ></Paragraph>
-          <Paragraph
-            props={
-              "2. Show how we integrated the findings into 2nd version of the prototype(from sprint 2)"
-            }
-          ></Paragraph>
-          <Paragraph
-            props={
-              "3. also talk about the limitation without completed research on understanding the users."
+              "Throughout the entirety of the project, we employed a diverse range of research methods and approaches to comprehensively comprehend the user and synthesize the findings. These invaluable insights guided our design decisions effectively."
             }
           ></Paragraph>
           <ProjectSectionTitle
-            title={"Reframing the problem"}
+            title={"The research - From the big picture"}
           ></ProjectSectionTitle>
           <Paragraph
             props={
-              "this section would explain how we decide to do the research in sprint 3 and expand the design scale to the whole brain os in sprints 4 & 5"
+              "To gain a comprehensive understanding of the user, our user research commenced by addressing the following three pivotal questions: Who constitutes the user base of Obran OS? What specific actions do these users aim to accomplish on Obran OS? What are the prevailing challenges encountered when utilizing Obran OS?"
             }
           ></Paragraph>
           <Paragraph
             props={
-              "this section would focus on how we communicate with clients and how we came to the decision and what is our ultimate goal for this project."
+              "Our research plan encompassed two distinct segments: Obran Admin and Obran members. We tailored interview questions according to each role, allowing us to delve into their unique perspectives and experiences as either administrators or regular users."
             }
           ></Paragraph>
-          <ProjectSectionTitle title={"solution"}></ProjectSectionTitle>
+          <SubTitle props={"Interview Format"}></SubTitle>
           <Paragraph
             props={
-              "Here will show the final prototype(both desktop and mobile versions with all of the pages) with a detailed introduction."
+              "We carried out a total of two user interviews with the admin and an additional four user interviews with general users. During each interview, we designated a primary facilitator responsible for conducting the interview while the remaining team members observed in the background, taking notes or posing follow-up questions as necessary."
             }
           ></Paragraph>
-          <ProjectSectionTitle title={"How we got here"}></ProjectSectionTitle>
-          <SubTitle props={"design strategy"}></SubTitle>
           <Paragraph
             props={
-              "what are our considerations during the product design process"
+              "To ensure organized documentation, we utilized Figjam as a platform for note-taking. All notes were meticulously recorded and categorized based on the corresponding user and interview questions, enabling efficient analysis and reference in the subsequent stages of the project."
             }
           ></Paragraph>
-          <Paragraph
-            props={"- what is Obran's intention for users?"}
-          ></Paragraph>
-          <Paragraph props={"- what do users consider the most?"}></Paragraph>
+          <SubTitle props={"Data Synthesize"}></SubTitle>
           <Paragraph
             props={
-              "- how do we find a balance between what the client wants and what the user wants?"
+              "Given our utilization of qualitative research methods throughout the process, we employed various techniques to synthesize the gathered data effectively. These techniques encompassed Affinity mapping, Count analysis, thematic analysis, as well as the creation of a 2x2 matrix for data analysis."
             }
           ></Paragraph>
-          <SubTitle props={"From ICA to whole Obran OS"}></SubTitle>
           <Paragraph
             props={
-              "- how the different scales would lead to different design decision"
+              "Subsequently, we leveraged the synthesized research outcomes to construct both user personas and user journeys. These artifacts facilitated a comprehensive comprehension of the user base and facilitated alignment with stakeholders. Moreover, these insights served as the foundation for designing the system, ensuring its alignment with user needs and expectations."
             }
           ></Paragraph>
+          <SubTitle props={"Takeaway"}></SubTitle>
           <SubTitle
-            props={"how we conduct research and synthesize the findings."}
+            props={"Takeaway - The Significance of User Understanding"}
           ></SubTitle>
           <Paragraph
             props={
-              "- talk about sprint 3 in how we conduct the user interview to create a persona and user journey"
+              "In order to create a product that resonates with users, it is crucial to gain insights into their identities, emotions, and actual usage patterns. By comprehensively understanding the user, we can effectively identify their needs and seamlessly integrate the research findings into the design process."
             }
           ></Paragraph>
-          <SubTitle props={"team collaboration"}></SubTitle>
+          <SubTitle
+            props={"Takeaway - Effective Stakeholder Communication"}
+          ></SubTitle>
           <Paragraph
             props={
-              "- talk about how research and design channel sync information(in sprint 4), and how we manage to make sure everyone is on the same page"
+              "While advocating for the necessity of user research, it is common to encounter resistance from stakeholders who may believe they already possess a solid understanding of the user. It is vital to articulate the rationale behind conducting user research and present easily digestible results to ensure the project progresses smoothly. By sharing compelling evidence, we can demonstrate the value of user research and maintain momentum in the project."
             }
           ></Paragraph>
-          <SubTitle props={"design iteration (design critique)"}></SubTitle>
+          <ProjectSectionTitle
+            title={"The research - at a closer look"}
+          ></ProjectSectionTitle>
           <Paragraph
             props={
-              "- talk about how the design critique help to improve the design, with the case of the membership page"
+              "In the product design process, two crucial aspects that need careful consideration before finalizing the design are the design direction and usability. To inform our design decisions effectively, we employed two distinct methods: expert interviews and usability testing."
             }
           ></Paragraph>
-          <ProjectSectionTitle title={"takeaway"}></ProjectSectionTitle>
+          <SubTitle
+            props={
+              "Expert Interviews: Initial Product Vision and Wireframing Confirmation"
+            }
+          ></SubTitle>
           <Paragraph
-            props={"How to effectively communicate with the client"}
+            props={
+              "During the expert interviews, we focused on two key elements: understanding the initial product vision and direction, as well as seeking confirmation on wireframing. By employing contextual interview techniques, we engaged with Obran experts to gather their expectations, intentions, and considerations. This understanding enabled us to ideate and design based on their insights, ensuring alignment with the desired goals."
+            }
           ></Paragraph>
           <Paragraph
-            props={"How to sync information in the team and collaborate"}
+            props={
+              "Wireframing confirmation interviews were conducted periodically throughout the design sprint to align the design outcomes with clients. This facilitated discussions around basic functionality and user flow, ensuring the design direction matched the stakeholders' expectations. These interviews also helped identify crucial design issues, such as terminology and conceptual understanding of the product's workings."
+            }
+          ></Paragraph>
+          <SubTitle
+            props={"Usability Testing: Evaluating Design Effectiveness"}
+          ></SubTitle>
+          <Paragraph
+            props={
+              "Upon completing the high-fidelity design, we conducted usability testing to verify its effectiveness. A comprehensive usability test was carried out in ICA with five participants, focusing on their ability to navigate the page, find key information, and manage their accounts. In addition to collecting quantitative data on task completion rates, we also gathered qualitative feedback from users to inform our design decisions."
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "With a SUS (System Usability Scale) score of 65.5 and a relatively low task completion rate (below 50%), we made significant design modifications to address the issues raised during testing."
+            }
+          ></Paragraph>
+          <SubTitle props={"Takeaway"}></SubTitle>
+          <SubTitle props={"Takeaway - Evaluating Design"}></SubTitle>
+          <Paragraph
+            props={
+              "Usability testing with users after design completion is crucial for obtaining subjective feedback and ensuring the solution aligns with user expectations. It helps validate the effectiveness of the design and identify areas for improvement."
+            }
+          ></Paragraph>
+          <SubTitle props={"Takeaway - Stakeholder Alignment"}></SubTitle>
+          <Paragraph
+            props={
+              "Expert interviews played a vital role in understanding stakeholders' ideas and motivations behind the product. Without these interviews, we could have potentially developed a solution lacking business value, despite its excellent user experience design."
+            }
+          ></Paragraph>
+          <Divider></Divider>
+          <div className="bg-zinc-50">
+            <ProjectSectionTitle
+              title={"The Design - Leveraging User Research and Design Process"}
+            ></ProjectSectionTitle>
+            <Paragraph
+              props={
+                "The design of Obran OS was shaped by insights gathered from user research, including expert interviews and user personas/user journeys. These research findings served as the foundation for our design decisions."
+              }
+            ></Paragraph>
+            <SubTitle props={"My ICA"}></SubTitle>
+            <Paragraph
+              props={
+                "The ICA design was initiated from scratch, with initial ideas originating from the CEO. For the My ICA section, we conducted Lightning Demos, exploring existing products with similar designs to be incorporated into the ICA page. Inspired by these demos, we developed our own sketch solutions."
+              }
+            ></Paragraph>
+            <Paragraph
+              props={
+                "To consolidate our designs, we shared our sketches with each other, selecting key design decisions and combining them into a cohesive whole. After completing the wireframe design, we conducted expert interviews, seeking insights from individuals such as product managers to further refine our design."
+              }
+            ></Paragraph>
+            <Paragraph
+              props={
+                "We underwent two major iterations for the ICA design. The first iteration focused on redesigning features and information, while the second iteration centered around implementing the ICA within the new Design System."
+              }
+            ></Paragraph>
+            <SubTitle props={"Design System"}></SubTitle>
+            <Paragraph
+              props={
+                "To ensure consistency and expandability, we developed a new design system based on the existing Obran visual guidelines for the Obran Cooperative website. This design system catered to both mobile and desktop platforms, providing users with an intuitive interface that facilitated easy access to information without visual clutter."
+              }
+            ></Paragraph>
+            <SubTitle props={"Design Critique and Alignment"}></SubTitle>
+            <Paragraph
+              props={
+                "Design critique played a vital role in aligning the work of multiple product designers. Given the diverse features and user flows in Obran OS, not all scenarios were initially considered in the design system. Regular design critiques helped improve visual design, establish new design rules/components in the system, and align the design with user flows, ultimately enhancing the overall user experience."
+              }
+            ></Paragraph>
+            <SubTitle props={"Takeaway"}></SubTitle>
+            <SubTitle props={"Takeaway - Communication is Key"}></SubTitle>
+            <Paragraph
+              props={
+                "Effective communication within the team is crucial, particularly when simultaneously conducting user research and designing a new design system. Sharing information and maintaining understanding among team members is essential to avoid chaos and ensure successful collaboration."
+              }
+            ></Paragraph>
+            <SubTitle props={"Takeaway - Embracing Feedback"}></SubTitle>
+            <Paragraph
+              props={
+                "Taking feedback from others is highly beneficial. During a design critique session, I received direct feedback on the membership page's gamification aspect, prompting me to reevaluate my design from new perspectives. Embracing feedback with an open mind helps elevate one's own design skills and reach new levels of excellence."
+              }
+            ></Paragraph>
+            <Divider></Divider>
+          </div>
+          <ProjectSectionTitle
+            title={"Reflecting on the Capstone Project of the Past Year"}
+          ></ProjectSectionTitle>
+          <Paragraph
+            props={
+              "The journey from starting the project with limited knowledge about co-ops to designing an exceptional member center for the Obran Cooperative has been a remarkable achievement."
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "Despite initial uncertainties and potential deviations from our planned sprints, we successfully delivered a project that left stakeholders happy and satisfied."
+            }
+          ></Paragraph>
+          <SubTitle props={"Key Takeaways"}></SubTitle>
+          <SubTitle props={"Collaboration"}></SubTitle>
+          <Paragraph
+            props={
+              " Strong collaboration within the product design teams and maintaining a close connection with stakeholders serve as the foundation for building a product that users love. By working together effectively, we can leverage diverse perspectives and skills to achieve outstanding outcomes."
+            }
+          ></Paragraph>
+          <SubTitle props={"Communication"}></SubTitle>
+          <Paragraph
+            props={
+              "Clear communication plays a pivotal role in ensuring everyone is on the same page, enabling efficient and effective project execution. Understanding the thoughts and viewpoints of team members and stakeholders is essential for smooth coordination and cohesive decision-making."
+            }
+          ></Paragraph>
+          <SubTitle props={"Embracing Challenges"}></SubTitle>
+          <Paragraph
+            props={
+              "Challenges are inevitable on any project journey. By embracing these challenges, we transform them into opportunities for enhancing our design solutions. Overcoming obstacles allows us to push our designs to the next level and foster innovation."
+            }
+          ></Paragraph>
+          <SubTitle props={"Advocating User Voices"}></SubTitle>
+          <Paragraph
+            props={
+              "Placing user voices at the forefront of our minds is the most efficient way to create products that resonate with users. By empathizing with their perspectives and considering their needs, we can explore new and often brilliant solutions."
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "As we reflect on this past year's capstone project, we celebrate our achievements and the lessons learned along the way. It is through collaborative efforts, effective communication, embracing challenges, and prioritizing user voices that we have created a product that brings value and satisfaction to its users."
+            }
           ></Paragraph>
           <Divider />
         </div>

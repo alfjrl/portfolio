@@ -210,6 +210,138 @@ export default function SmartDaily() {
           <Paragraph
             props={"How to sync information in the team and collaborate"}
           ></Paragraph>
+          <ProjectSectionTitle title={"The process"}></ProjectSectionTitle>
+          <Paragraph
+            props={
+              "We started the design for My ICA with Lightning Demos, and based on the inspiration we got from the lightning demos, we developed our own sketch solutions."
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "We would share the sketch solutions with each other, pick the key design decision and combine all of the designs together."
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "Once we finished the wireframe design, we conduct the expert interview to get insights from people such as product managers to further modify our design."
+            }
+          ></Paragraph>
+          <div className="container max-auto max-w-screen-xl px-2 sm:px-5">
+            <div className="flex flex-col sm:flex-row justify-center">
+              <ProjectImg props={obranld}></ProjectImg>
+              <ProjectImg props={obranss}></ProjectImg>
+              <ProjectImg props={obranei}></ProjectImg>
+            </div>
+          </div>
+
+          <Paragraph
+            props={
+              "(how we understand the problem and how to communicate with the client)"
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "1. talk about the expert interviews we had with the Obran people, and then here would show the early insight from the expert interview"
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "2. talk about how we design the ICA prototype here based on the expert interview insight, lighting demo, and solution sketches."
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "3. show the first version of prototype(from sprint 1) here with detailed explanation."
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "4. talk about how we conduct the user testing on the prototype."
+            }
+          ></Paragraph>
+
+          <ProjectSectionTitle title={"The discovery"}></ProjectSectionTitle>
+          <Paragraph
+            props={"1. Talk about the user testing findings"}
+          ></Paragraph>
+          <Paragraph
+            props={
+              "2. Show how we integrated the findings into 2nd version of the prototype(from sprint 2)"
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "3. also talk about the limitation without completed research on understanding the users."
+            }
+          ></Paragraph>
+          <ProjectSectionTitle
+            title={"Reframing the problem"}
+          ></ProjectSectionTitle>
+          <Paragraph
+            props={
+              "this section would explain how we decide to do the research in sprint 3 and expand the design scale to the whole brain os in sprints 4 & 5"
+            }
+          ></Paragraph>
+          <Paragraph
+            props={
+              "this section would focus on how we communicate with clients and how we came to the decision and what is our ultimate goal for this project."
+            }
+          ></Paragraph>
+          <ProjectSectionTitle title={"solution"}></ProjectSectionTitle>
+          <Paragraph
+            props={
+              "Here will show the final prototype(both desktop and mobile versions with all of the pages) with a detailed introduction."
+            }
+          ></Paragraph>
+          <ProjectSectionTitle title={"How we got here"}></ProjectSectionTitle>
+          <SubTitle props={"design strategy"}></SubTitle>
+          <Paragraph
+            props={
+              "what are our considerations during the product design process"
+            }
+          ></Paragraph>
+          <Paragraph
+            props={"- what is Obran's intention for users?"}
+          ></Paragraph>
+          <Paragraph props={"- what do users consider the most?"}></Paragraph>
+          <Paragraph
+            props={
+              "- how do we find a balance between what the client wants and what the user wants?"
+            }
+          ></Paragraph>
+          <SubTitle props={"From ICA to whole Obran OS"}></SubTitle>
+          <Paragraph
+            props={
+              "- how the different scales would lead to different design decision"
+            }
+          ></Paragraph>
+          <SubTitle
+            props={"how we conduct research and synthesize the findings."}
+          ></SubTitle>
+          <Paragraph
+            props={
+              "- talk about sprint 3 in how we conduct the user interview to create a persona and user journey"
+            }
+          ></Paragraph>
+          <SubTitle props={"team collaboration"}></SubTitle>
+          <Paragraph
+            props={
+              "- talk about how research and design channel sync information(in sprint 4), and how we manage to make sure everyone is on the same page"
+            }
+          ></Paragraph>
+          <SubTitle props={"design iteration (design critique)"}></SubTitle>
+          <Paragraph
+            props={
+              "- talk about how the design critique help to improve the design, with the case of the membership page"
+            }
+          ></Paragraph>
+          <ProjectSectionTitle title={"takeaway"}></ProjectSectionTitle>
+          <Paragraph
+            props={"How to effectively communicate with the client"}
+          ></Paragraph>
+          <Paragraph
+            props={"How to sync information in the team and collaborate"}
+          ></Paragraph>
           <Divider />
         </div>
         <Footer></Footer>
