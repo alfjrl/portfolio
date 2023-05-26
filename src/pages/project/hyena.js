@@ -22,7 +22,7 @@ export default function Hyena() {
     role: "Product Designer",
     time: "2020 - 2021",
     platform: "Windows/macOS",
-    coworkers: "1 UI Designers, 1 Product Manager, and 10 Software Engineers",
+    coworkers: "1 UI Designer, 1 Product Manager, and 10 Software Engineers",
     type: "Work Experience",
     src: "/hyena.png",
   };
