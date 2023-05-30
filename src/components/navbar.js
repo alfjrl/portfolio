@@ -7,7 +7,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const resume =
-    "https://drive.google.com/file/d/15lh7tC2WXBCrcqvszjeCFiW6nkDwnX54/view?usp=sharing";
+    "https://drive.google.com/file/d/1POnivJ-f1gZkEVeB9QJdqsBEWtBdcRyJ/view?usp=sharing";
 
   return (
     <nav className="sticky w-full z-50 pt-5 top-0">
