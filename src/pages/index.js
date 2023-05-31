@@ -4,7 +4,6 @@ import ProjectCard from "@/components/projectcard";
 import ArticleCard from "@/components/articlecard";
 import Footer from "@/components/footer";
 import HeroIntro from "@/components/herointro";
-import ExperienceCard from "@/components/experiencecard";
 import SectionTitle from "@/components/sectiontitle";
 import GA from "@/components/ga";
 
@@ -26,12 +25,10 @@ export default function Home() {
           <HeroIntro></HeroIntro>
           <section id="project" className="scroll-my-10">
             <SectionTitle title={"project(s)"}></SectionTitle>
-            <ProjectCard link={"/404"}></ProjectCard>
+            <ProjectCard></ProjectCard>
           </section>
           <SectionTitle title={"article(s)"}></SectionTitle>
           <ArticleCard></ArticleCard>
-          {/* <SectionTitle title={"exp. & edu."}></SectionTitle> */}
-          {/* <ExperienceCard></ExperienceCard> */}
           <div className="container max-w-screen-xl pb-20"></div>
         </div>
         <Footer></Footer>
