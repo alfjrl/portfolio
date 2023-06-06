@@ -39,12 +39,12 @@ export default function Navbar() {
     >
       <div
         onClick={() => setOpen(!open)}
-        className="text-3xl absolute right-7 top-9 cursor-pointer sm:hidden z-50"
+        className="text-3xl absolute right-7 top-4 cursor-pointer sm:hidden z-50"
       >
         <RiMenu5Line className={`${open ? "hidden" : "visible"}`}></RiMenu5Line>
         <RiCloseFill className={`${open ? "visible" : "hidden"}`}></RiCloseFill>
       </div>
-      <div className=" container  max-w-screen-xl px-2 sm:px-5">
+      <div className="container  max-w-screen-xl px-2 sm:px-5">
         <div className="p-5 sm:flex sm:items-center sm:justify-between">
           <Link href={"/"} className="flex flex-row items-center">
             <Image src="/al.svg" alt="logo" width={40} height={10}></Image>
