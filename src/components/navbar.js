@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { RiMenu5Line, RiCloseFill } from "react-icons/ri";
 import Link from "next/link";
@@ -6,11 +6,37 @@ import Link from "next/link";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  // hide navbar when scrolling down, show navbar when scrolling up
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+
+    if (currentScrollPos > prevScrollPos) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
   const resume =
     "https://drive.google.com/file/d/1POnivJ-f1gZkEVeB9QJdqsBEWtBdcRyJ/view?usp=sharing";
 
   return (
-    <nav className="sticky w-full z-50 pt-5 top-0">
+    <nav
+      className={`sticky w-full z-50 ${
+        visible ? "top-0" : ""
+      }  bg-white border-b border-solid border-slate-700`}
+    >
       <div
         onClick={() => setOpen(!open)}
         className="text-3xl absolute right-7 top-9 cursor-pointer sm:hidden z-50"
@@ -19,7 +45,7 @@ export default function Navbar() {
         <RiCloseFill className={`${open ? "visible" : "hidden"}`}></RiCloseFill>
       </div>
       <div className=" container  max-w-screen-xl px-2 sm:px-5">
-        <div className="p-5 bg-white rounded-md border border-slate-700 sm:flex sm:items-center sm:justify-between">
+        <div className="p-5 sm:flex sm:items-center sm:justify-between">
           <Link href={"/"} className="flex flex-row items-center">
             <Image src="/al.svg" alt="logo" width={40} height={10}></Image>
             <p className="mx-3 text-md font-inter font-medium text-slate-900">
