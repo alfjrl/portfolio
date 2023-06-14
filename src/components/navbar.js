@@ -40,37 +40,32 @@ export default function Navbar() {
     <nav
       className={`sticky w-full z-50 ${
         visible ? "top-0" : ""
-      }  bg-white border-b border-solid border-slate-700`}
+      }  bg-white border-b border-solid border-slate-700 font-inter text-slate-900`}
     >
       {/* desktop navbar */}
       <div className="container  max-w-screen-xl px-2 sm:px-5">
         <div className="p-5 sm:flex sm:items-center sm:justify-between">
           <Link href={"/"} className="flex flex-row items-center">
             <Image src="/al.svg" alt="logo" width={40} height={10}></Image>
-            <p className="mx-3 text-md font-inter font-medium text-slate-900">
-              ALFRED J. LIN
-            </p>
+            <p className="mx-3 text-md font-medium">ALFRED J. LIN</p>
           </Link>
           <ul className={`hidden sm:visible sm:flex sm:items-center`}>
-            <li className="mx-0.5 py-1 px-4 rounded-md transition ease-in text-slate-900 hover:bg-slate-100">
-              <Link
-                href={"/#project"}
-                className="font-inter font-medium text-sm"
-              >
+            <li className="mx-0.5 py-1 px-4 rounded-md transition ease-in hover:bg-slate-100">
+              <Link href={"/#project"} className="font-medium text-sm">
                 PROJECT
               </Link>
             </li>
-            <li className="mx-0.5 py-1 px-4 rounded-md  transition ease-in  text-slate-900 hover:bg-slate-100">
-              <Link href={"/about"} className="font-inter font-medium text-sm">
+            <li className="mx-0.5 py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
+              <Link href={"/about"} className="font-medium text-sm">
                 ABOUT
               </Link>
             </li>
-            <li className="group mx-0.5 py-1 px-4 rounded-md flex items-center transition ease-in  text-slate-900 hover:bg-slate-100">
+            <li className="group mx-0.5 py-1 px-4 rounded-md flex items-center transition ease-in hover:bg-slate-100">
               <Link
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-inter font-medium text-sm py-0.5"
+                className="font-medium text-sm py-0.5"
               >
                 RESUME
               </Link>
@@ -94,7 +89,7 @@ export default function Navbar() {
 
       {/* mobile navbar */}
       <div
-        className={`fixed top-0 sm:hidden h-screen w-screen z-49 bg-white transition-all ease-in duration-200 z-auto ${
+        className={`fixed top-0 sm:hidden h-screen w-screen bg-white transition-all ease-in duration-200 z-auto ${
           open ? "left-0" : "-left-[700px]"
         }`}
       >
@@ -102,7 +97,7 @@ export default function Navbar() {
           <li className="mx-8 my-6">
             <Link
               href={"/"}
-              className="font-inter font-medium text-base text-slate-900"
+              className="font-medium text-base"
               onClick={() => setOpen(!open)}
             >
               Home
@@ -111,7 +106,7 @@ export default function Navbar() {
           <li className="mx-8 my-6">
             <Link
               href={"/#project"}
-              className="font-inter font-medium text-base text-slate-900"
+              className="font-medium text-base"
               onClick={() => setOpen(!open)}
             >
               Project
@@ -120,7 +115,7 @@ export default function Navbar() {
           <li className="mx-8 my-6">
             <Link
               href={"/about"}
-              className="font-inter font-medium text-base text-slate-900"
+              className="font-medium text-base"
               onClick={() => setOpen(!open)}
             >
               About
@@ -131,7 +126,7 @@ export default function Navbar() {
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-inter font-medium text-base text-slate-900"
+              className="font-medium text-base"
             >
               Resume
             </Link>

@@ -23,21 +23,6 @@ export default function HeroIntro() {
             <p className="pl-3">M.S. in HCI, University of Maryland</p>
           </div>
         </div>
-        {/* <h1 className="font-inter font-medium text-xl text-slate-900">
-          {`Hey there, I'm Alfred.`}
-        </h1>
-        <p className="font-inter sm:text-lg text-slate-500 leading-relaxed pt-8 max-w-screen-lg">
-          A product designer/developer designing and creating{" "}
-          <span className="text-slate-900 underline">
-            ethically humane digital products
-          </span>{" "}
-          focused on{" "}
-          <span className="text-slate-900 underline">user well-being</span>,
-          bringing <span className="text-slate-900  underline">inclusive</span>{" "}
-          and{" "}
-          <span className="text-slate-900 underline">accessible design</span>{" "}
-          into everyone’s daily life.
-        </p> */}
       </div>
     </div>
   );

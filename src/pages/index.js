@@ -1,11 +1,12 @@
 import Head from "next/head";
+import GA from "@/components/ga";
 import Navbar from "@/components/navbar";
+import HeroIntro from "@/components/herointro";
 import ProjectCard from "@/components/projectcard";
 import ArticleCard from "@/components/articlecard";
 import Footer from "@/components/footer";
-import HeroIntro from "@/components/herointro";
 import SectionTitle from "@/components/sectiontitle";
-import GA from "@/components/ga";
+import Divider from "@/components/project/divider";
 
 export default function Home() {
   return (
@@ -21,17 +22,17 @@ export default function Home() {
       <GA />
       <main className="max-auto bg-white min-h-screen flex flex-col">
         <div className="flex-1">
-          <Navbar></Navbar>
-          <HeroIntro></HeroIntro>
+          <Navbar />
+          <HeroIntro />
           <section id="project" className="scroll-my-0">
-            <SectionTitle title={"project(s)"}></SectionTitle>
-            <ProjectCard></ProjectCard>
+            <SectionTitle title={"project(s)"} />
+            <ProjectCard />
           </section>
-          <SectionTitle title={"article(s)"}></SectionTitle>
-          <ArticleCard></ArticleCard>
-          <div className="container max-w-screen-xl pb-20"></div>
+          <SectionTitle title={"article(s)"} />
+          <ArticleCard />
+          <Divider />
         </div>
-        <Footer></Footer>
+        <Footer />
       </main>
     </>
   );

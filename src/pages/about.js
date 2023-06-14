@@ -1,14 +1,13 @@
 import Head from "next/head";
+import GA from "@/components/ga";
 import Navbar from "@/components/navbar";
-import CurrentCard from "@/components/curretcard";
-import Footer from "@/components/footer";
 import ProfilePhoto from "@/components/profilephoto";
 import AboutIntro from "@/components/aboutintro";
-import GA from "@/components/ga";
+import CurrentCard from "@/components/curretcard";
+import Footer from "@/components/footer";
 import Divider from "@/components/project/divider";
 
 export default function about() {
-  // px-5 sm:px-8 py-5 h-full grid justify-items-center
   return (
     <>
       <Head>
@@ -22,17 +21,17 @@ export default function about() {
       <GA />
       <main className="max-auto bg-white min-h-screen flex flex-col">
         <div className="flex-1">
-          <Navbar></Navbar>
+          <Navbar />
           <div className="container max-w-screen-xl max-auto flex flex-col lg:flex-row pt-6">
-            <ProfilePhoto></ProfilePhoto>
+            <ProfilePhoto />
             <div className="flex flex-col">
-              <AboutIntro></AboutIntro>
-              <CurrentCard></CurrentCard>
+              <AboutIntro />
+              <CurrentCard />
             </div>
           </div>
-          <Divider></Divider>
+          <Divider />
         </div>
-        <Footer></Footer>
+        <Footer />
       </main>
     </>
   );
