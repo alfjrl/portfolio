@@ -25,9 +25,9 @@ export default function ProjectCard({ title, description, image, link }) {
               <p className="font-inter text-sm pt-2 sm:pt-8 text-slate-500 transition ease-in group-hover:text-slate-700">
                 {data.cate}
               </p>
-              <h1 className="font-inter text-xl pt-6 font-semibold text-slate-900">
+              <h2 className="font-inter text-xl pt-6 font-semibold text-slate-900">
                 {data.title}
-              </h1>
+              </h2>
               <p className="font-inter font-medium pt-2 text-slate-900">
                 {data.subtitle}
               </p>
@@ -47,7 +47,7 @@ export default function ProjectCard({ title, description, image, link }) {
             <Image
               fill
               src={data.src}
-              alt="project cover image"
+              alt={data.alt}
               className="object-cover sm:object-scale-down"
             ></Image>
           </div>
