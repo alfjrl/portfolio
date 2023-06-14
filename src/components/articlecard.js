@@ -21,9 +21,9 @@ export default function ArticleCard() {
           <p className="font-inter text-sm text-slate-500 transition ease-in group-hover:text-slate-700">
             {data.date} - {data.readtime} mins read
           </p>
-          <h1 className="font-inter text-xl pt-3 font-semibold text-slate-900">
+          <h2 className="font-inter text-xl pt-3 font-semibold text-slate-900">
             {data.title}
-          </h1>
+          </h2>
           <p className="font-inter pt-3 text-slate-500 transition ease-in group-hover:text-slate-700 truncate ...">
             {data.description}
           </p>
