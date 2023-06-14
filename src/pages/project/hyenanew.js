@@ -2,17 +2,11 @@ import Head from "next/head";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ProjectIntro from "@/components/project/projectintro";
-import ProjectSectionTitle from "@/components/project/projectsectiontitle";
 import Paragraph from "@/components/project/paragraph";
-import List from "@/components/project/list";
 import Divider from "@/components/project/divider";
-import SubTitle from "@/components/project/subtitle";
-import Quote from "@/components/project/quote";
-import ProjectImg from "@/components/project/projectimg";
-import Insights from "@/components/project/insights";
-import HMW from "@/components/project/hmw";
-import AtGlance from "@/components/project/atglance";
 import GA from "@/components/ga";
+import { FiArrowUpRight } from "react-icons/fi";
+import Link from "next/link";
 
 // new components
 import TableOfContents from "@/components/casestudy/tableofcontent";
@@ -21,15 +15,16 @@ import P from "@/components/casestudy/p";
 
 export default function Hyena() {
   const metadata = {
-    title: "A Completed Software System Solution for E-bikes",
+    title: "Obran OS - A Memeber Center for Cooperative Employee",
     intro:
-      "Designing a new feature in the bike service tool to serve the need of the regional service center.",
+      "Redesigning an online service ordering experience by identifying the user needs to provide a user-friendly process.",
     role: "Product Designer",
-    time: "2020 - 2021",
-    platform: "Windows/macOS",
-    coworkers: "1 UI Designer, 1 Product Manager, and 10 Software Engineers",
-    type: "Work Experience",
-    src: "/hyena.png",
+    time: "2022 - 2023",
+    platform: "Web & Mobile",
+    coworkers:
+      "Alfred Lin, Jing Wang, Sourabh Doraji, Tushar Karlapudi, Yeri Yeong",
+    type: "Course Project",
+    src: "/obran-cover.png",
   };
 
   // at glance
@@ -192,7 +187,7 @@ export default function Hyena() {
   return (
     <>
       <Head>
-        <title>Hyena | Alfred J. Lin | Portfolio</title>
+        <title>Obran OS | Alfred J. Lin | Portfolio</title>
         <meta
           name="description"
           content="Welcome to Alfred's product dsesign portfolio. Alfred is a data-driven product designer, who loves working on complex systems, creating user-centered and ethically humane design."
@@ -200,11 +195,11 @@ export default function Hyena() {
         />
       </Head>
       <GA />
-      <main className="max-auto bg-white min-h-screen flex flex-col">
+      <main className="max-auto bg-white min-h-screen flex flex-col font-inter">
         <div className="flex-1">
+          <Navbar></Navbar>
           {/* herosection */}
           <div id="herosection">
-            <Navbar></Navbar>
             <ProjectIntro
               title={metadata.title}
               intro={metadata.intro}
@@ -215,10 +210,62 @@ export default function Hyena() {
               type={metadata.type}
               src={metadata.src}
             ></ProjectIntro>
+            {/* at a glance */}
             <div className="bg-zinc-50">
               <div id="ataglance" className="scroll-my-10">
                 <Divider></Divider>
-                <AtGlance props={atglance}></AtGlance>
+                <div className="container max-auto max-w-screen-xl flex flex-row px-2 sm:px-5">
+                  <div className="w-full py-10 px-4 lg:px-8 bg-sky-100 divide-y divide-slate-700">
+                    <div>
+                      <p className="text-sm text-slate-700 uppercase">
+                        Project At A Glance
+                      </p>
+                      <h2 className="text-2xl pt-2 font-semibold text-slate-900 max-w-screen-md">
+                        ftresgvtrsehgyt
+                      </h2>
+                      <div className="py-6 lg:py-8 text-slate-700 font-light max-w-screen-md">
+                        <p>ferwsf</p>
+                        <p className="pt-3">fwraesf</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col md:flex-row">
+                      <div className="pt-6 lg:pt-8 pr-4 lg:pr-6 basis-1/2">
+                        <Link
+                          href={`#wred`}
+                          className="group flex flex-row items-center"
+                        >
+                          <h3 className="text-xl font-medium uppercase pr-1 text-slate-900">
+                            erfcsr
+                          </h3>
+                          <FiArrowUpRight
+                            size={20}
+                            className="text-slate-400 group-hover:text-slate-900 transition-all ease-in duration-50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                          ></FiArrowUpRight>
+                        </Link>
+                        <p className="pt-3 pr-4 lg:pr-6 font-light text-slate-700">
+                          frwefr
+                        </p>
+                      </div>
+                      <div className="pt-6 lg:pt-8 pr-4 lg:pr-6 basis-1/2">
+                        <Link
+                          href={`#werde`}
+                          className="group flex flex-row items-center transition ease-in duration-50"
+                        >
+                          <h3 className="text-xl font-medium uppercase pr-1 text-slate-900">
+                            retr
+                          </h3>
+                          <FiArrowUpRight
+                            size={20}
+                            className="text-slate-400 group-hover:text-slate-900 transition-all ease-in duration-50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                          ></FiArrowUpRight>
+                        </Link>
+                        <p className="pt-3 pr-4 lg:pr-6 font-light text-slate-700">
+                          tees
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <Divider></Divider>
               </div>
             </div>
