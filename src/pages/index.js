@@ -23,7 +23,7 @@ export default function Home() {
         <div className="flex-1">
           <Navbar></Navbar>
           <HeroIntro></HeroIntro>
-          <section id="project" className="scroll-my-10">
+          <section id="project" className="scroll-my-0">
             <SectionTitle title={"project(s)"}></SectionTitle>
             <ProjectCard></ProjectCard>
           </section>

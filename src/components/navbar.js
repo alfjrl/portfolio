@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
+
 import Image from "next/image";
-import { RiMenu5Line, RiCloseFill } from "react-icons/ri";
 import Link from "next/link";
 
+import { RiMenu5Line, RiCloseFill } from "react-icons/ri";
+import { FiArrowUpRight } from "react-icons/fi";
+
 export default function Navbar() {
+  // resume link
+  const resume =
+    "https://drive.google.com/file/d/1POnivJ-f1gZkEVeB9QJdqsBEWtBdcRyJ/view?usp=sharing";
+
+  // show or hide mobile navbar
   const [open, setOpen] = useState(false);
 
   // hide navbar when scrolling down, show navbar when scrolling up
@@ -28,22 +36,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  const resume =
-    "https://drive.google.com/file/d/1POnivJ-f1gZkEVeB9QJdqsBEWtBdcRyJ/view?usp=sharing";
-
   return (
     <nav
       className={`sticky w-full z-50 ${
         visible ? "top-0" : ""
       }  bg-white border-b border-solid border-slate-700`}
     >
-      <div
-        onClick={() => setOpen(!open)}
-        className="text-3xl absolute right-7 top-4 cursor-pointer sm:hidden z-50"
-      >
-        <RiMenu5Line className={`${open ? "hidden" : "visible"}`}></RiMenu5Line>
-        <RiCloseFill className={`${open ? "visible" : "hidden"}`}></RiCloseFill>
-      </div>
+      {/* desktop navbar */}
       <div className="container  max-w-screen-xl px-2 sm:px-5">
         <div className="p-5 sm:flex sm:items-center sm:justify-between">
           <Link href={"/"} className="flex flex-row items-center">
@@ -53,36 +52,48 @@ export default function Navbar() {
             </p>
           </Link>
           <ul className={`hidden sm:visible sm:flex sm:items-center`}>
-            <li className="mx-0.5 py-1 px-4 rounded-md transition ease-in border border-white hover:border-slate-900">
+            <li className="mx-0.5 py-1 px-4 rounded-md transition ease-in text-slate-900 hover:bg-slate-100">
               <Link
                 href={"/#project"}
-                className="font-inter font-medium text-sm text-slate-900"
+                className="font-inter font-medium text-sm"
               >
                 PROJECT
               </Link>
             </li>
-            <li className="mx-0.5 py-1 px-4 rounded-md  transition ease-in border border-white hover:border-slate-900">
-              <Link
-                href={"/about"}
-                className="font-inter font-medium text-sm text-slate-900"
-              >
+            <li className="mx-0.5 py-1 px-4 rounded-md  transition ease-in  text-slate-900 hover:bg-slate-100">
+              <Link href={"/about"} className="font-inter font-medium text-sm">
                 ABOUT
               </Link>
             </li>
-            <li className="mx-0.5 py-1 px-4 rounded-md  transition ease-in border border-white hover:border-slate-900">
+            <li className="group mx-0.5 py-1 px-4 rounded-md flex items-center transition ease-in  text-slate-900 hover:bg-slate-100">
               <Link
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-inter font-medium text-sm text-slate-900"
+                className="font-inter font-medium text-sm py-0.5"
               >
                 RESUME
               </Link>
+              <FiArrowUpRight
+                size={16}
+                className="group-hover:rotate-45 transition ease-in"
+              />
             </li>
           </ul>
         </div>
       </div>
-      <nav
+
+      {/* button hamburger menu for mobile navbar */}
+      <div
+        onClick={() => setOpen(!open)}
+        className="text-3xl absolute right-7 top-4 cursor-pointer sm:hidden z-50"
+      >
+        <RiMenu5Line className={`${open ? "hidden" : "visible"}`}></RiMenu5Line>
+        <RiCloseFill className={`${open ? "visible" : "hidden"}`}></RiCloseFill>
+      </div>
+
+      {/* mobile navbar */}
+      <div
         className={`fixed top-0 sm:hidden h-screen w-screen z-49 bg-white transition-all ease-in duration-200 z-auto ${
           open ? "left-0" : "-left-[700px]"
         }`}
@@ -115,7 +126,7 @@ export default function Navbar() {
               About
             </Link>
           </li>
-          <li className="mx-8 my-6">
+          <li className="mx-8 my-6 flex items-center">
             <Link
               href={resume}
               target="_blank"
@@ -124,9 +135,13 @@ export default function Navbar() {
             >
               Resume
             </Link>
+            <FiArrowUpRight
+              size={16}
+              className="group-hover:rotate-45 transition ease-in"
+            />
           </li>
         </ul>
-      </nav>
+      </div>
     </nav>
   );
 }
