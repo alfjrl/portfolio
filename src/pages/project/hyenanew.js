@@ -17,13 +17,13 @@ export default function Hyena() {
   const metadata = {
     title: "Obran OS - A Memeber Center for Cooperative Employee",
     intro:
-      "Redesigning an online service ordering experience by identifying the user needs to provide a user-friendly process.",
+      "Revitalizing member engagement and achieving business objectives through feature design and member center revamp.",
     role: "Product Designer",
     time: "2022 - 2023",
     platform: "Web & Mobile",
     coworkers:
       "Alfred Lin, Jing Wang, Sourabh Doraji, Tushar Karlapudi, Yeri Yeong",
-    type: "Course Project",
+    type: "Capstone Project",
     src: "/obran-cover.png",
   };
 

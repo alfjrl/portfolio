@@ -9,7 +9,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 export default function Navbar() {
   // resume link
   const resume =
-    "https://drive.google.com/file/d/1POnivJ-f1gZkEVeB9QJdqsBEWtBdcRyJ/view?usp=sharing";
+    "https://drive.google.com/file/d/1P2ZcrTfWxd38sIuSpZEh2TQkvPSQzVjy/view?usp=sharing";
 
   // show or hide mobile navbar
   const [open, setOpen] = useState(false);

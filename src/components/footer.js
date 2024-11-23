@@ -20,7 +20,7 @@ export default function Footer() {
             <span className="hidden sm:block md:hidden lg:block">
               Made with love & coffee&nbsp;
             </span>
-            © 2023 Alfred Jhan-Ren Lin
+            © 2024 Alfred Jhan-Ren Lin
           </p>
           <div className="flex flex-col md:flex-row order-1 md:order-2 pt-2 md:pt-0">
             <div className="flex flex-row order-2 pt-2 md:pt-0 md:order-1 self-end">

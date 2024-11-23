@@ -11,7 +11,7 @@ export default function AboutIntro() {
       </p>
       <p className="pt-4">
         {`I have experiences in multiple platforms (web,
-        iOS/Android) for diffrent B2B / B2C products including internal tools,
+        iOS/Android) for different B2B / B2C products including internal tools,
         IoT, SaaS, and so on.`}
       </p>
       <p className="pt-4">
