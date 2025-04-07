@@ -16,7 +16,7 @@ export default function project() {
       id: 2,
       // cate: "Product Design - research, conception & prototyping",
       cate: ["Manufacturing SaaS", "dekstop", "mobile"],
-      title: "An After-Sales Service System Solution for E-bikes",
+      title: "A Completed Software System Solution for E-bikes",
       link: "/project/hyena",
       src: "/hyena.png",
       alt: "Hyena software system runs on a desktop, a laptop, and a mobile device.",

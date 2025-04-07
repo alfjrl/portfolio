@@ -20,7 +20,7 @@ export default function ProjectCard({ title, description, image, link }) {
         <div className="w-full h-full flex flex-col sm:flex-row">
           <div className="w-full h-full p-6 sm:p-8 sm:py-0 basis-7/12 sm:basis-auto grid content-between">
             <div className="">
-              <h3 className="text-xl pt-6 font-semibold text-slate-900">
+              <h3 className="text-xl sm:pt-6 font-semibold text-slate-900">
                 {data.title}
               </h3>
               <div className="flex flex-wrap gap-2 mt-3">

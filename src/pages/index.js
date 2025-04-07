@@ -7,6 +7,7 @@ import ArticleCard from "@/components/articlecard";
 import Footer from "@/components/footer";
 import SectionTitle from "@/components/sectiontitle";
 import Divider from "@/components/project/divider";
+import OtherThing from "@/components/otherthing";
 
 export default function Home() {
   return (
@@ -28,8 +29,11 @@ export default function Home() {
             <SectionTitle title={"selected work(s)"} />
             <ProjectCard />
           </section>
+          <SectionTitle title={"other project(s)"} />
+          <OtherThing />
           <SectionTitle title={"selected article(s)"} />
           <ArticleCard />
+
           <Divider />
         </div>
         <Footer />
