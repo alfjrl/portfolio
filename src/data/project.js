@@ -2,7 +2,8 @@ export default function project() {
   return [
     {
       id: 1,
-      cate: "Product Design - research, conception, prototyping & developing",
+      // cate: "Product Design - research, conception, prototyping & developing",
+      cate: ["Higher Education", "responseive web design"],
       title: "A New Search Experience for Libraries in Higher Education",
       link: "/project/umd-libraries",
       src: "/umd_libraries.png",
@@ -13,8 +14,9 @@ export default function project() {
     },
     {
       id: 2,
-      cate: "Product Design - research, conception & prototyping",
-      title: "A Software System Solution for E-bikes",
+      // cate: "Product Design - research, conception & prototyping",
+      cate: ["Manufacturing SaaS", "dekstop", "mobile"],
+      title: "An After-Sales Service System Solution for E-bikes",
       link: "/project/hyena",
       src: "/hyena.png",
       alt: "Hyena software system runs on a desktop, a laptop, and a mobile device.",
@@ -24,8 +26,8 @@ export default function project() {
     },
     {
       id: 3,
-      cate: "Product Design - reserach, conception & prototyping",
-      title: "An E-Commerce Platform for Communities",
+      cate: ["e-commerce", "mobile"],
+      title: "An Order Placing Feature for an online E-commerce Application",
       link: "/project/smart-daily",
       src: "/knst.png",
       alt: "Smart Daily app shows new features for the online ordering service.",

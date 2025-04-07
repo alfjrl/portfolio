@@ -13,6 +13,9 @@ module.exports = {
         inter: ["Inter"],
         manrope: ["Manrope"],
       },
+      aspectRatio: {
+        "3/4": "3 / 4",
+      },
     },
   },
   plugins: [],

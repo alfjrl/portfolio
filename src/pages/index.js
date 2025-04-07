@@ -25,10 +25,10 @@ export default function Home() {
           <Navbar />
           <HeroIntro />
           <section id="project" className="scroll-my-0">
-            <SectionTitle title={"project(s)"} />
+            <SectionTitle title={"selected work(s)"} />
             <ProjectCard />
           </section>
-          <SectionTitle title={"article(s)"} />
+          <SectionTitle title={"selected article(s)"} />
           <ArticleCard />
           <Divider />
         </div>

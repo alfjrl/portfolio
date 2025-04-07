@@ -99,7 +99,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(!open)}
             >
-              Home
+              home
             </Link>
           </li>
           <li className="mx-8 my-6">
@@ -108,7 +108,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(!open)}
             >
-              Project
+              work
             </Link>
           </li>
           <li className="mx-8 my-6">
@@ -117,7 +117,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(!open)}
             >
-              About
+              about
             </Link>
           </li>
           <li className="mx-8 my-6 flex items-center">
@@ -127,7 +127,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="font-medium text-base"
             >
-              Resume
+              resume
             </Link>
             <FiArrowUpRight
               size={16}

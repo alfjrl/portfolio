@@ -8,7 +8,7 @@ export default function CurrentCard(link) {
     <div className="container max-w-lg max-auto pt-10 px-5 sm:px-8 flex flex-col justify-between">
       <Link
         href={
-          "https://www.goodreads.com/book/show/51146931-designing-with-data"
+          "https://www.amazon.com/Grid-systems-graphic-design-communication/dp/3721201450"
         }
         target="_blank"
         rel="noopener noreferrer"
@@ -26,12 +26,12 @@ export default function CurrentCard(link) {
           </div>
 
           <p className="font-inter font-medium text-slate-900 pt-2">
-            Designing with Data
+            Grid systems in graphic design
           </p>
         </div>
         <div className="h-14 w-14 overflow-hidden">
           <Image
-            src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1492895089i/34790762.jpg"
+            src="/grid-system.jpg"
             alt="Designing with data book cover"
             width={100}
             height={100}
