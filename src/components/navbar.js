@@ -39,24 +39,24 @@ export default function Navbar() {
     <nav
       className={`sticky w-full z-50 ${
         visible ? "top-0" : ""
-      }  bg-white border-b border-solid border-slate-700 font-inter text-slate-900`}
+      }  bg-white font-manrope text-slate-900`}
     >
       {/* desktop navbar */}
       <div className="container  max-w-screen-xl px-2 sm:px-5">
         <div className="p-5 sm:flex sm:items-center sm:justify-between">
           <Link href={"/"} className="flex flex-row items-center">
             <Image src="/al.svg" alt="logo" width={40} height={10}></Image>
-            <p className="mx-3 text-md font-medium">ALFRED J. LIN</p>
+            {/* <p className="mx-3 text-xl font-semibold">ALFRED J. LIN</p> */}
           </Link>
           <ul className={`hidden sm:visible sm:flex sm:items-center`}>
             <li className="mx-0.5 py-1 px-4 rounded-md transition ease-in hover:bg-slate-100">
-              <Link href={"/#project"} className="font-medium text-sm">
-                PROJECT
+              <Link href={"/#project"} className="font-medium text-base">
+                work
               </Link>
             </li>
             <li className="mx-0.5 py-1 px-4 rounded-md  transition ease-in hover:bg-slate-100">
-              <Link href={"/about"} className="font-medium text-sm">
-                ABOUT
+              <Link href={"/about"} className="font-medium text-base">
+                about
               </Link>
             </li>
             <li className="group mx-0.5 py-1 px-4 rounded-md flex items-center transition ease-in hover:bg-slate-100">
@@ -64,9 +64,9 @@ export default function Navbar() {
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-sm py-0.5"
+                className="font-medium text-base py-0.5"
               >
-                RESUME
+                resume
               </Link>
               <FiArrowUpRight
                 size={16}
