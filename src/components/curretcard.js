@@ -16,7 +16,7 @@ export default function CurrentCard(link) {
       >
         <div className="flex flex-col justify-center">
           <div className="flex flex-row items-center text-slate-500 group-hover:text-slate-900">
-            <p className="font-inter text-sm font-light pr-2">
+            <p className="font-manrope text-sm font-light pr-2">
               Currently Reading
             </p>
             <FiArrowUpRight
@@ -25,7 +25,7 @@ export default function CurrentCard(link) {
             ></FiArrowUpRight>
           </div>
 
-          <p className="font-inter font-medium text-slate-900 pt-2">
+          <p className="font-manrope font-medium text-slate-900 pt-2">
             Grid systems in graphic design
           </p>
         </div>
@@ -47,14 +47,14 @@ export default function CurrentCard(link) {
       >
         <div className="flex flex-col justify-center">
           <div className="flex flex-row items-center text-slate-500 group-hover:text-slate-900">
-            <p className="font-inter text-sm font-light pr-2">Listening to</p>
+            <p className="font-manrope text-sm font-light pr-2">Listening to</p>
             <FiArrowUpRight
               size={14}
               className="group-hover:rotate-45 transition ease-in"
             ></FiArrowUpRight>
           </div>
 
-          <p className="font-inter font-medium text-slate-900 pt-2">
+          <p className="font-manrope font-medium text-slate-900 pt-2">
             No Stupid Questions
           </p>
         </div>
@@ -77,14 +77,14 @@ export default function CurrentCard(link) {
       >
         <div className="flex flex-col justify-center">
           <div className="flex flex-row items-center text-slate-500 group-hover:text-slate-900">
-            <p className="font-inter text-sm font-light pr-2">Watching</p>
+            <p className="font-manrope text-sm font-light pr-2">Watching</p>
             <FiArrowUpRight
               size={14}
               className="group-hover:rotate-45 transition ease-in"
             ></FiArrowUpRight>
           </div>
 
-          <p className="font-inter font-medium text-slate-900 pt-2">
+          <p className="font-manrope font-medium text-slate-900 pt-2">
             Formula 1™
           </p>
         </div>

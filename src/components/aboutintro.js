@@ -1,7 +1,7 @@
 export default function AboutIntro() {
   // born and raised in Taiwan
   return (
-    <div className="container max-w-screen-lg max-auto px-5 sm:px-8 pt-10 font-light font-inter text-slate-900 leading-relaxed">
+    <div className="container max-w-screen-lg max-auto px-5 sm:px-8 pt-10 font-light font-manrope text-slate-900 leading-relaxed">
       <p className="lg:pt-10">
         {`Hey, I'm Alfred, go by 展任 (Jhan-Ren) in Mandarin.`}
       </p>
