@@ -7,6 +7,7 @@ import ArticleCard from "@/components/articlecard";
 import Footer from "@/components/footer";
 import SectionTitle from "@/components/sectiontitle";
 import Divider from "@/components/project/divider";
+import OtherThing from "@/components/otherthing";
 
 export default function Home() {
   return (
@@ -25,11 +26,14 @@ export default function Home() {
           <Navbar />
           <HeroIntro />
           <section id="project" className="scroll-my-0">
-            <SectionTitle title={"project(s)"} />
+            <SectionTitle title={"selected work(s)"} />
             <ProjectCard />
           </section>
-          <SectionTitle title={"article(s)"} />
+          <SectionTitle title={"other project(s)"} />
+          <OtherThing />
+          <SectionTitle title={"selected article(s)"} />
           <ArticleCard />
+
           <Divider />
         </div>
         <Footer />

@@ -12,10 +12,9 @@ import List from "@/components/project/list";
 import GA from "@/components/ga";
 import HMW from "@/components/project/hmw";
 
-export default function SmartDaily() {
+export default function EcommerceOrderPlacing() {
   const metadata = {
-    title:
-      "Smart Daily - A Residential Property Management System for Communities",
+    title: "Order Placing Feature for an online E-commerce Application",
     intro:
       "Redesigning an online service ordering experience by identifying the user needs to provide a user-friendly process.",
     role: "Product Designer, Product Manager",
@@ -30,9 +29,9 @@ export default function SmartDaily() {
   // at glance
   const atglance = {
     title:
-      "Redesigning the online ordering experience for postal service with research insights to fulfill users' needs.",
+      "Redesigning the online ordering experience for an e-commerce app with research insights to fulfill users' needs.",
     subtitle:
-      "When I took over the project, the online ordering service for the postal service was already finished its MVP test and was prepared to officially release it to the public. Before that, we needed to solve the significant usability issues for the best user experience and reduce the workload for the customer service team. We started with conducting user research to understand the current usability issues of the service and users' experiences and expectations. Based on the insights, we redesigned key features and rolled out the service to all of the users in Taiwan.",
+      "When I took over the project, the online ordering service was already finished its MVP test and was prepared to officially release it to the public. Before that, we needed to solve the significant usability issues for the best user experience and reduce the workload for the customer service team. We started with conducting user research to understand the current usability issues of the service and users' experiences and expectations. Based on the insights, we redesigned key features and rolled out the service to all of the users in Taiwan.",
     description: "",
     subtitle1: "problem",
     description1:
@@ -44,15 +43,15 @@ export default function SmartDaily() {
 
   // list
   const researchquestion = [
-    `Who is the user of this service? and what are their user behaviors when using this?`,
-    `What are the user pain points when using the service?`,
+    `Who is the user of this e-commerce app? and what are their user behaviors when placing orders?`,
+    `What are the user pain points when using the ordering service?`,
   ];
 
   // img
   const knstuiya1 = {
     description: "",
     src: "/knst-ya-1.png",
-    alt: "Your Address Funtion",
+    alt: "Your Address Function",
     width: "1500",
     height: "3088",
   };
@@ -60,7 +59,7 @@ export default function SmartDaily() {
   const knstuiya2 = {
     description: "",
     src: "/knst-ya-2.png",
-    alt: "Your Address Funtion",
+    alt: "Your Address Function",
     width: "1500",
     height: "3088",
   };
@@ -68,7 +67,7 @@ export default function SmartDaily() {
   const knstuiya3 = {
     description: "",
     src: "/knst-ya-3.png",
-    alt: "Your Address Funtion",
+    alt: "Your Address Function",
     width: "1500",
     height: "3088",
   };
@@ -76,7 +75,7 @@ export default function SmartDaily() {
   const knstuipa1 = {
     description: "",
     src: "/knst-pa-1.png",
-    alt: "Purchase Again Funtion",
+    alt: "Purchase Again Function",
     width: "1500",
     height: "3088",
   };
@@ -84,7 +83,7 @@ export default function SmartDaily() {
   const knstuipa2 = {
     description: "",
     src: "/knst-pa-2.png",
-    alt: "Purchase Again Funtion",
+    alt: "Purchase Again Function",
     width: "1500",
     height: "3088",
   };
@@ -92,7 +91,7 @@ export default function SmartDaily() {
   const knstuipa3 = {
     description: "",
     src: "/knst-pa-3.png",
-    alt: "Purchase Again Funtion",
+    alt: "Purchase Again Function",
     width: "1500",
     height: "3088",
   };
@@ -147,7 +146,7 @@ export default function SmartDaily() {
   const knstprocess = {
     description: "",
     src: "/knst-process.png",
-    alt: "Produce Design Process",
+    alt: "Product Design Process",
     width: "1500",
     height: "3088",
   };
@@ -186,10 +185,12 @@ export default function SmartDaily() {
   return (
     <>
       <Head>
-        <title>Smart Daily | Alfred J. Lin | Portfolio</title>
+        <title>
+          E-commerce Order Placing Feature | Alfred J. Lin | Portfolio
+        </title>
         <meta
           name="description"
-          content="Welcome to Alfred's product dsesign portfolio. Alfred is a data-driven product designer, who loves working on complex systems, creating user-centered and ethically humane design."
+          content="Welcome to Alfred's product design portfolio. Alfred is a data-driven product designer, who loves working on complex systems, creating user-centered and ethically humane design."
           key="desc"
         />
       </Head>
@@ -212,13 +213,13 @@ export default function SmartDaily() {
             <AtGlance props={atglance} />
             <Divider />
           </div>
-          <ProjectSectionTitle title="Backgroud"></ProjectSectionTitle>
+          <ProjectSectionTitle title="Background"></ProjectSectionTitle>
           <Paragraph
-            props={`Smart Daily is KNST's property management platform. The platform has over 1.5 million active users daily. It aims at providing the residents in each apartment or community a tool to solve any living-related problems/requests with one tap on their phone.`}
+            props={`The Smart Daily app is a popular community service platform with over 1.5 million active users daily. It aims at providing users a tool to solve any living-related problems/requests with one tap on their phone`}
           ></Paragraph>
           <Paragraph
             props={
-              "The online postal service was the latest addition to Smart Daily. When this project started, they just finished the MVP test and planned to roll out this service to the entire Taiwan."
+              "The online ordering feature was the latest addition to the app. When this project started, they had just finished the MVP test and planned to roll out this service to all users in Taiwan."
             }
           ></Paragraph>
           <Divider />
@@ -227,7 +228,7 @@ export default function SmartDaily() {
               <ProjectSectionTitle title="Problem"></ProjectSectionTitle>
               <Paragraph
                 props={
-                  "Starting as an MVP(Minimum Viable Product) product, the service was introduced to people with basic functions without any consideration for user experience. While it successfully passed the MVP test, the timeline set for releasing the service to the public was tight, and there wasn't much time to revamp the whole service."
+                  "Starting as an MVP (Minimum Viable Product), the ordering feature was introduced with basic functions without any consideration for user experience. While it successfully passed the MVP test, the timeline set for releasing the service to the public was tight, and there wasn't much time to revamp the whole feature."
                 }
               ></Paragraph>
               <Paragraph
@@ -237,7 +238,7 @@ export default function SmartDaily() {
               ></Paragraph>
               <HMW
                 props={
-                  "...how might we redesign the service that fulfills users' critical needs with minimal effort while greatly improving the user experience?"
+                  "...how might we redesign the ordering feature that fulfills users' critical needs with minimal effort while greatly improving the user experience?"
                 }
               ></HMW>
               <Divider />
@@ -249,17 +250,17 @@ export default function SmartDaily() {
               <SubTitle props={"Your Addresses Function"}></SubTitle>
               <Paragraph
                 props={
-                  "On the page that users enter the recipient information, we add the button on the top indicating there is a list of recipients' information they could choose from."
+                  "On the page where users enter the shipping address, we added a button at the top indicating there is a list of saved addresses they could choose from."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "Because the reading direction is from the top to bottom, we try to prevent the situation users discover this function after filling in all of the information already. Based on the same concept, once users finish entering the recipient information, we offer an option at the bottom in which users could decide to save this information or not."
+                  "Because the reading direction is from the top to bottom, we try to prevent the situation where users discover this function after filling in all of the information already. Based on the same concept, once users finish entering the shipping address, we offer an option at the bottom where users could decide to save this information for future use."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "Once the list of recipients' information is stored in Your Addresses, users could choose the address directly and edit the list."
+                  "Once the shipping addresses are stored in Your Addresses, users could choose the address directly and edit the list as needed."
                 }
               ></Paragraph>
               <div className="flex sm:flex-row sm:max-h-[60vh]">
@@ -272,12 +273,12 @@ export default function SmartDaily() {
               <SubTitle props={"Purchase Again Function"}></SubTitle>
               <Paragraph
                 props={
-                  "Your Addresses function only provides convenience when entering the recipient’s information, but users still need to select other service details. After discussion internally with product designers in other teams, we decided to add one feature which is the ability to place the same order directly from the order history."
+                  "Your Addresses function only provides convenience when entering the shipping address, but users still need to select other order details. After discussion internally with product designers in other teams, we decided to add one feature which is the ability to place the same order directly from the order history."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "The feature is not only used in the online postal service but also used across the platform. There are several services on the platform and the original design of the platform would make users difficult to find the service they want. This feature would greatly reduce the time users needed to search the service, and skip the process of selecting the service options."
+                  "The feature is not only used in the ordering process but also used across the platform. There are several product categories on the platform and the original design would make it difficult for users to find the products they want. This feature would greatly reduce the time users needed to search for products, and skip the process of selecting options they've chosen before."
                 }
               ></Paragraph>
               <div className="flex sm:flex-row sm:max-h-[60vh]">
@@ -290,12 +291,12 @@ export default function SmartDaily() {
               <SubTitle props={"Detailed Order Information"}></SubTitle>
               <Paragraph
                 props={
-                  "We add the online postal service detail information in the order overview section before the user places the order. So that the user could have the enough information before making purchasing decision. The information provided here includes estimated delivery time and also the additional fee for the destination in a remote area."
+                  "We added detailed order information in the order overview section before the user places the order. This ensures users have enough information before making a purchasing decision. The information provided includes estimated delivery time and additional fees for special delivery options."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "That information is displayed in red color which attracts the attention of the user."
+                  "Important information is displayed in red color which attracts the attention of the user."
                 }
               ></Paragraph>
               <div className="flex sm:flex-row sm:max-h-[60vh]">
@@ -304,20 +305,20 @@ export default function SmartDaily() {
               </div>
             </div>
             <div className="container flex flex-col max-auto max-w-screen-lg px-4 sm:px-9 my-8 lg:my-10 pb-8 lg:pb-12 bg-slate-100">
-              <SubTitle props={"Additional Ordering Option"}></SubTitle>
+              <SubTitle props={"Additional Ordering Options"}></SubTitle>
               <Paragraph
                 props={
-                  "On the first page of the online postal service, we add the checkboxes including “Delivery Notice” and “Agree to the service agreement”. We put that information below the service options because users care more about the service they want in the beginning. Once they decide to make the purchase decision, they would start to consider the further details."
+                  "On the first page of the ordering process, we added checkboxes including 'Delivery Notice' and 'Agree to the service agreement'. We placed that information below the product options because users care more about the products they want initially. Once they decide to make a purchase, they would then consider the additional details."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "The Delivery Notice section remains the flexibility which the marketing team could add or modify the contents based on situation at any given time, and the notice would be recorded the term each time users agree to."
+                  "The Delivery Notice section maintains flexibility so the marketing team can add or modify the contents based on the situation at any given time, and the notice would record the terms each time users agree to them."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "The design of service agreement would require users to agree the term before continuing to the following steps."
+                  "The design of the service agreement requires users to agree to the terms before continuing to the following steps."
                 }
               ></Paragraph>
               <div className="flex sm:flex-row sm:max-h-[60vh]">
@@ -326,12 +327,12 @@ export default function SmartDaily() {
               </div>
               <Paragraph
                 props={
-                  "As mentioned above in the user pain points section, some communities do not have a doorman so that the logistics company might fail to pick up the package. In order to solve this problem, after that discussion with the logistics company, we decided to add one more option before users placing orders."
+                  "As mentioned in the user pain points section, some delivery options had issues with package collection. To solve this problem, after discussion with the logistics team, we decided to add one more option before users place orders."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "The option is to ask the logistics company to call users before picking up the package so that users could hand in the package in person. This option is presented under the community selection with the following pop-up window upon checking the checkbox to notify users details."
+                  "The option is to ask the delivery service to call users before picking up items so that users could coordinate the delivery in person. This option is presented under the delivery method selection with a pop-up window upon checking the checkbox to notify users of details."
                 }
               ></Paragraph>
               <div className="flex sm:flex-row sm:max-h-[60vh]">
@@ -346,7 +347,7 @@ export default function SmartDaily() {
             <SubTitle props={"Process"}></SubTitle>
             <Paragraph
               props={
-                "As the service was planned to roll out in a short time frame, we needed to discover problems and deliver new features as soon as possible. Therefore, we speeded up the progress from research to validate with the randomly selected users to test our design prototype."
+                "As the feature was planned to roll out in a short time frame, we needed to discover problems and deliver new solutions as soon as possible. Therefore, we speeded up the progress from research to validation with randomly selected users to test our design prototype."
               }
             ></Paragraph>
             <ProjectImg props={knstprocess}></ProjectImg>
@@ -356,15 +357,14 @@ export default function SmartDaily() {
             ></Paragraph>
             <div className="container max-auto max-w-screen-lg px-2 sm:px-5">
               <p className="font-inter font-semibold sm:text-lg text-slate-700 pt-6 sm:pt-8 px-2 sm:px-4 pl-6 sm:pl-10">
-                1. Limit resources from the development team
+                1. Limited resources from the development team
               </p>
               <p className="font-inter sm:text-lg text-slate-700 pt-2 px-2 sm:px-4 pl-6 sm:pl-10">
-                This service was one of all products and there were several
-                features under development at the same time, that was impossible
-                to have all of the resources to deliver the completed redesign
-                at one time, we have to find the best solutions from the
-                perspectives of both users and the engineering team and
-                implement step by step.
+                This feature was one of many products under development at the
+                same time. It was impossible to have all the resources needed to
+                deliver a complete redesign at once, so we had to find the best
+                solutions from the perspectives of both users and the
+                engineering team and implement them step by step.
               </p>
             </div>
             <div className="container max-auto max-w-screen-lg px-2 sm:px-5">
@@ -372,22 +372,21 @@ export default function SmartDaily() {
                 2. Consistency with the existing product design
               </p>
               <p className="font-inter sm:text-lg text-slate-700 pt-2 px-2 sm:px-4 pl-6 sm:pl-10">
-                This service is based on the existing platform, therefore the
-                design must consider the system consistency to reduce the
-                influence of the overall user experience. On the other hand, we
-                also need to understand the constraint of the original platform
-                so that the redesign would not exceed the possibility of the
-                platform.
+                This feature is based on the existing platform, therefore the
+                design must consider system consistency to maintain the overall
+                user experience. On the other hand, we also needed to understand
+                the constraints of the original platform so that the redesign
+                would not exceed its capabilities.
               </p>
             </div>
             <Paragraph
               props={
-                "To conclude, the most challenging part is to find the balance in all time so that the product could be delivered on time with high quality, and enjoyed by users."
+                "To conclude, the most challenging part was finding the right balance so that the product could be delivered on time with high quality and be enjoyed by users."
               }
             ></Paragraph>
             <SubTitle props={"Research"}></SubTitle>
             <Paragraph
-              props={`We used two methods to conduct research, "survey", and "contextual interview" trying to identify the user behavior of using postal service, especially under the influence of the pandemic, and current usability issues of the service.`}
+              props={`We used two methods to conduct research, "survey" and "contextual interview" trying to identify the user behavior when shopping online, especially during the pandemic, and current usability issues of the ordering feature.`}
             ></Paragraph>
             <Paragraph
               props={"Focused on two main research questions:"}
@@ -401,11 +400,10 @@ export default function SmartDaily() {
                       Method - Survey
                     </p>
                     <p className="font-inter text-slate-700 pt-4 lg:pt-6 pb-4">
-                      We designed the survey with the focus on collecting the
-                      user habit of using postal service(no limit to our online
-                      postal service) to gain an overview of user behaviors on
-                      our platform. By pushing notifications directly through
-                      App, we collected 3279 responses within 2 weeks.
+                      We designed the survey focusing on collecting user habits
+                      when shopping online to gain an overview of user behaviors
+                      on our platform. By pushing notifications directly through
+                      the app, we collected 3279 responses within 2 weeks.
                     </p>
                   </div>
                 </div>
@@ -415,12 +413,12 @@ export default function SmartDaily() {
                       Method - Contextual Inquiry
                     </p>
                     <p className="font-inter text-slate-700 pt-4 lg:pt-6 pb-4">
-                      The interview focused on how they felt about the service
-                      and asked for their feedback. We recruited 5 existing
-                      Smart Daily users, who were also the MVP users in the
-                      first phase of the service for this user interview. At the
-                      same time, we also observed how they used the online
-                      postal service while adopting the think-aloud protocol.
+                      The interview focused on how users felt about the ordering
+                      feature and asked for their feedback. We recruited 5
+                      existing app users who were also the MVP users in the
+                      first phase of the feature for this user interview. At the
+                      same time, we also observed how they completed the
+                      ordering process while adopting the think-aloud protocol.
                     </p>
                   </div>
                 </div>
@@ -428,66 +426,66 @@ export default function SmartDaily() {
             </div>
             <SubTitle props={"Finding"}></SubTitle>
             <div className="container flex flex-col max-auto max-w-screen-lg px-4 sm:px-9 my-8 lg:my-10 pb-8 lg:pb-12 bg-sky-100">
-              <SubTitle props={"Postal Service Usage"}></SubTitle>
+              <SubTitle props={"E-commerce Usage Patterns"}></SubTitle>
               <div className="flex flex-col">
                 <p className="font-inter sm:text-lg text-slate-700 pt-6 sm:pt-8 px-6 sm:px-10">
                   <span className="font-semibold">5% of the users</span> are
-                  heavy users of the postal service, which would send more than
-                  6 packages per month.
+                  heavy users of the app, who place more than 6 orders per
+                  month.
                 </p>
                 <p className="font-inter sm:text-lg text-slate-700 pt-2 px-6 sm:px-10">
                   <span className="font-semibold">80% of the users</span> are
-                  general users, which would send 1-2 packages per month.
+                  general users, who place 1-2 orders per month.
                 </p>
                 <p className="font-inter sm:text-lg text-slate-700 pt-2 px-6 sm:px-10">
-                  <span className="font-semibold">15% of the users</span> do not
-                  need postal services at all.
+                  <span className="font-semibold">15% of the users</span> rarely
+                  shop online.
                 </p>
                 <ProjectImg props={knstsurvey}></ProjectImg>
                 <p className="font-inter sm:text-lg text-slate-700 pt-6 sm:pt-8 px-6 sm:px-10">
                   The demographic result shows that the main user types of the
-                  online postal service include two types of users:
+                  e-commerce app include two types of users:
                 </p>
                 <p className="font-inter sm:text-lg text-slate-700 pt-2 px-6 sm:px-10">
-                  {`1. General public such as homemakers.`}
+                  {`1. General consumers such as homemakers.`}
                 </p>
                 <p className="font-inter sm:text-lg text-slate-700 pt-2 px-6 sm:px-10">
-                  2. Business users such as e-commerce sellers.
+                  2. Business users such as small business owners.
                 </p>
               </div>
               <SubTitle props={"User Behaviors and Expectations"}></SubTitle>
               <div className="flex flex-col">
                 <p className="font-inter sm:text-lg text-slate-700 pt-6 sm:pt-8 px-6 sm:px-10">
                   <span className="font-semibold">85% of the users</span> expect
-                  that the order details and status to be clear.
+                  the order details and status to be clear.
                 </p>
                 <p className="font-inter sm:text-lg text-slate-700 pt-2 px-6 sm:px-10">
-                  <span className="font-semibold">60% of the users</span> send
-                  the package to the same place several times.
+                  <span className="font-semibold">60% of the users</span> ship
+                  to the same address multiple times.
                 </p>
                 <p className="font-inter sm:text-lg text-slate-700 pt-2 px-6 sm:px-10">
                   <span className="font-semibold">76% of the orders</span>{" "}
-                  contain only one packages.
+                  contain only one or two items.
                 </p>
               </div>
               <Paragraph
                 props={
-                  "With the help of user research, it helped us to have a clear understanding of our users. The users could be roughly divided into 2 groups; one is the general public which has small demand, another one is the business users which have a consistent demand for the postal service."
+                  "The user research helped us gain a clear understanding of our users. The users could be roughly divided into 2 groups: general consumers who shop occasionally, and business users who have consistent shopping needs."
                 }
               ></Paragraph>
             </div>
             <div className="container flex flex-col max-auto max-w-screen-lg px-4 sm:px-9 my-8 lg:my-10 pb-8 lg:pb-12 bg-sky-100">
               <SubTitle
-                props={"Inconvenience in entering recipient information"}
+                props={"Inconvenience in entering shipping information"}
               ></SubTitle>
               <Paragraph
                 props={
-                  "It is always inconvenient to enter information such as address and phone number, not only need to memorize so that you could enter, but also take effort to enter. According to our previous research, 60% of the users have the demand of sending packages to the same recipient several times."
+                  "It is always inconvenient to enter information such as address and phone number, not only needing to memorize details but also taking effort to enter them. According to our research, 60% of users ship to the same address multiple times."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "Under the existing design, If users would like to send the packages to the same recipient several times, the user has to enter the detailed information of the recipient every single time."
+                  "Under the existing design, if users wanted to ship to the same address multiple times, they had to enter the detailed information every single time."
                 }
               ></Paragraph>
               <div className="flex max-h-[60vh]">
@@ -496,16 +494,16 @@ export default function SmartDaily() {
             </div>
             <div className="container flex flex-col max-auto max-w-screen-lg px-4 sm:px-9 my-8 lg:my-10 pb-8 lg:pb-12 bg-sky-100">
               <SubTitle
-                props={"Incomplete postal service information"}
+                props={"Incomplete order and shipping information"}
               ></SubTitle>
               <Paragraph
                 props={
-                  "Generally speaking, the postal service has several key information that is important to the users, including estimated delivery time, cost of delivery, and related information."
+                  "Key information that is important to users includes estimated delivery time, shipping costs, and delivery options."
                 }
               ></Paragraph>
               <Paragraph
                 props={
-                  "However, that information was completed missing in the original design, which would need to call the customer services to inquiry for that. The worst situation is that, if the destination of package locates at remote area, the user would be asked to pay additional fee in person to the logistics company."
+                  "However, this information was completely missing in the original design, requiring users to call customer service with inquiries. In the worst case, if the delivery address was in a remote area, the user would be asked to pay additional fees without prior notification."
                 }
               ></Paragraph>
               <div className="flex max-h-[60vh]">
@@ -514,11 +512,11 @@ export default function SmartDaily() {
             </div>
             <div className="container flex flex-col max-auto max-w-screen-lg px-4 sm:px-9 my-8 lg:my-10 pb-8 lg:pb-12 bg-sky-100">
               <SubTitle
-                props={"Difficulties in package pick-up process"}
+                props={"Difficulties in delivery coordination"}
               ></SubTitle>
               <Paragraph
                 props={
-                  "The package was designed to be picked up at the gate of the community However, some communities do not have a doorman to handle those affairs, which residents need to finish by themselves. In this situation, if the user uses this online postal service, the logistics company would fail to pick up the packages since no one is at the gate."
+                  "The delivery process was designed without considering various living situations. Some users had special delivery requirements or were not available during standard delivery times. Without a way to specify these needs in the ordering process, delivery attempts would often fail."
                 }
               ></Paragraph>
               <ProjectImg props={knstpickup}></ProjectImg>
@@ -526,43 +524,41 @@ export default function SmartDaily() {
             <SubTitle props={"Ideate"}></SubTitle>
             <Paragraph
               props={
-                "During the whole product design process, those 2 questions were always on my mind to inform my design decision,"
+                "During the entire product design process, these 2 questions were always on my mind to inform my design decisions:"
               }
             ></Paragraph>
             <List
               props={[
-                "What users care the most?",
-                "What causes the most serious usability issues to users?",
+                "What do users care about the most?",
+                "What causes the most serious usability issues for users?",
               ]}
             ></List>
             <Paragraph
               props={
-                "Based on the research findings, with above design considerations, I set the two directions for product design iteration."
+                "Based on the research findings and design considerations, I set two directions for product design iteration."
               }
             ></Paragraph>
             <div className="container max-auto max-w-screen-lg px-2 sm:px-5">
               <p className="font-inter font-semibold sm:text-lg text-slate-700 pt-6 sm:pt-8 px-2 sm:px-4 pl-6 sm:pl-10">
-                1. Simplify the whole process
+                1. Simplify the ordering process
               </p>
               <p className="font-inter sm:text-lg text-slate-700 pt-2 px-2 sm:px-4 pl-6 sm:pl-10">
-                Provide features for users to be able to use this service with
-                ease, and match their habit of using the existing postal
-                service.
+                Provide features that enable users to complete orders easily and
+                match their online shopping habits.
               </p>
             </div>
             <div className="container max-auto max-w-screen-lg px-2 sm:px-5">
               <p className="font-inter font-semibold sm:text-lg text-slate-700 pt-6 sm:pt-8 px-2 sm:px-4 pl-6 sm:pl-10">
-                2. Keep users in control
+                2. Keep users informed
               </p>
               <p className="font-inter sm:text-lg text-slate-700 pt-2 px-2 sm:px-4 pl-6 sm:pl-10">
-                Reduce uncertainty for users when using the service, users
-                should have the access to the latest information on the
-                delivery.
+                Reduce uncertainty for users by providing complete information
+                about their orders, shipping options, and delivery status.
               </p>
             </div>
             <Paragraph
               props={
-                "With those directions, we selected the necessary improvements and pushed back other recommendations we got from the heuristic evaluation. By doing this, we successfully delivered the new product iteration to the market within two months."
+                "With these directions, we selected the necessary improvements and prioritized them over other recommendations from our heuristic evaluation. By doing this, we successfully delivered the new product iteration to the market within two months."
               }
             ></Paragraph>
             <Divider />
@@ -570,7 +566,7 @@ export default function SmartDaily() {
           <ProjectSectionTitle title="Impact"></ProjectSectionTitle>
           <Paragraph
             props={
-              "Enhance customer stickiness to the community postal service, and increase the usage rate eventually. After the rollout of the redesign version, the service orders increased over 400% with the repurchase rate increased of up to 36% in 3 months."
+              "The redesign enhanced customer engagement with the e-commerce platform and increased usage rates significantly. After rolling out the redesigned version, service orders increased by over 400% with the repurchase rate increasing by up to 36% within 3 months."
             }
           ></Paragraph>
           <Divider />
@@ -581,13 +577,13 @@ export default function SmartDaily() {
             ></SubTitle>
             <Paragraph
               props={
-                "Other than starting from scratch again, it is always impossible to do the completed redesign implementation to the existing product in a short time. You have to consider several factors during the redesign such as the consideration to the existing users, the perspectives from the marketing team, and also how much resources you would get from the development team."
+                "Rather than starting from scratch, it's often impossible to implement a complete redesign to an existing product in a short time. You have to consider several factors such as the impact on existing users, perspectives from the marketing team, and available resources from the development team."
               }
             ></Paragraph>
-            <SubTitle props={"Simple solutions could be effective"}></SubTitle>
+            <SubTitle props={"Simple solutions can be effective"}></SubTitle>
             <Paragraph
               props={
-                "Once the key factors are identified, you could improve the overall user experience with small efforts. For instance, you don’t need to completely redesign the interface, it is possible to just change the process of the user flow or even add a couple of words to achieve the same result."
+                "Once key factors are identified, you can improve the overall user experience with minimal effort. For instance, you don't need to completely redesign the interface - it's possible to just change the user flow or add strategic elements to achieve significant improvements."
               }
             ></Paragraph>
             <Divider />

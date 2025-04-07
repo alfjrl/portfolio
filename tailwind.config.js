@@ -11,6 +11,10 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["Inter"],
+        manrope: ["Manrope"],
+      },
+      aspectRatio: {
+        "3/4": "3 / 4",
       },
     },
   },

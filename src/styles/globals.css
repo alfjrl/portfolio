@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-custom {
+  background: rgba(255, 222, 78, 0.6);
+}
+
+.bg-custom-tag {
+  background: rgba(255, 222, 78, 0.4);
+}
+
+.see-more {
+}
