@@ -87,11 +87,38 @@ export default function Hyena() {
             <AtGlance props={atglance}></AtGlance>
             <Divider></Divider>
           </div>
-          <Quote
-            props={
-              "This project is currently in development and awaiting production deployment. To learn more about this project or test the features in development, please visit UMD University Libraries website or reach out to me at alfred.jr.lin@gmail.com"
-            }
-          ></Quote>
+          <div className="container max-auto max-w-screen-lg px-2 sm:px-5">
+            <div className="font-inter text-slate-700 sm:text-lg pt-6 lg:pt-8 px-2 lg:px-4">
+              The libraries search redesign is now live on the production
+              environment at{" "}
+              <a
+                href="https://www.lib.umd.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                www.lib.umd.edu
+              </a>
+              {". "}
+              While the experience continues to be refined, you are invited to
+              explore the new interface and functionality.
+            </div>
+          </div>
+          <div className="container max-auto max-w-screen-lg px-2 sm:px-5">
+            <div className="font-inter text-slate-700 sm:text-lg pt-6 lg:pt-8 px-2 lg:px-4">
+              For a detailed look at our design process, research findings, and
+              implementation journey, please view{" "}
+              <a
+                href="https://www.figma.com/deck/g5C7iukOOAzT7FEepVCH3a/Light-slides?node-id=1-553&viewport=281%2C-9%2C0.63&t=R8wxU99dicb1pRTl-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                this comprehensive case study
+              </a>
+              .
+            </div>
+          </div>
           <Divider></Divider>
         </div>
         <Footer></Footer>
