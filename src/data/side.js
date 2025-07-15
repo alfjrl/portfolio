@@ -3,7 +3,7 @@ export default function project() {
     {
       id: 1,
       title: "UMD Libraries Design System",
-      link: "https://github.com/umd-lib/umd-design-system-theme/tree/libraries/main",
+      link: "https://github.com/umd-lib/umdlib-design-system-theme",
       src: "/design-system.png",
       alt: "Design system component showcase.",
       subtitle: "UMD University Libraries | Responsive web design",
