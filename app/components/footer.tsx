@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 function ArrowIcon() {
   return (
     <svg
@@ -16,61 +20,79 @@ function ArrowIcon() {
 }
 
 export default function Footer() {
+  const [year, setYear] = useState(2025);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
-    <footer className="mb-5 md:mb-16">
-      <ul className="font-sm mt-16 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-black dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="mailto:alfred.jr.lin@gmail.com"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">email</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-black dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://www.linkedin.com/in/alfredjrlin/"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">LinkedIn</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-black dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://medium.com/@alfredjlin"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">Medium</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-black dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/alfjrl"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">GitHub</p>
-          </a>
-        </li>
-      </ul>
-      <p className="mt-4 flex flex-row">
-        <span className="hidden md:block">
-          Made with love &amp; coffee&nbsp;
-        </span>
-        {" © "}
-        {new Date().getFullYear()} Alfred Jhan-Ren Lin
-      </p>
+    <footer className="bg-gray-900 text-gray-300 pb-8 mt-12">
+      <div className="max-w-4xl mx-4 md:mx-auto md:px-4">
+        <div className="my-14 max-w-2xl">
+          <p className="leading-relaxed font-manrope italic">
+            On the side, I always think about how design influences our daily
+            lives and why things are designed that way, which is fascinating to
+            me. I enjoy talking to random people and learning something new from
+            them, whether it's their life experiences or tips for finding a
+            parking space in an overly crowded city.
+          </p>
+        </div>
+
+        <ul className="font-sm  flex flex-col space-x-0 space-y-2 text-gray-300 md:flex-row md:space-x-4 md:space-y-0">
+          <li>
+            <a
+              className="flex items-center transition-all hover:text-white"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="mailto:alfred.jr.lin@gmail.com"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">email</p>
+            </a>
+          </li>
+          <li className="md:ml-6">
+            <a
+              className="flex items-center transition-all hover:text-white"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/in/alfredjrlin/"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">LinkedIn</p>
+            </a>
+          </li>
+          <li className="md:ml-6">
+            <a
+              className="flex items-center transition-all hover:text-white"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://medium.com/@alfredjlin"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">Medium</p>
+            </a>
+          </li>
+          <li className="md:ml-6">
+            <a
+              className="flex items-center transition-all hover:text-white"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://github.com/alfjrl"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">GitHub</p>
+            </a>
+          </li>
+        </ul>
+        <p className="mt-4 flex flex-row">
+          <span className="hidden md:block">
+            Made with love &amp; coffee&nbsp;
+          </span>
+          {" © "}
+          {year} Alfred Jhan-Ren Lin
+        </p>
+      </div>
     </footer>
   );
 }

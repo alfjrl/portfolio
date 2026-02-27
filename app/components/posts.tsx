@@ -1,39 +1,119 @@
 import Link from "next/link";
-import { formatDate, getBlogPosts } from "app/blog/utils";
+import Image from "next/image";
+import { getProjects } from "app/project/utils";
+import { getBlogPosts } from "app/article/utils";
 
-export function BlogPosts() {
-  let allBlogs = getBlogPosts();
+function ExternalLinkIcon() {
+  return (
+    <svg
+      stroke="currentColor"
+      fill="none"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="group-hover:rotate-45 transition ease-in flex-shrink-0"
+      height="14"
+      width="14"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="7" y1="17" x2="17" y2="7" />
+      <polyline points="7 7 17 7 17 17" />
+    </svg>
+  );
+}
+
+export function ProjectPosts() {
+  const projects = getProjects().map((p) => ({
+    ...p,
+    type: "project" as const,
+    href: `/project/${p.slug}`,
+  }));
+
+  const blogs = getBlogPosts().map((b) => ({
+    ...b,
+    type: "blog" as const,
+    href: `/article/${b.slug}`,
+  }));
+
+  const all = [...projects, ...blogs].sort(
+    (a, b) =>
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime(),
+  );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {allBlogs
-        .sort((a, b) => {
-          if (
-            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-          ) {
-            return -1;
-          }
-          return 1;
-        })
-        .map((post) => (
-          <Link
-            key={post.slug}
-            // className="flex flex-col space-y-1 mb-4"
-            // className="grid gird-col-2"
-            href={`/blog/${post.slug}`}
+    <ul aria-label="Work and writing" className="flex flex-col gap-4">
+      {all.map((post, index) => {
+        const isProject = post.type === "project";
+        const coverImage = isProject
+          ? (post.metadata as { coverImage?: string }).coverImage
+          : undefined;
+
+        return (
+          <li
+            key={`${post.type}-${post.slug}`}
+            className="animate-blur-in group"
+            style={{ animationDelay: `${0.4 + index * 0.08}s` }}
           >
-            {/* <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2"> */}
-            <div className="w-full flex flex-col space-x-0 md:space-x-2">
-              <div className="w-full bg-gray-200 aspect-4/3 rounded-lg"></div>
-              {/* <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p> */}
-              <p className="text-black dark:text-neutral-100 tracking-tight ml-0">
-                {post.metadata.title}
-              </p>
-            </div>
-          </Link>
-        ))}
-    </div>
+            <Link
+              href={post.href}
+              className="block w-full border border-gray-200 bg-white rounded-lg overflow-hidden transition-all duration-200 ease-in hover:border-gray-400"
+            >
+              <div
+                className={`w-full flex flex-col sm:flex-row ${
+                  coverImage ? "h-[600px] sm:h-[360px]" : "h-auto"
+                }`}
+              >
+                {/* Content */}
+                <div
+                  className={`h-full p-4 flex flex-col justify-between ${
+                    coverImage ? "basis-1/3 sm:basis-3/5" : "w-full"
+                  }`}
+                >
+                  <div>
+                    <h2 className="text-xl font-bold text-black mb-3">
+                      {post.metadata.title}
+                    </h2>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="inline-block text-xs font-medium uppercase px-1 py-1 rounded-md tracking-wide bg-gray-100 text-gray-500 group-hover:text-gray-700 transition ease-in">
+                        {isProject ? "Case Study" : "Article"}
+                      </span>
+                      {isProject &&
+                        (post.metadata as { platform?: string }).platform && (
+                          <span className="inline-block text-xs font-medium uppercase px-1 py-1 rounded-md tracking-wide bg-gray-100 text-gray-500 group-hover:text-gray-700 transition ease-in">
+                            {(post.metadata as { platform?: string }).platform}
+                          </span>
+                        )}
+                    </div>
+                    <p className="text-gray-500 leading-relaxed group-hover:text-gray-700 transition ease-in">
+                      {post.metadata.summary}
+                    </p>
+                  </div>
+
+                  <span className="flex flex-row items-center gap-1 text-gray-400 group-hover:text-black transition ease-in mt-6 hidden sm:flex">
+                    <span className="text-sm">See more</span>
+                    <ExternalLinkIcon />
+                  </span>
+                </div>
+
+                {/* Image — projects only */}
+                {coverImage && (
+                  <div className="relative basis-2/3 sm:basis-2/5 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                    <Image
+                      src={coverImage}
+                      alt={post.metadata.title}
+                      fill
+                      className="object-cover sm:object-scale-down"
+                    />
+                  </div>
+                )}
+              </div>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
   );
 }

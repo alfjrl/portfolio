@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  icons: {
+    icon: "/favi.png",
+  },
   robots: {
     index: true,
     follow: true,
@@ -52,15 +55,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        "text-gray-600 bg-white dark:text-white dark:bg-black font-medium",
-        manrope.className
-      )}
+      className={cx("text-gray-600 bg-white font-medium", manrope.className)}
     >
-      <body className="antialiased max-w-4xl mx-4 md:mx-auto">
+      <body className="antialiased" suppressHydrationWarning>
         <main className="flex-auto min-w-0 flex flex-col">
-          <Navbar />
-          {children}
+          <div className="max-w-4xl w-full md:mx-auto px-4">
+            <Navbar />
+            {children}
+          </div>
           <Footer />
           <Analytics />
           <SpeedInsights />

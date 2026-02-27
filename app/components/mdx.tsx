@@ -45,6 +45,17 @@ function CustomLink(props) {
 }
 
 function RoundedImage(props) {
+  // If width/height are not provided or are "auto", make it responsive
+  if (!props.width || !props.height || props.width === "auto" || props.height === "auto") {
+    return (
+      <img
+        alt={props.alt}
+        src={props.src}
+        className="rounded-lg w-full h-auto"
+        {...props}
+      />
+    )
+  }
   return <Image alt={props.alt} className="rounded-lg" {...props} />
 }
 
