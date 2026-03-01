@@ -182,6 +182,11 @@ table {
   color: black;
 }
 
+.prose a.link-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .prose strong {
   font-weight: 700;
   color: black;
@@ -189,8 +194,16 @@ table {
 
 .prose blockquote {
   border-left: 2px solid #9ca3af;
-  padding-left: 1rem;
+  padding: 0.5rem 0rem 0.5rem 1rem;
   color: #6b7280;
 
   margin: 1.25rem 0;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose .link-card p {
+  margin: 0;
 }

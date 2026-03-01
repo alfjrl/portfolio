@@ -16,7 +16,7 @@ function ExternalLinkIcon() {
       viewBox="0 0 24 24"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="group-hover:rotate-45 transition ease-in flex-shrink-0"
+      className="-translate-x-0.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition ease-in flex-shrink-0"
       height="14"
       width="14"
       xmlns="http://www.w3.org/2000/svg"

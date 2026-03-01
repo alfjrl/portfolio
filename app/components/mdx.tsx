@@ -102,6 +102,53 @@ function Code({ children, ...props }) {
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
+function CardExternalLinkIcon() {
+  return (
+    <svg
+      stroke="currentColor"
+      fill="none"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition ease-in flex-shrink-0"
+      height="14"
+      width="14"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="7" y1="17" x2="17" y2="7" />
+      <polyline points="7 7 17 7 17 17" />
+    </svg>
+  );
+}
+
+function LinkCard({
+  href,
+  label,
+  title,
+}: {
+  href: string;
+  label: string;
+  title: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="link-card group bg-white flex flex-row min-w-fit w-[360px] justify-between items-center border border-gray-200 rounded-lg p-4 mb-8 transition ease-in hover:border-gray-400"
+    >
+      <div className="flex flex-col justify-center">
+        <div className="pb-2 flex flex-row items-center gap-1 text-gray-400 group-hover:text-gray-700 transition ease-in">
+          <p className="text-sm m-0">{label}</p>
+          <CardExternalLinkIcon />
+        </div>
+        <p className="font-bold text-black">{title}</p>
+      </div>
+    </a>
+  );
+}
+
 function slugify(str) {
   return str
     .toString()
@@ -148,6 +195,7 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+  LinkCard,
 };
 
 export function CustomMDX(props) {
