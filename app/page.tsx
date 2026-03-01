@@ -17,8 +17,8 @@ export default function Page() {
           Product Designer w/ 5+ years of experience
         </p>
         <p className="mb-6 animate-blur-in" style={{ animationDelay: "0.2s" }}>
-          Design Systems • Accessibility • Enterprise UX • MS in Human-Computer
-          Interaction
+          Design Systems • Accessibility • Enterprise UX • M.S. in
+          Human-Computer Interaction
         </p>
         <p className="mb-4 animate-blur-in" style={{ animationDelay: "0.3s" }}>
           Data-driven product designer working{" "}
