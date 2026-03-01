@@ -66,7 +66,7 @@ export default function AboutPage() {
       </div>
       {/* Profile image */}
       <div
-        className="w-64 lg:w-full flex-shrink-0 lg:mt-10 animate-blur-in"
+        className="w-64 mx-auto lg:w-full flex-shrink-0 lg:mt-10 animate-blur-in"
         style={{ animationDelay: "0s" }}
       >
         <Image

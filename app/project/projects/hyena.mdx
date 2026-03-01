@@ -1,0 +1,223 @@
+---
+title: "Unifying Internal Software Tools for an E-bike Company"
+summary: "Designed a new service center feature integrated into the existing bike service tool, streamlining e-bike configuration and laying the foundation for future product development."
+publishedAt: "2021"
+category: "Work Experience"
+coverImage: "/project/hyena.png"
+role: "Product Designer"
+year: "2020 - 2021"
+team: "1 UI Designer, 1 Product Manager, and 10 Software Engineers"
+platform: "Desktop Application"
+glanceTitle: "Building a new feature to fit in the existing software system to create a consistent user experience."
+glanceSummary: "The regional service center needed a new feature to support their daily task including checking the e-bike status and updating the e-bike configuration fast and efficiently. The original proposal was to customize one of the internal applications, however, after user interviews and system evaluation, we came up with a new design to provide an easy-to-use solution integrated into the existing application for users and lay the foundation for future product development."
+problem: "The initial design decision led to not only bad user experiences, but also a complicated product design for maintaining, and adding new features."
+problemLink: "#reframing-the-problem"
+solution: "A new product design concept for the internal system to streamline workflows and a new user flow and new interfaces in the existing bike service tool."
+solutionLink: "#solutions--behind-the-scene"
+impact: "Reduced e-bike servicing time by 50% and delivered the feature within 2 months by integrating into an existing tool rather than building from scratch."
+impactLink: "#impact"
+---
+
+## Background
+
+In the early phase, Hyena developed software products based on the use cases, dividing all of the features into several different software applications to demo its ideas faster and show the ability to provide highly customizable solutions for its clients.
+
+By 2020, as the company became stable, the disadvantages of this strategy came to the stage, it created an extremely deep learning curve for new users, not to mention it became a huge workload for the engineering team to only maintain the product, and difficulties of designing and developing new features.
+
+<Image
+  src="/project/hyena-system.png"
+  alt="Hyena developed several software applications as a completed system solution covering the whole life cycle of the e-bike from manufacturing to after-sales services."
+  width="auto"
+  height="auto"
+/>
+
+## The Challenge — Recapture the Aspiration
+
+Our goal for this project is to recapture the aspiration for Hyena's software systems, which made Hyena stand out from the competition. The original concept was simple: provide an e-bike system solution with deep integration between software and hardware. Our ambition is to set a strong foundation to support future product developments as the business grows faster.
+
+Our goals:
+
+1. Make it fast and easy to use for different users in every scenario.
+2. Create a strong foundation to deliver new features of high quality and faster.
+3. Create the product roadmap to lead the way for the future direction.
+
+## My Role
+
+I led the design for the e-bike assembly-related features (BTS) from September 2020 to August 2021 and collaborated with another designer on the e-bike service features.
+
+I was responsible for all software systems at the time except the rider's assistant mobile app, working alongside my manager (senior product manager), a senior firmware development manager, and ten software engineers.
+
+For the e-bike service features, my ownership covered the full user flow and wireframe phase. Once those were finalized and handed off, a collaborating designer took over the visual design, applying the existing design system to bring it to production.
+
+## The Kick-off — Connecting the Dot
+
+The main task at the time was to **find a solution for the regional service center to update the e-bike configuration in different countries for the after-sales services**.
+
+The original solution was to provide BTS (the internal application used in the bike assembly factory) directly to the regional service center. However, it not only increases the need to provide additional user training, but also needs a lot of customized redesign in the BTS which couldn't be done in time.
+
+Therefore, we started exploring existing workflows in the Hyena software system for possible solutions. At the same time, we decided to have the completed product review, understanding the user's pain points and real user experiences. With the understanding of previous direct feedback from users, I partnered up with my manager(who is also a senior product manager) to have interviews with key users using the system.
+
+### Early Insight
+
+We interviewed 6 key users to develop a full understanding of users' perspectives when they were trying to use the system to put e-bikes into production or prepare for the after-sales services. After synthesis of the interview results, here are the insights we got,
+
+1. E-bike information and management functions scatter across several different systems.
+2. Bike model information should be accurate and consistent.
+3. The system should streamline the process of bike information creation and management.
+4. When manufacturing or adjusting an e-bike, stability and usability play an important role.
+5. It is hard to identify the bike model information and corresponding settings directly from an e-bike.
+
+## The Discovery
+
+> "The bike model information scattered across different internal software applications led to users' confusion, and data inconsistency."
+
+There was a huge gap between users' expectations and the existing system, leading to difficulties maintaining e-bike information for different clients and collaborating across departments.
+
+### Deeper Insight
+
+Before designing the new solution, we used the sequence model to identify bottlenecks in the workflow.
+
+<Image
+  src="/project/hyena-workflow.png"
+  alt="Part of the user flow in Hyena's system identifying the e-bike and asking users to enter the corresponding bike frame no. to configure the correct bike settings."
+  width="auto"
+  height="auto"
+/>
+
+A critical finding:
+
+> "80% of the time in setting up the e-bike information is wasted by users checking the information accuracy and consistency between each feature and application."
+
+Users had to manually visit each application to verify the same information before proceeding — only after confirming everything was correct could settings be applied to the assembly line.
+
+## Reframing the Problem
+
+**Poorly designed information architecture leads to time waste, and the accompanied deep learning curve of the system brings unpleasant user experiences.**
+
+The original product design makes the simple data be created and maintained in a complex way, which complicated the whole user flows and product design. The complexity of the whole system brings more confusion and frustration to users, and makes it difficult to collaborate across departments just to fulfill a simple request.
+
+> " ...how might we help users in the regional service center utilize the Hyena software system to service the bike efficiently & easily? "
+
+This seems like a simple feature to design, but it requires the whole system revamp to provide the completed solution for future product development.
+
+## Solutions — Behind the Scene
+
+Set up the internal software system structure and streamline the entire workflow to lay the foundation for better user experiences.
+
+### Product Redesign at System Level
+
+We divided all current system functions into two applications: **Hyena Management Tool** and **Hyena Manufacturing Tool**.
+
+<Image
+  src="/project/hyena-newsd.png"
+  alt="Hyena new system design plan"
+  width="auto"
+  height="auto"
+/>
+
+By integrating and simplifying the internal software applications from 3 to 2, and removing the replicated features in the application, there would be a centralized place to manage the whole information, getting rid of the need for users to jump around the application to check and maintain information.
+
+Also, the engineering team would not need to maintain the same function in several different places. It would speed up the software development process and reduce the possibility of bugs.
+
+Another major benefit of product management is, it helps to set the foundation and direction for the Hyena software system product roadmap.
+
+### Bike Model Data Structure
+
+We introduce the bike model structure into the system, which serves as the foundation to streamline the information needed for the e-bike when it is being assembled and serviced.
+
+<Image
+  src="/project/hyena-bikemodel.png"
+  alt="Hyena new bike model data structure design"
+  width="auto"
+  height="auto"
+/>
+
+It would be used as a foundation for the whole system to perform data validation across the whole system, making sure that all of the e-bike-related data would be consistent without any surprises.
+
+## Solutions — On the Stage
+
+Design a new user flow and user interface in the existing bike service tool to create a consistent user experience with easy access.
+
+### Access the Service Center Feature
+
+To provide a consistent user experience, we integrate the service center features into the existing bike service tool. We add an icon in the top left corner menu for access to the service center feature page.
+
+<Image
+  src="/project/hyena-ui-home.png"
+  alt="HST Homepage"
+  width="auto"
+  height="auto"
+/>
+
+Unlike regular bike shops, the service center would be dealing with a more advanced configuration of the e-bike, which being constrained by local regulations, would require users to log in to access the feature.
+
+By doing this, we could also keep track of all of the service histories from each regional service center for future client quality claims or research to improve the product.
+
+<Image
+  src="/project/hyena-ui-login.png"
+  alt="Service Center Login Page"
+  width="auto"
+  height="auto"
+/>
+
+### Select the Bike Model
+
+We keep the workflow simple: users only need to select the bike model and connect the computer to the e-bike, and the system handles the rest.
+
+To identify the bike model, users can choose from three methods: by bike brand, by model name, or by frame number.
+
+<Image
+  src="/project/hyena-ui-connect.png"
+  alt="Service Center Bike Model Selection Page"
+  width="auto"
+  height="auto"
+/>
+
+### Service the Bike
+
+Once the e-bike is connected, it would show all of the detailed information about the bike, from its part no. to whether the bike requires firmware update or re-configuration.
+
+<Image
+  src="/project/hyena-ui-bikestatus.png"
+  alt="Service Center Bike Status Page"
+  width="auto"
+  height="auto"
+/>
+
+During the updating or configuring of the e-bike, it would show the progress and status with a warning to remind users not to disconnect the bike during the process.
+
+<Image
+  src="/project/hyena-ui-update.png"
+  alt="Service Center Bike Updating Page"
+  width="auto"
+  height="auto"
+/>
+
+After the service is done, it would show the bike status with the new configuration and region setting.
+
+<Image
+  src="/project/hyena-ui-complete.png"
+  alt="Service Center Bike Update Complete Page"
+  width="auto"
+  height="auto"
+/>
+
+## Impact
+
+By implementing the new feature in the existing bike service tool, we successfully:
+
+1. Saved **50% of the time** required to service and re-configure an e-bike.
+2. **Reduced development time** — the feature was delivered within 2 months.
+3. **Prevented additional costs** to implement new software and provide training at service centers.
+
+By redesigning the internal software system, we set the direction for Hyena Software System 3.0, which would solve the fundamental issues in the system. When we started organizing data such as bike model information, we received positive feedback from users immediately.
+
+## Takeaways
+
+### Observing the Root Cause
+
+When conducting user research on products involving software-hardware interaction, we need to consider how users are actually using the product and find out what's causing the issue — not just how the interface influences users.
+
+### What Is the Best Solution?
+
+The best solution is one that is feasible, solves the user's real need, and provides business value. It is important to find the balance so the product can move forward. The product will become user-friendly eventually if we stay on the right track.

@@ -23,20 +23,32 @@ function ExternalLinkIcon() {
   );
 }
 
+type ProjectPost = ReturnType<typeof getProjects>[number] & {
+  type: "project";
+  href: string;
+};
+
+type ArticlePost = ReturnType<typeof getBlogPosts>[number] & {
+  type: "blog";
+  href: string;
+};
+
+type CombinedPost = ProjectPost | ArticlePost;
+
 export function ProjectPosts() {
-  const projects = getProjects().map((p) => ({
+  const projects: ProjectPost[] = getProjects().map((p) => ({
     ...p,
-    type: "project" as const,
+    type: "project",
     href: `/project/${p.slug}`,
   }));
 
-  const blogs = getBlogPosts().map((b) => ({
+  const blogs: ArticlePost[] = getBlogPosts().map((b) => ({
     ...b,
-    type: "blog" as const,
+    type: "blog",
     href: `/article/${b.slug}`,
   }));
 
-  const all = [...projects, ...blogs].sort(
+  const all: CombinedPost[] = [...projects, ...blogs].sort(
     (a, b) =>
       new Date(b.metadata.publishedAt).getTime() -
       new Date(a.metadata.publishedAt).getTime(),
@@ -46,9 +58,8 @@ export function ProjectPosts() {
     <ul aria-label="Work and writing" className="flex flex-col gap-4">
       {all.map((post, index) => {
         const isProject = post.type === "project";
-        const coverImage = isProject
-          ? (post.metadata as { coverImage?: string }).coverImage
-          : undefined;
+        const coverImage = isProject ? post.metadata.coverImage : undefined;
+        const platform = isProject ? post.metadata.platform : undefined;
 
         return (
           <li
@@ -62,53 +73,53 @@ export function ProjectPosts() {
             >
               <div
                 className={`w-full flex flex-col sm:flex-row ${
-                  coverImage ? "h-[600px] sm:h-[360px]" : "h-auto"
+                  coverImage ? "h-[600px] sm:h-[300px]" : "h-auto"
                 }`}
               >
                 {/* Content */}
-                <div
-                  className={`h-full p-4 flex flex-col justify-between ${
-                    coverImage ? "basis-1/3 sm:basis-3/5" : "w-full"
-                  }`}
-                >
-                  <div>
-                    <h2 className="text-xl font-bold text-black mb-3">
-                      {post.metadata.title}
-                    </h2>
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="inline-block text-xs font-medium uppercase px-1 py-1 rounded-md tracking-wide bg-gray-100 text-gray-500 group-hover:text-gray-700 transition ease-in">
-                        {isProject ? "Case Study" : "Article"}
-                      </span>
-                      {isProject &&
-                        (post.metadata as { platform?: string }).platform && (
-                          <span className="inline-block text-xs font-medium uppercase px-1 py-1 rounded-md tracking-wide bg-gray-100 text-gray-500 group-hover:text-gray-700 transition ease-in">
-                            {(post.metadata as { platform?: string }).platform}
+                <div className="h-full w-full p-4 flex flex-col">
+                  <h2 className="text-xl font-bold text-black mb-2">
+                    {post.metadata.title}
+                  </h2>
+                  {/* Description & image */}
+                  <div className="flex flex-col sm:flex-row grow">
+                    <div
+                      className={`flex flex-col ${isProject ? "basis-1/3 sm:basis-3/5" : "basis-full"}`}
+                    >
+                      <p
+                        className={`text-gray-500 leading-relaxed group-hover:text-gray-700 transition ease-in mb-2 ${isProject ? "pr-4" : ""}`}
+                      >
+                        {post.metadata.summary}
+                      </p>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-auto">
+                        <span className="inline-block text-xs font-medium uppercase p-1 sm:mb-4 rounded-md tracking-wide bg-gray-100 text-gray-500 group-hover:text-gray-900 transition ease-in">
+                          {isProject ? "Case Study" : "Article"}
+                        </span>
+                        {platform && (
+                          <span className="inline-block text-xs font-medium uppercase p-1 sm:mb-4 rounded-md tracking-wide bg-gray-100 text-gray-500 group-hover:text-gray-900 transition ease-in">
+                            {platform}
                           </span>
                         )}
+                      </div>
+                      <span className="flex-row items-center gap-1 text-gray-400 group-hover:text-black transition ease-in hidden sm:flex">
+                        <span className="text-sm">See more</span>
+                        <ExternalLinkIcon />
+                      </span>
                     </div>
-                    <p className="text-gray-500 leading-relaxed group-hover:text-gray-700 transition ease-in">
-                      {post.metadata.summary}
-                    </p>
+                    {/* Cover image — projects only */}
+                    {coverImage && (
+                      <div className="relative basis-2/3 sm:basis-2/5">
+                        <Image
+                          src={coverImage}
+                          alt={post.metadata.title}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform ease-in"
+                        />
+                      </div>
+                    )}
                   </div>
-
-                  <span className="flex flex-row items-center gap-1 text-gray-400 group-hover:text-black transition ease-in mt-6 hidden sm:flex">
-                    <span className="text-sm">See more</span>
-                    <ExternalLinkIcon />
-                  </span>
                 </div>
-
-                {/* Image — projects only */}
-                {coverImage && (
-                  <div className="relative basis-2/3 sm:basis-2/5 overflow-hidden transition-transform duration-300 group-hover:scale-105">
-                    <Image
-                      src={coverImage}
-                      alt={post.metadata.title}
-                      fill
-                      className="object-cover sm:object-scale-down"
-                    />
-                  </div>
-                )}
               </div>
             </Link>
           </li>

@@ -4,6 +4,7 @@ import { CustomMDX } from "app/components/mdx";
 import { getProjects } from "app/project/utils";
 import { baseUrl } from "app/sitemap";
 import { FiArrowUpRight } from "react-icons/fi";
+import { RiH2 } from "react-icons/ri";
 
 function ExternalLinkIcon() {
   return (
@@ -77,21 +78,25 @@ export default async function ProjectPage({ params }) {
     glanceTitle,
     glanceSummary,
     problem,
+    problemLink,
     solution,
+    solutionLink,
+    impact,
+    impactLink,
   } = project.metadata;
 
   return (
     <div>
       {/* Hero image */}
       <div
-        className="relative h-[50vh] min-h-72 mt-6 rounded-xl overflow-hidden animate-blur-in"
+        className="relative aspect-16/9 w-full mt-6 rounded-xl overflow-hidden animate-blur-in"
         style={{ animationDelay: "0s" }}
       >
         <Image
           src={coverImage}
           alt={`${title} cover`}
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>
@@ -138,10 +143,10 @@ export default async function ProjectPage({ params }) {
         className="my-16 rounded-lg bg-gray-100 p-4 md:p-8 animate-blur-in"
         style={{ animationDelay: "0.3s" }}
       >
-        <p className="text-xs text-black uppercase tracking-wide mb-2">
+        <h2 className="text-xs text-black uppercase tracking-wide mb-2">
           Project at a Glance
-        </p>
-        <h2 className="text-xl font-semibold text-black mb-2">{glanceTitle}</h2>
+        </h2>
+        <h3 className="text-xl font-semibold text-black mb-2">{glanceTitle}</h3>
         <p className="text-gray-600 leading-relaxed pb-4 md:pb-8 border-b border-gray-300 mb-4 md:mb-8">
           {glanceSummary}
         </p>
@@ -149,28 +154,42 @@ export default async function ProjectPage({ params }) {
         <div className="flex flex-col gap-4 md:gap-8">
           <div className="flex-1">
             <a
-              href={`#problem`}
+              href={problemLink ?? `#problem`}
               className="group flex flex-row items-center gap-1  mb-2"
             >
-              <h3 className="text-base font-semibold uppercase text-black">
+              <h4 className="text-base font-semibold uppercase text-black">
                 Problem
-              </h3>
+              </h4>
               <ExternalLinkIcon />
             </a>
             <p className=" text-gray-600 leading-relaxed ">{problem}</p>
           </div>
           <div className="flex-1">
             <a
-              href={`#solution`}
+              href={solutionLink ?? `#solution`}
               className="group flex flex-row items-center gap-1 mb-2"
             >
-              <h3 className="text-base font-semibold uppercase text-black">
+              <h4 className="text-base font-semibold uppercase text-black">
                 Solution
-              </h3>
+              </h4>
               <ExternalLinkIcon />
             </a>
             <p className="text-gray-600 leading-relaxed ">{solution}</p>
           </div>
+          {impact && (
+            <div className="flex-1">
+              <a
+                href={impactLink ?? `#impact`}
+                className="group flex flex-row items-center gap-1 mb-2"
+              >
+                <h4 className="text-base font-semibold uppercase text-black">
+                  Impact
+                </h4>
+                <ExternalLinkIcon />
+              </a>
+              <p className="text-gray-600 leading-relaxed">{impact}</p>
+            </div>
+          )}
         </div>
       </div>
 

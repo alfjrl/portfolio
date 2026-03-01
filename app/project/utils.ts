@@ -14,7 +14,11 @@ type Metadata = {
   glanceTitle: string
   glanceSummary: string
   problem: string
+  problemLink: string
   solution: string
+  solutionLink: string
+  impact: string
+  impactLink: string
 }
 
 function parseFrontmatter(fileContent: string) {
