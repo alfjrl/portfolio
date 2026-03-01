@@ -136,7 +136,7 @@ function LinkCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="link-card group bg-white flex flex-row min-w-fit w-[360px] justify-between items-center border border-gray-200 rounded-lg p-4 mb-8 transition ease-in hover:border-gray-400"
+      className="link-card group bg-white flex flex-row min-w-fit w-[360px] justify-between items-center border border-gray-200 rounded-lg p-4 mb-4 transition ease-in hover:border-gray-400"
     >
       <div className="flex flex-col justify-center">
         <div className="pb-2 flex flex-row items-center gap-1 text-gray-400 group-hover:text-gray-700 transition ease-in">
