@@ -1,0 +1,171 @@
+---
+title: "Designing for the 5-Second Glance — A Real-Time Information Display Across UMD Libraries"
+summary: "Replacing a broken, data-centric monitor with a need-driven information system that helps thousands of students answer the questions they'd otherwise have to ask."
+publishedAt: "2024"
+category: "Work Experience"
+coverImage: "/project/umdlib-display.png"
+role: "UX/UI Designer, UX Engineer"
+year: "2025"
+team: "1 Senior Developer, 1 Product Manager"
+platform: "Information Display"
+glanceTitle: "Designing a real-time information display for library entrances across multiple locations"
+glanceSummary: "The monitors at UMD library entrances showed only computer availability counts — and the data had been broken for months. Students entering the library have a predictable set of urgent questions: Can I stay? Where can I work? What's available? The redesign replaced a data-centric display with a need-driven information system, designed for passive consumption at a glance and deployed as a modular framework across multiple library locations."
+problem: "The existing entrance displays showed broken computer counts on a non-interactive screen viewed from 10–15 feet away — failing to answer what students actually need when walking through the door: closing time, space availability, equipment access, and where to get help."
+problemLink: "#the-problem"
+solution: "Identified priorities through staff input and location-page analytics, then designed a modular card-based layout with a clear urgency hierarchy — time-critical info at top, real-time availability in the middle, wayfinding at the bottom. QR codes bridge the passive display to personal devices. Content modules adapt per location while maintaining a consistent framework."
+solutionLink: "#the-design"
+impact: "Deployed a real-time information system across multiple UMD library locations, each serving thousands of daily visitors with location-specific, glanceable content requiring no staff intervention."
+impactLink: "#outcome"
+---
+
+## The Problem
+
+The existing library entrance display showed only two things: computer availability counts and a link to a list of borrowable equipment. The data had been broken for an extended period, making the display functionally useless; and even when working, it answered questions students weren't really asking.
+
+The deeper issue wasn't the broken data. It was that the display was designed around what the system could output, not what students actually need when they walk through the door.
+
+Students entering a library have a short, predictable set of questions: **Can I stay?** **Where can I work?** **What's available to me?** **Where do I go for help?** The old display addressed almost none of these.
+
+<Image
+  src="/project/umdlib-display-old.png"
+  alt="Original McKeldin Library entrance display showing computer counts and a link to equipment loan"
+  width="auto"
+  height="auto"
+/>
+
+## Research & Prioritization
+
+I identified information priorities through two inputs.
+
+### Library staff input
+
+Conversations with staff at service desks across library locations revealed the most common questions students ask in person — closing times, room availability, and where to find equipment like laptop chargers.
+
+### Website analytics
+
+I analyzed usage data for each library's location page on the website, confirming that the same categories — spaces, hours, and equipment — dominated what students were actively seeking out. Nearly 20% of traffic of the location pages directs to space availability information, followed by hours and equipment information.
+
+These two sources converged clearly. Students entering the library need answers in a specific order of urgency:
+
+- "Can I stay?" — Closing time and current time
+- "Where can I work?" — Study room and computer availability
+- "What resources are available?" — Equipment, tech lending, services
+- "Where do I go?" — Wayfinding to service desks and deeper information
+
+This priority sequence became the foundation for the display's information hierarchy.
+
+## Design Decisions
+
+### 1. Information Hierarchy for a Passive Display
+
+Unlike a website, users can't scroll, click, or search. Everything competes for attention simultaneously on a single screen viewed from a distance. The layout needed to communicate priority through position and visual weight alone.
+
+I placed time-critical information — closing time and current time — at the top left, using the largest type sizes. This answers the most urgent question ("can I stay?") within the first second of glancing at the screen. Availability data for computers and study rooms occupies the middle of the display, using a clear available/total format that's readable at a distance. Action-oriented content — QR codes and service desk directions — sits at the bottom, serving students who've already decided to stay and need next steps.
+
+<Image
+  src="/project/umdlib-display-hierarchy.png"
+  alt="Top-left has highest hierarchy, next is middle, then bottom-right, place and size communicate urgency and priority of information"
+  width="auto"
+  height="auto"
+/>
+
+### 2. Designing for Physical Constraints
+
+This isn't a website on a laptop. It's a large-format display in a brightly lit entrance that people walk past at varying distances. Every design decision had to account for this context.
+
+Typography at distance. All type needed to be legible from at least 10–15 feet away. The critical numbers are consistently large and bold, to ensure they are immediately noticeable.
+
+Color as a signal. The closing time displays in red, creating an immediate visual cue that communicates urgency without requiring the viewer to read and process numbers first. A student glancing at the screen can register "red = pay attention to the time" before they've even read the digits.
+
+High contrast on dark background. The dark background ensures readability under the variable lighting conditions of a library entrance — overhead fluorescents, natural light from windows, and shifting conditions throughout the day.
+
+<Image
+  src="/project/umdlib-display-font.png"
+  alt="Font choices prioritize legibility at distance, with large, bold numbers for critical information and high contrast colors to ensure readability in a brightly lit environment"
+  width="auto"
+  height="auto"
+/>
+
+### 3. Physical-to-Digital Handoff
+
+The display can't be interactive — you can't touch it, scroll it, or click anything. But some information is too detailed or action-oriented for a passive screen (full equipment lists, room reservation flows).
+
+I solved this with QR codes that bridge the physical display to the student's personal device. The screen shows the high-level answer ("Need a Space?" with a short URL), and the QR code hands off to the detailed experience on their phone. This was a deliberate decision about what belongs on an ambient display versus what belongs on a personal device — the monitor surfaces awareness, the phone enables action.
+
+<Image
+  src="/project/umdlib-display-qrcode.png"
+  alt="QR code section of the display showing a short URL and a scannable code, annotated to show how it serves as a handoff from the passive display to the interactive experience on a personal device"
+  width="auto"
+  height="auto"
+/>
+
+### 4. Location-Specific Content Modules
+
+Each UMD library serves different populations with different needs. McKeldin — the university's largest library — prioritizes study room availability because it's the primary space students seek out for group work. Other locations might foreground equipment availability or specialized service access instead.
+
+Rather than designing a single fixed layout, I designed a modular framework where content blocks can be swapped based on what's most relevant at each location. The structure and hierarchy remain consistent — time at top, availability in the middle, actions at the bottom — but the specific modules adapt to each library's context.
+
+This approach means the system scales without requiring a unique design for every location. It's the same design thinking behind component-based design systems, applied to a physical information display.
+
+<Image
+  src="/project/umdlib-display-compare.png"
+  alt="Information modules can be swapped based on location needs — McKeldin prioritizes study room availability, while other locations might prioritize equipment, branch specific service information, all within the same overall framework and hierarchy"
+  width="auto"
+  height="auto"
+/>
+
+## The Design
+
+<Image
+  src="/project/umdlib-display.png"
+  alt="Design example for McKeldin Library"
+  width="auto"
+  height="auto"
+/>
+
+The dashboard is organized as a grid of content cards on a dark background, each
+card addressing one category of information. The card-based approach creates
+clear visual separation between information types, allowing students to quickly
+locate the category they care about without parsing a dense wall of data. Key
+design elements:
+
+- Closing time — displayed prominently in red with a segmented-display typeface, creating visual distinction from other content and signaling time-sensitivity
+- Availability counters — use an "available / total" format with color-coded progress bars (gold when available, adaptable to red when full)
+- QR codes — paired with short, memorable URLs as a fallback for students who don't want to scan
+- Service desk wayfinding — uses a directional arrow and high-contrast yellow background to stand out as the "I need a human" option
+
+I designed and implemented frontend myself, handling both the Figma design and the production code. The display pulls real-time data for room and computer availability, ensuring the information stays current without manual updates.
+
+<Image
+  src="/project/umdlib-display-live.jpg"
+  alt="See it in action: photo of the installed display in context at the library entrance, showing real-time information and QR codes"
+  width="auto"
+  height="auto"
+/>
+
+Interested in the implementation details? Check out the open-source GitHub repositories.
+
+<LinkCard
+  href="https://github.com/umd-lib/library-monitors"
+  label="GitHub Repository"
+  title="UMD Library Monitors"
+/>
+
+## Outcome
+
+The redesigned dashboard replaced a broken, single-purpose display with a comprehensive information system now deployed across multiple UMD library locations. Each location surfaces the information most relevant to its visitors while maintaining a consistent framework and visual language.
+
+What changed:
+
+- Went from showing only computer counts (that weren't working) to a full information system covering hours, spaces, equipment, and wayfinding
+- Real-time data feeds ensure information stays accurate without staff intervention
+- QR codes bridge the gap between ambient awareness and actionable detail on students' personal devices
+- Modular design supports location-specific content across the library system
+
+## Reflection
+
+The biggest constraint was designing for a format with no interactivity and no analytics. On a website, I can track clicks, scroll depth, and search patterns to validate decisions. A passive display offers none of that; I can't measure whether students actually glance at the screen, which information they notice first, or whether the QR codes get scanned.
+
+If I were to revisit this, I'd explore lightweight measurement, even something as simple as tracking QR code scan rates by location would provide a feedback loop for refining content priority. I'd also want to observe students in the entrance more systematically to validate whether the information hierarchy matches their actual glance patterns.
+
+The project reinforced something I've come to value in my work: the most impactful design decisions are often about what to leave out. The old display tried to show everything the system had. The new one asks a simpler question — what does someone walking through this door need to know right now?
