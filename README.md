@@ -1,42 +1,34 @@
-# Portfolio Blog Starter
+# Alfred J. Lin — Portfolio
 
-This is a porfolio site template complete with a blog. Includes:
+Personal portfolio site for Alfred J. Lin, Product Designer with 5+ years across hardware-adjacent software, e-commerce, and information systems.
 
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4
-- Vercel Speed Insights / Web Analytics
-- Geist font
+Built with **Next.js 15**, **TypeScript**, **Tailwind CSS v4**, and **MDX** for project write-ups. Deployed on Vercel.
 
-## Demo
+## Stack
 
-https://portfolio-blog-starter.vercel.app
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS v4
+- **Content**: MDX via `next-mdx-remote`
+- **Analytics**: Vercel Analytics + Speed Insights
+- **Package manager**: pnpm
 
-## How to Use
-
-You can choose from one of the following two methods to use this repository:
-
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
+## Getting Started
 
 ```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
-```
-
-Then, run Next.js in development mode:
-
-```bash
+pnpm install
 pnpm dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+Requires Node.js >= 24.
+
+## Structure
+
+```
+app/
+  page.tsx          # Home / project listing
+  about/            # About page
+  project/          # Project case studies (MDX)
+  article/          # Blog articles (MDX)
+  components/       # Shared UI components
+public/             # Static assets
+```

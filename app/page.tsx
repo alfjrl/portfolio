@@ -35,10 +35,14 @@ export default function Page() {
           className="max-w-4xl animate-blur-in"
           style={{ animationDelay: "0.3s" }}
         >
-          Currently leading design for the public-facing interface of University
-          of Maryland Libraries, specializing in building{" "}
+          Currently leading design for the public-facing interfaces of
+          University of Maryland Libraries, specializing in building{" "}
           <span className="font-bold text-black underline decoration-wavy decoration-amber-300">
-            scalable, accessible
+            scalable
+          </span>
+          ,{" "}
+          <span className="font-bold text-black underline decoration-wavy decoration-amber-300">
+            accessible
           </span>{" "}
           products for{" "}
           <span className="font-bold text-black underline decoration-wavy decoration-amber-300">
