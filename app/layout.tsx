@@ -55,14 +55,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx("text-gray-600 bg-white font-medium", manrope.className)}
+      className={cx(
+        "text-gray-600 bg-[#fafcfd] font-medium",
+        manrope.className,
+      )}
     >
       <body className="antialiased" suppressHydrationWarning>
-        <main className="flex-auto min-w-0 flex flex-col">
-          <div className="max-w-4xl w-full md:mx-auto px-4">
+        <main className="flex-auto min-w-0 flex flex-col bg-[#fafcfd]">
+          <div className="max-w-[1440px] w-full md:mx-auto px-4 md:px-16">
             <Navbar />
-            {children}
           </div>
+          {children}
           <Footer />
           <Analytics />
           <SpeedInsights />

@@ -60,6 +60,8 @@ export function ProjectPosts() {
         const isProject = post.type === "project";
         const coverImage = isProject ? post.metadata.coverImage : undefined;
         const platform = isProject ? post.metadata.platform : undefined;
+        const releaseYear = isProject ? post.metadata.releaseYear : undefined;
+        const status = isProject ? post.metadata.status : undefined;
 
         return (
           <li
@@ -69,55 +71,57 @@ export function ProjectPosts() {
           >
             <Link
               href={post.href}
-              className="block w-full border border-gray-200 bg-white rounded-lg overflow-hidden transition-all duration-200 ease-in hover:border-gray-400"
+              className="block w-full bg-white rounded-3xl border border-gray-200 overflow-hidden transition-all duration-200 ease-in group-hover:scale-101"
             >
-              <div
-                className={`w-full flex flex-col sm:flex-row ${
-                  coverImage ? "h-[600px] sm:h-[300px]" : "h-auto"
-                }`}
-              >
-                {/* Content */}
-                <div className="h-full w-full p-4 flex flex-col">
-                  <h2 className="text-xl font-bold text-black mb-2">
+              {/* Content */}
+              <div className="h-full w-full p-4 md:p-8 flex flex-col">
+                {/* Cover image — projects only */}
+                {coverImage && (
+                  <div
+                    className="md:basis-3/4 overflow-hidden"
+                    style={{
+                      viewTransitionName: `project-cover-${post.slug}`,
+                    }}
+                  >
+                    <Image
+                      src={coverImage}
+                      alt={post.metadata.title}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-full h-auto transition-transform ease-in bg-white"
+                    />
+                  </div>
+                )}
+                <div
+                  className={`flex flex-col ${isProject ? "basis-full md:basis-1/4" : "basis-full"}`}
+                >
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <span className="inline-block text-xs font-medium uppercase p-1 rounded-md tracking-wide bg-gray-100 text-gray-600 group-hover:text-gray-900 transition ease-in">
+                      {isProject ? "Case Study" : "Article"}
+                    </span>
+                    {platform && (
+                      <span className="inline-block text-xs font-medium uppercase p-1  rounded-md tracking-wide bg-gray-100 text-gray-600 group-hover:text-gray-900 transition ease-in">
+                        {platform}
+                      </span>
+                    )}
+                    {releaseYear && (
+                      <span className="inline-block text-xs font-medium uppercase p-1 rounded-md tracking-wide bg-gray-100 text-gray-600 group-hover:text-gray-900 transition ease-in">
+                        {releaseYear} - {status}
+                      </span>
+                    )}
+                  </div>
+                  <h2 className="text-xl md:text-2xl font-black text-black mb-2">
                     {post.metadata.title}
                   </h2>
                   {/* Description & image */}
-                  <div className="flex flex-col sm:flex-row grow">
-                    <div
-                      className={`flex flex-col ${isProject ? "basis-1/3 sm:basis-3/5" : "basis-full"}`}
+                  <div>
+                    <p
+                      className={`text-gray-600 leading-relaxed group-hover:text-gray-900 transition ease-in ${isProject ? "pr-4" : ""}`}
                     >
-                      <p
-                        className={`text-gray-500 leading-relaxed group-hover:text-gray-700 transition ease-in mb-2 ${isProject ? "pr-4" : ""}`}
-                      >
-                        {post.metadata.summary}
-                      </p>
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-2 mb-auto">
-                        <span className="inline-block text-xs font-medium uppercase p-1 sm:mb-4 rounded-md tracking-wide bg-gray-100 text-gray-500 group-hover:text-gray-900 transition ease-in">
-                          {isProject ? "Case Study" : "Article"}
-                        </span>
-                        {platform && (
-                          <span className="inline-block text-xs font-medium uppercase p-1 sm:mb-4 rounded-md tracking-wide bg-gray-100 text-gray-500 group-hover:text-gray-900 transition ease-in">
-                            {platform}
-                          </span>
-                        )}
-                      </div>
-                      <span className="flex-row items-center gap-1 text-gray-400 group-hover:text-black transition ease-in hidden sm:flex">
-                        <span className="text-sm">See more</span>
-                        <ExternalLinkIcon />
-                      </span>
-                    </div>
-                    {/* Cover image — projects only */}
-                    {coverImage && (
-                      <div className="relative basis-2/3 sm:basis-2/5">
-                        <Image
-                          src={coverImage}
-                          alt={post.metadata.title}
-                          fill
-                          className="object-cover group-hover:scale-110 transition-transform ease-in"
-                        />
-                      </div>
-                    )}
+                      {post.metadata.summary}
+                    </p>
                   </div>
                 </div>
               </div>

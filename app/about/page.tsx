@@ -60,7 +60,7 @@ const activities = [
 
 export default function AboutPage() {
   return (
-    <section className="flex flex-col lg:flex-row mt-6 gap-8 lg:gap-12">
+    <section className="max-w-4xl w-full md:mx-auto px-4 flex flex-col lg:flex-row mt-6 gap-8 lg:gap-12">
       <div className="sr-only">
         <h1>About Alfred Lin</h1>
       </div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
           alt="Alfred Lin profile picture"
           width={2020}
           height={3020}
-          className="rounded-full aspect-square object-cover object-top"
+          className="rounded-full aspect-square object-cover object-top bg-white"
         />
       </div>
 
@@ -152,7 +152,7 @@ export default function AboutPage() {
                     <img
                       src={item.image}
                       alt={item.imageAlt}
-                      className={`${item.imageClass} w-full h-full rounded-lg`}
+                      className={`${item.imageClass} w-full h-full rounded-lg bg-white`}
                     />
                   ) : (
                     <Image
@@ -160,7 +160,7 @@ export default function AboutPage() {
                       alt={item.imageAlt}
                       width={100}
                       height={100}
-                      className={`${item.imageClass} w-full h-full rounded-lg`}
+                      className={`${item.imageClass} w-full h-full rounded-lg bg-white`}
                     />
                   )}
                 </div>

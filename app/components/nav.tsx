@@ -7,7 +7,7 @@ import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Navbar() {
-  const resume = "https://drive.proton.me/urls/X2VY4NSK5M#Q4AQYbHvmDOB";
+  const resume = "https://drive.proton.me/urls/FWJV8HY8NR#diMY0JKV6CZL";
   const [open, setOpen] = useState(false);
 
   function ArrowIcon() {
@@ -28,9 +28,9 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 w-full z-50 bg-white">
+    <nav className="sticky top-0 w-full z-50">
       {/* desktop navbar */}
-      <div className="py-4 hidden sm:flex sm:items-center sm:justify-between">
+      <div className="py-4 md:py-8 hidden sm:flex sm:items-center sm:justify-between">
         <Link href="/">
           <Image src="/Al.svg" alt="Alfred Lin logo" width={32} height={18} />
         </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/#project"
-              className="flex font-medium text-base text-gray-600 hover:text-black"
+              className="flex font-bold text-base text-gray-600 hover:text-black"
             >
               <span className="h-7">work</span>
             </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/about"
-              className="flex font-medium text-base text-gray-600 hover:text-black ml-6"
+              className="flex font-bold text-base text-gray-600 hover:text-black ml-6"
             >
               <span className="h-7">about</span>
             </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-base text-gray-600 hover:text-black flex items-center bottom gap-2 ml-6"
+              className="font-bold text-base text-gray-600 hover:text-black flex items-center bottom gap-2 ml-6"
             >
               <ArrowIcon />
               <span className="h-7">resume</span>

@@ -6,6 +6,8 @@ category: "Work Experience"
 coverImage: "/project/knst.png"
 role: "Product Designer, Product Manager"
 year: "2020"
+releaseYear: "2021"
+status: "Shipped"
 team: "1 UI Designer, 1 Marketing Specialist, and 6 Software Engineers"
 platform: "Mobile (iOS & Android)"
 glanceTitle: "Redesigning the online ordering experience for an e-commerce app with research insights to fulfill users' needs."
@@ -26,21 +28,13 @@ The online ordering feature was the latest addition to the app. When this projec
 
 ## Problem
 
-Starting as an MVP (Minimum Viable Product), the ordering feature was introduced with basic functions without any consideration for user experience. While it successfully passed the MVP test, the timeline set for releasing the service to the public was tight, and there wasn't much time to revamp the whole feature.
-
-Based on the 80-20 rule, we believe that the user experience could be greatly improved if we identify the key issues. Therefore, we reframe our problem for this product design to:
+The ordering feature launched as an MVP with no UX consideration. It passed the MVP test, but the public rollout timeline was tight — a full redesign wasn't an option.
 
 > ...how might we redesign the ordering feature that fulfills users' critical needs with minimal effort while greatly improving the user experience?
 
 ## Design Solution
 
 ### Your Addresses Function
-
-On the page where users enter the shipping address, we added a button at the top indicating there is a list of saved addresses they could choose from.
-
-Because the reading direction is from the top to bottom, we try to prevent the situation where users discover this function after filling in all of the information already. Based on the same concept, once users finish entering the shipping address, we offer an option at the bottom where users could decide to save this information for future use.
-
-Once the shipping addresses are stored in Your Addresses, users could choose the address directly and edit the list as needed.
 
 <Image
   src="/project/knst-ya.png"
@@ -49,11 +43,9 @@ Once the shipping addresses are stored in Your Addresses, users could choose the
   height="auto"
 />
 
+60% of users ship to the same address repeatedly. We added a saved-address selector at the top of the address entry page — placed above the form so users find it before filling anything in — and offered to save new addresses on completion.
+
 ### Purchase Again Function
-
-Your Addresses function only provides convenience when entering the shipping address, but users still need to select other order details. After discussion internally with product designers in other teams, we decided to add one feature which is the ability to place the same order directly from the order history.
-
-The feature is not only used in the ordering process but also used across the platform. There are several product categories on the platform and the original design would make it difficult for users to find the products they want. This feature would greatly reduce the time users needed to search for products, and skip the process of selecting options they've chosen before.
 
 <Image
   src="/project/knst-pa.png"
@@ -62,11 +54,9 @@ The feature is not only used in the ordering process but also used across the pl
   height="auto"
 />
 
+Saved addresses solved one step, but repeat users still had to re-select every product option. We added a "Purchase Again" action to order history, letting users skip search and re-selection entirely.
+
 ### Detailed Order Information
-
-We added detailed order information in the order overview section before the user places the order. This ensures users have enough information before making a purchasing decision. The information provided includes estimated delivery time and additional fees for special delivery options.
-
-Important information is displayed in red color which attracts the attention of the user.
 
 <Image
   src="/project/knst-doi.png"
@@ -75,13 +65,9 @@ Important information is displayed in red color which attracts the attention of 
   height="auto"
 />
 
+The original design showed no delivery time or fees before checkout — users discovered surprise charges after the fact. We surfaced estimated delivery time and additional fees in the order overview, with critical figures in red to draw immediate attention.
+
 ### Additional Ordering Options
-
-On the first page of the ordering process, we added checkboxes including 'Delivery Notice' and 'Agree to the service agreement'. We placed that information below the product options because users care more about the products they want initially. Once they decide to make a purchase, they would then consider the additional details.
-
-The Delivery Notice section maintains flexibility so the marketing team can add or modify the contents based on the situation at any given time, and the notice would record the terms each time users agree to them.
-
-The design of the service agreement requires users to agree to the terms before continuing to the following steps.
 
 <Image
   src="/project/knst-ao1.png"
@@ -90,9 +76,7 @@ The design of the service agreement requires users to agree to the terms before 
   height="auto"
 />
 
-As mentioned in the user pain points section, some delivery options had issues with package collection. To solve this problem, after discussion with the logistics team, we decided to add one more option before users place orders.
-
-The option is to ask the delivery service to call users before picking up items so that users could coordinate the delivery in person. This option is presented under the delivery method selection with a pop-up window upon checking the checkbox to notify users of details.
+Delivery notices and service agreement acknowledgment are placed below product options — users decide on the product first, then consider the details. The notice section is editable by the marketing team without a deploy.
 
 <Image
   src="/project/knst-ao2.png"
@@ -101,11 +85,11 @@ The option is to ask the delivery service to call users before picking up items 
   height="auto"
 />
 
+Failed deliveries were a recurring pain point. Working with the logistics team, we added a "call before pickup" checkbox at the delivery method step, confirmed with a pop-up that explains what the option does.
+
 ## How We Got Here
 
 ### Process
-
-As the feature was planned to roll out in a short time frame, we needed to discover problems and deliver new solutions as soon as possible. Therefore, we speeded up the progress from research to validation with randomly selected users to test our design prototype.
 
 <Image
   src="/project/knst-process.png"
@@ -114,44 +98,17 @@ As the feature was planned to roll out in a short time frame, we needed to disco
   height="auto"
 />
 
-### Constraint
+Tight rollout timeline meant moving fast: research to prototype validation in parallel, testing with randomly selected users as designs came together.
 
-There were two main challenges/limitations at the time.
+### Constraints
 
-**1. Limited resources from the development team**
-
-This feature was one of many products under development at the same time. It was impossible to have all the resources needed to deliver a complete redesign at once, so we had to find the best solutions from the perspectives of both users and the engineering team and implement them step by step.
-
-**2. Consistency with the existing product design**
-
-This feature is based on the existing platform, therefore the design must consider system consistency to maintain the overall user experience. On the other hand, we also needed to understand the constraints of the original platform so that the redesign would not exceed its capabilities.
-
-To conclude, the most challenging part was finding the right balance so that the product could be delivered on time with high quality and be enjoyed by users.
+Two hard limits shaped every decision: shared engineering resources across multiple simultaneous products, and strict consistency with the existing platform design system. The challenge was finding improvements impactful enough to matter but scoped tightly enough to ship on time.
 
 ### Research
 
-We used two methods to conduct research, "survey" and "contextual interview" trying to identify the user behavior when shopping online, especially during the pandemic, and current usability issues of the ordering feature.
-
-Focused on two main research questions:
-
-1. Who is the user of this e-commerce app? and what are their user behaviors when placing orders?
-2. What are the user pain points when using the ordering service?
-
-**Method — Survey**
-
-We designed the survey focusing on collecting user habits when shopping online to gain an overview of user behaviors on our platform. By pushing notifications directly through the app, we collected 3,279 responses within 2 weeks.
-
-**Method — Contextual Inquiry**
-
-The interview focused on how users felt about the ordering feature and asked for their feedback. We recruited 5 existing app users who were also the MVP users in the first phase of the feature for this user interview. At the same time, we also observed how they completed the ordering process while adopting the think-aloud protocol.
+Two methods: a survey pushed through the app (3,279 responses in 2 weeks) to map general shopping behavior, and contextual inquiry with 5 MVP users — watching them complete orders with think-aloud protocol to identify where the experience broke down.
 
 ### Findings
-
-**E-commerce Usage Patterns**
-
-- **5% of the users** are heavy users of the app, who place more than 6 orders per month.
-- **80% of the users** are general users, who place 1–2 orders per month.
-- **15% of the users** rarely shop online.
 
 <Image
   src="/project/knst-survey.png"
@@ -160,24 +117,11 @@ The interview focused on how users felt about the ordering feature and asked for
   height="auto"
 />
 
-The demographic result shows that the main user types of the e-commerce app include two types of users:
+Two user groups emerged: general consumers (homemakers, occasional shoppers) and business users with consistent, repeat needs. Three patterns shaped the redesign:
 
-1. General consumers such as homemakers.
-2. Business users such as small business owners.
-
-**User Behaviors and Expectations**
-
-- **85% of the users** expect the order details and status to be clear.
-- **60% of the users** ship to the same address multiple times.
-- **76% of the orders** contain only one or two items.
-
-The user research helped us gain a clear understanding of our users. The users could be roughly divided into 2 groups: general consumers who shop occasionally, and business users who have consistent shopping needs.
-
-**Inconvenience in entering shipping information**
-
-It is always inconvenient to enter information such as address and phone number, not only needing to memorize details but also taking effort to enter them. According to our research, 60% of users ship to the same address multiple times.
-
-Under the existing design, if users wanted to ship to the same address multiple times, they had to enter the detailed information every single time.
+- **60% ship to the same address repeatedly** — but had to re-enter it every time
+- **85% expected clear order details and status** — the original showed neither delivery time nor fees until after checkout
+- **Failed deliveries were common** — no way to specify pickup requirements during ordering
 
 <Image
   src="/project/knst-incon.png"
@@ -186,22 +130,12 @@ Under the existing design, if users wanted to ship to the same address multiple 
   height="auto"
 />
 
-**Incomplete order and shipping information**
-
-Key information that is important to users includes estimated delivery time, shipping costs, and delivery options.
-
-However, this information was completely missing in the original design, requiring users to call customer service with inquiries. In the worst case, if the delivery address was in a remote area, the user would be asked to pay additional fees without prior notification.
-
 <Image
   src="/project/knst-lackinfo.png"
   alt="Incomplete Order and Shipping Information"
   width="auto"
   height="auto"
 />
-
-**Difficulties in delivery coordination**
-
-The delivery process was designed without considering various living situations. Some users had special delivery requirements or were not available during standard delivery times. Without a way to specify these needs in the ordering process, delivery attempts would often fail.
 
 <Image
   src="/project/knst-pickup.png"
@@ -212,22 +146,7 @@ The delivery process was designed without considering various living situations.
 
 ### Ideate
 
-During the entire product design process, these 2 questions were always on my mind to inform my design decisions:
-
-1. What do users care about the most?
-2. What causes the most serious usability issues for users?
-
-Based on the research findings and design considerations, I set two directions for product design iteration.
-
-**1. Simplify the ordering process**
-
-Provide features that enable users to complete orders easily and match their online shopping habits.
-
-**2. Keep users informed**
-
-Reduce uncertainty for users by providing complete information about their orders, shipping options, and delivery status.
-
-With these directions, we selected the necessary improvements and prioritized them over other recommendations from our heuristic evaluation. By doing this, we successfully delivered the new product iteration to the market within two months.
+Findings pointed to two design directions: **simplify the ordering process** (match existing shopping habits, reduce repeated effort) and **keep users informed** (surface delivery time, fees, and options before checkout). These filtered the full heuristic evaluation down to a scoped set of improvements we could ship in two months.
 
 ## Impact
 
@@ -235,10 +154,10 @@ The redesign enhanced customer engagement with the e-commerce platform and incre
 
 ## Takeaways
 
-### Importance of prioritizing and considering feasibility
+### Prioritize within constraints
 
-Rather than starting from scratch, it's often impossible to implement a complete redesign to an existing product in a short time. You have to consider several factors such as the impact on existing users, perspectives from the marketing team, and available resources from the development team.
+A complete redesign of an existing product rarely happens in one cycle — the real skill is identifying which changes have the most leverage given the time, engineering, and consistency constraints you're working within.
 
-### Simple solutions can be effective
+### Small interventions, large impact
 
-Once key factors are identified, you can improve the overall user experience with minimal effort. For instance, you don't need to completely redesign the interface — it's possible to just change the user flow or add strategic elements to achieve significant improvements.
+A saved-address field and a "call before pickup" checkbox aren't dramatic design moves. But they address real, high-frequency pain — and the 400% order increase shows how much headroom exists when an MVP ships without UX consideration.
