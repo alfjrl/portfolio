@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white pb-8 mt-12">
-      <div className="max-w-[1440px] mx-4 md:mx-auto px-4 md:px-16">
+      <div className="max-w-[1440px] md:mx-auto px-4 md:px-16">
         <div className="my-14 max-w-2xl">
           <p className="leading-relaxed font-manrope">
             On the side, I always think about how design influences our daily
@@ -48,7 +48,7 @@ export default function Footer() {
               href="mailto:alfred.jr.lin@gmail.com"
             >
               <ArrowIcon />
-              <p className="ml-2 h-7">email</p>
+              <p className="ml-2 h-7">Email</p>
             </a>
           </li>
           <li className="md:ml-6">
