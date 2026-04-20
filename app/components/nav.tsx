@@ -7,7 +7,7 @@ import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Navbar() {
-  const resume = "https://drive.proton.me/urls/FWJV8HY8NR#diMY0JKV6CZL";
+  const resume = "https://drive.proton.me/urls/QDQHF9VR88#VXEbTU6zZeEj";
   const [open, setOpen] = useState(false);
 
   function ArrowIcon() {
