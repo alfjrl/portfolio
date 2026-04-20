@@ -57,11 +57,11 @@ function RoundedImage(props) {
         <img
           alt={props.alt}
           src={props.src}
-          className="rounded-lg w-full h-auto mb-4"
+          className="rounded-lg w-full h-auto mb-4 bg-white"
           {...props}
         />
         {props.alt && (
-          <figcaption className="text-center text-sm text-neutral-600 mt-2 italic">
+          <figcaption className="text-center text-sm text-gray-600 mt-2 italic">
             {props.alt}
           </figcaption>
         )}
@@ -70,9 +70,9 @@ function RoundedImage(props) {
   }
   return (
     <figure className="my-4">
-      <Image alt={props.alt} className="rounded-lg" {...props} />
+      <Image alt={props.alt} className="rounded-lg bg-white" {...props} />
       {props.alt && (
-        <figcaption className="text-center text-sm text-neutral-600 mt-2 italic">
+        <figcaption className="text-center text-sm text-gray-600 mt-2 italic">
           {props.alt}
         </figcaption>
       )}
@@ -143,7 +143,7 @@ function LinkCard({
           <p className="text-sm m-0">{label}</p>
           <CardExternalLinkIcon />
         </div>
-        <p className="font-bold text-black">{title}</p>
+        <p className="font-bold text-black card-title">{title}</p>
       </div>
     </a>
   );

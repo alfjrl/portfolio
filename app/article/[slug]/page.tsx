@@ -61,7 +61,7 @@ export default async function Blog({ params }) {
   }
 
   return (
-    <section>
+    <section className="max-w-4xl w-full md:mx-auto px-4">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -88,7 +88,7 @@ export default async function Blog({ params }) {
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mb-8 animate-blur-in" style={{ animationDelay: "0.1s" }}>
-        <p className="text-neutral-600">
+        <p className="text-gray-600">
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>

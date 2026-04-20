@@ -4,8 +4,10 @@ summary: "Replacing a broken, data-centric monitor with a need-driven informatio
 publishedAt: "2024"
 category: "Work Experience"
 coverImage: "/project/umdlib-display.png"
-role: "UX/UI Designer, UX Engineer"
+role: "UX/UI Designer, Frontend Engineer"
 year: "2025"
+releaseYear: "2025"
+status: "Shipped"
 team: "1 Senior Developer, 1 Product Manager"
 platform: "Information Display"
 glanceTitle: "Designing a real-time information display for library entrances across multiple locations"
@@ -35,32 +37,16 @@ Students entering a library have a short, predictable set of questions: **Can I 
 
 ## Research & Prioritization
 
-I identified information priorities through two inputs.
-
-### Library staff input
-
-Conversations with staff at service desks across library locations revealed the most common questions students ask in person — closing times, room availability, and where to find equipment like laptop chargers.
-
-### Website analytics
-
-I analyzed usage data for each library's location page on the website, confirming that the same categories — spaces, hours, and equipment — dominated what students were actively seeking out. Nearly 20% of traffic of the location pages directs to space availability information, followed by hours and equipment information.
-
-These two sources converged clearly. Students entering the library need answers in a specific order of urgency:
+Staff interviews and website analytics converged on the same four categories: hours, spaces, equipment, and wayfinding. Analytics confirmed it — nearly 20% of location-page traffic goes directly to space availability. This became the urgency order:
 
 - "Can I stay?" — Closing time and current time
 - "Where can I work?" — Study room and computer availability
 - "What resources are available?" — Equipment, tech lending, services
 - "Where do I go?" — Wayfinding to service desks and deeper information
 
-This priority sequence became the foundation for the display's information hierarchy.
-
 ## Design Decisions
 
 ### 1. Information Hierarchy for a Passive Display
-
-Unlike a website, users can't scroll, click, or search. Everything competes for attention simultaneously on a single screen viewed from a distance. The layout needed to communicate priority through position and visual weight alone.
-
-I placed time-critical information — closing time and current time — at the top left, using the largest type sizes. This answers the most urgent question ("can I stay?") within the first second of glancing at the screen. Availability data for computers and study rooms occupies the middle of the display, using a clear available/total format that's readable at a distance. Action-oriented content — QR codes and service desk directions — sits at the bottom, serving students who've already decided to stay and need next steps.
 
 <Image
   src="/project/umdlib-display-hierarchy.png"
@@ -69,15 +55,9 @@ I placed time-critical information — closing time and current time — at the 
   height="auto"
 />
 
+Unlike a website, users can't scroll or search — everything competes for attention at once on a single screen viewed from a distance. Time-critical info sits top-left in the largest type; availability occupies the middle; QR codes and wayfinding anchor the bottom for students who've decided to stay.
+
 ### 2. Designing for Physical Constraints
-
-This isn't a website on a laptop. It's a large-format display in a brightly lit entrance that people walk past at varying distances. Every design decision had to account for this context.
-
-Typography at distance. All type needed to be legible from at least 10–15 feet away. The critical numbers are consistently large and bold, to ensure they are immediately noticeable.
-
-Color as a signal. The closing time displays in red, creating an immediate visual cue that communicates urgency without requiring the viewer to read and process numbers first. A student glancing at the screen can register "red = pay attention to the time" before they've even read the digits.
-
-High contrast on dark background. The dark background ensures readability under the variable lighting conditions of a library entrance — overhead fluorescents, natural light from windows, and shifting conditions throughout the day.
 
 <Image
   src="/project/umdlib-display-font.png"
@@ -86,11 +66,9 @@ High contrast on dark background. The dark background ensures readability under 
   height="auto"
 />
 
+This is a large-format screen viewed from 10–15 feet in variable lighting — not a laptop. Critical numbers are large and bold; closing time displays in red so a student can register urgency before reading the digits; the dark background holds contrast under overhead fluorescents and shifting daylight.
+
 ### 3. Physical-to-Digital Handoff
-
-The display can't be interactive — you can't touch it, scroll it, or click anything. But some information is too detailed or action-oriented for a passive screen (full equipment lists, room reservation flows).
-
-I solved this with QR codes that bridge the physical display to the student's personal device. The screen shows the high-level answer ("Need a Space?" with a short URL), and the QR code hands off to the detailed experience on their phone. This was a deliberate decision about what belongs on an ambient display versus what belongs on a personal device — the monitor surfaces awareness, the phone enables action.
 
 <Image
   src="/project/umdlib-display-qrcode.png"
@@ -99,13 +77,9 @@ I solved this with QR codes that bridge the physical display to the student's pe
   height="auto"
 />
 
+Some information — full equipment lists, room reservation flows — is too detailed for a passive screen. QR codes hand off to the student's phone: the display surfaces awareness, the phone enables action.
+
 ### 4. Location-Specific Content Modules
-
-Each UMD library serves different populations with different needs. McKeldin — the university's largest library — prioritizes study room availability because it's the primary space students seek out for group work. Other locations might foreground equipment availability or specialized service access instead.
-
-Rather than designing a single fixed layout, I designed a modular framework where content blocks can be swapped based on what's most relevant at each location. The structure and hierarchy remain consistent — time at top, availability in the middle, actions at the bottom — but the specific modules adapt to each library's context.
-
-This approach means the system scales without requiring a unique design for every location. It's the same design thinking behind component-based design systems, applied to a physical information display.
 
 <Image
   src="/project/umdlib-display-compare.png"
@@ -113,6 +87,8 @@ This approach means the system scales without requiring a unique design for ever
   width="auto"
   height="auto"
 />
+
+Each library serves a different population, so content blocks swap per location — McKeldin leads with study room availability; other branches foreground equipment or specialized services. The hierarchy stays consistent; only the modules change.
 
 ## The Design
 
@@ -123,18 +99,7 @@ This approach means the system scales without requiring a unique design for ever
   height="auto"
 />
 
-The dashboard is organized as a grid of content cards on a dark background, each
-card addressing one category of information. The card-based approach creates
-clear visual separation between information types, allowing students to quickly
-locate the category they care about without parsing a dense wall of data. Key
-design elements:
-
-- Closing time — displayed prominently in red with a segmented-display typeface, creating visual distinction from other content and signaling time-sensitivity
-- Availability counters — use an "available / total" format with color-coded progress bars (gold when available, adaptable to red when full)
-- QR codes — paired with short, memorable URLs as a fallback for students who don't want to scan
-- Service desk wayfinding — uses a directional arrow and high-contrast yellow background to stand out as the "I need a human" option
-
-I designed and implemented frontend myself, handling both the Figma design and the production code. The display pulls real-time data for room and computer availability, ensuring the information stays current without manual updates.
+A grid of content cards on a dark background, each addressing one category of information. I designed and implemented the frontend — Figma through production code — with real-time data feeds for room and computer availability requiring no manual updates.
 
 <Image
   src="/project/umdlib-display-live.jpg"
@@ -164,8 +129,6 @@ What changed:
 
 ## Reflection
 
-The biggest constraint was designing for a format with no interactivity and no analytics. On a website, I can track clicks, scroll depth, and search patterns to validate decisions. A passive display offers none of that; I can't measure whether students actually glance at the screen, which information they notice first, or whether the QR codes get scanned.
+Designing for a passive display with no interactivity and no analytics meant I couldn't validate decisions the usual way — no clicks, no scroll depth, no scan data. If I revisited this, I'd track QR scan rates by location as a lightweight feedback loop, and observe students at entrances to confirm the information hierarchy matches actual glance patterns.
 
-If I were to revisit this, I'd explore lightweight measurement, even something as simple as tracking QR code scan rates by location would provide a feedback loop for refining content priority. I'd also want to observe students in the entrance more systematically to validate whether the information hierarchy matches their actual glance patterns.
-
-The project reinforced something I've come to value in my work: the most impactful design decisions are often about what to leave out. The old display tried to show everything the system had. The new one asks a simpler question — what does someone walking through this door need to know right now?
+The project reinforced something I've come to value: the most impactful decisions are often about what to leave out. The old display showed everything the system had. The new one asks a simpler question — what does someone walking through this door need to know right now?

@@ -27,10 +27,10 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gray-900 text-gray-300 pb-8 mt-12">
-      <div className="max-w-4xl mx-4 md:mx-auto md:px-4">
+    <footer className="bg-gray-900 text-white pb-8 mt-12">
+      <div className="max-w-[1440px] mx-4 md:mx-auto px-4 md:px-16">
         <div className="my-14 max-w-2xl">
-          <p className="leading-relaxed font-manrope italic">
+          <p className="leading-relaxed font-manrope">
             On the side, I always think about how design influences our daily
             lives and why things are designed that way, which is fascinating to
             me. I enjoy talking to random people and learning something new from
@@ -39,7 +39,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <ul className="font-sm  flex flex-col space-x-0 space-y-2 text-gray-300 md:flex-row md:space-x-4 md:space-y-0">
+        <ul className="flex flex-col space-x-0 space-y-2 text-gray-100 md:flex-row md:space-x-4 md:space-y-0">
           <li>
             <a
               className="flex items-center transition-all hover:text-white"

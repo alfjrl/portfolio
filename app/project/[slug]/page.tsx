@@ -86,11 +86,14 @@ export default async function ProjectPage({ params }) {
   } = project.metadata;
 
   return (
-    <div>
+    <div className="max-w-[1440px] w-full md:mx-auto px-4 md:px-16">
       {/* Hero image */}
       <div
-        className="relative aspect-16/9 w-full mt-6 rounded-xl overflow-hidden animate-blur-in"
-        style={{ animationDelay: "0s" }}
+        className="relative aspect-16/9 w-full mt-6 bg-white rounded-xl overflow-hidden animate-blur-in"
+        style={{
+          animationDelay: "0s",
+          viewTransitionName: `project-cover-${slug}`,
+        }}
       >
         <Image
           src={coverImage}
@@ -120,19 +123,19 @@ export default async function ProjectPage({ params }) {
         {/* Metadata */}
         <dl className="flex flex-col md:flex-row gap-4 w-full">
           <div className="flex-auto">
-            <dt className="font-semibold text-black">Role</dt>
+            <dt className="font-bold text-black">Role</dt>
             <dd className="text-gray-600 mt-1 text-sm">{role}</dd>
           </div>
           <div className="flex-auto">
-            <dt className="font-semibold text-black">Year</dt>
+            <dt className="font-bold text-black">Year</dt>
             <dd className="text-gray-600 mt-1 text-sm">{year}</dd>
           </div>
           <div className="flex-auto">
-            <dt className="font-semibold text-black ">Team</dt>
+            <dt className="font-bold text-black ">Team</dt>
             <dd className="text-gray-600 mt-1 text-sm">{team}</dd>
           </div>
           <div className="flex-auto">
-            <dt className="font-semibold text-black ">Platform</dt>
+            <dt className="font-bold text-black ">Platform</dt>
             <dd className="text-gray-600 mt-1 text-sm">{platform}</dd>
           </div>
         </dl>
@@ -140,13 +143,13 @@ export default async function ProjectPage({ params }) {
 
       {/* Project at a glance */}
       <div
-        className="my-16 rounded-lg bg-gray-100 p-4 md:p-8 animate-blur-in"
+        className="my-16 bg-white border border-gray-200 p-4 md:p-8 animate-blur-in"
         style={{ animationDelay: "0.3s" }}
       >
-        <h2 className="text-xs text-black uppercase tracking-wide mb-2">
+        <h2 className="text-sm text-black uppercase tracking-wide mb-2">
           Project at a Glance
         </h2>
-        <h3 className="text-xl font-semibold text-black mb-2">{glanceTitle}</h3>
+        <h3 className="text-xl font-bold text-black mb-2">{glanceTitle}</h3>
         <p className="text-gray-600 leading-relaxed pb-4 md:pb-8 border-b border-gray-300 mb-4 md:mb-8">
           {glanceSummary}
         </p>
@@ -157,7 +160,7 @@ export default async function ProjectPage({ params }) {
               href={problemLink ?? `#problem`}
               className="group flex flex-row items-center gap-1  mb-2"
             >
-              <h4 className="text-base font-semibold uppercase text-black">
+              <h4 className="text-base font-bold uppercase text-black">
                 Problem
               </h4>
               <ExternalLinkIcon />
@@ -169,7 +172,7 @@ export default async function ProjectPage({ params }) {
               href={solutionLink ?? `#solution`}
               className="group flex flex-row items-center gap-1 mb-2"
             >
-              <h4 className="text-base font-semibold uppercase text-black">
+              <h4 className="text-base font-bold uppercase text-black">
                 Solution
               </h4>
               <ExternalLinkIcon />
@@ -182,7 +185,7 @@ export default async function ProjectPage({ params }) {
                 href={impactLink ?? `#impact`}
                 className="group flex flex-row items-center gap-1 mb-2"
               >
-                <h4 className="text-base font-semibold uppercase text-black">
+                <h4 className="text-base font-bold uppercase text-black">
                   Impact
                 </h4>
                 <ExternalLinkIcon />

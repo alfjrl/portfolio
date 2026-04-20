@@ -11,6 +11,8 @@ type Metadata = {
   year: string
   team: string
   platform: string
+  releaseYear: string
+  status: string
   glanceTitle: string
   glanceSummary: string
   problem: string
