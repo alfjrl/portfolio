@@ -3,7 +3,13 @@
     "allow": [
       "Bash(pkill:*)",
       "Bash(npm run build)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "Bash(python3:*)",
+      "Bash(pnpm install:*)",
+      "WebFetch(domain:www.rachelchen.tech)",
+      "Bash(node -e \"const {Source_Serif_4} = require\\('next/font/google'\\); console.log\\('Source_Serif_4 exists'\\)\")",
+      "Bash(pnpm dev *)",
+      "Bash(curl -s http://localhost:3000/about)"
     ],
     "deny": [],
     "ask": []

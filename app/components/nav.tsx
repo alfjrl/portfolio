@@ -28,9 +28,9 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 w-full z-50">
+    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
       {/* desktop navbar */}
-      <div className="py-4 md:py-8 hidden sm:flex sm:items-center sm:justify-between">
+      <div className="p-4 md:py-6  max-w-[1280px] w-full md:mx-auto hidden sm:flex sm:items-center sm:justify-between">
         <Link href="/">
           <Image src="/Al.svg" alt="Alfred Lin logo" width={32} height={18} />
         </Link>
@@ -40,15 +40,15 @@ export default function Navbar() {
               href="/#project"
               className="flex font-bold text-base text-gray-600 hover:text-black"
             >
-              <span className="h-7">work</span>
+              <span className="h-7">WORK</span>
             </Link>
           </li>
           <li>
             <Link
               href="/about"
-              className="flex font-bold text-base text-gray-600 hover:text-black ml-6"
+              className="flex font-bold text-base text-gray-600 hover:text-black ml-12"
             >
-              <span className="h-7">about</span>
+              <span className="h-7">ABOUT</span>
             </Link>
           </li>
           <li>
@@ -56,17 +56,17 @@ export default function Navbar() {
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-base text-gray-600 hover:text-black flex items-center bottom gap-2 ml-6"
+              className="font-bold text-base text-gray-600 hover:text-black flex items-center bottom gap-2 ml-12"
             >
               <ArrowIcon />
-              <span className="h-7">resume</span>
+              <span className="h-7">RESUME</span>
             </Link>
           </li>
         </ul>
       </div>
 
       {/* mobile hamburger button */}
-      <div className="py-4 flex items-center justify-between sm:hidden">
+      <div className="p-4 flex items-center justify-between sm:hidden">
         <Link href="/">
           <Image src="/Al.svg" alt="Alfred Lin logo" width={32} height={18} />
         </Link>
@@ -92,7 +92,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              home
+              HOME
             </Link>
           </li>
           <li className="mx-8 my-6">
@@ -101,7 +101,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              work
+              WORK
             </Link>
           </li>
           <li className="mx-8 my-6">
@@ -110,7 +110,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              about
+              ABOUT
             </Link>
           </li>
           <li className="mx-8 my-6 flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="font-medium text-base"
             >
-              <span className="h-7">Resume</span>
+              <span className="h-7">RESUME</span>
             </Link>
             <ArrowIcon />
           </li>
