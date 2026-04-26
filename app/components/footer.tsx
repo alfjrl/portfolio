@@ -27,9 +27,9 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gray-900 text-white pb-8 mt-12">
-      <div className="max-w-[1440px] md:mx-auto px-4 md:px-16">
-        <div className="my-14 max-w-2xl">
+    <footer className="bg-gray-900 text-gray-200">
+      <div className="max-w-[1280px] md:mx-auto p-4 md:py-8 border-x border-gray-700">
+        <div className="mb-16 max-w-2xl">
           <p className="leading-relaxed font-manrope">
             On the side, I always think about how design influences our daily
             lives and why things are designed that way, which is fascinating to
@@ -39,7 +39,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <ul className="flex flex-col space-x-0 space-y-2 text-gray-100 md:flex-row md:space-x-4 md:space-y-0">
+        <ul className="flex flex-col space-x-0 space-y-2 text-gray-200 md:flex-row md:space-x-4 md:space-y-0 mb-4">
           <li>
             <a
               className="flex items-center transition-all hover:text-white"
@@ -85,9 +85,9 @@ export default function Footer() {
             </a>
           </li>
         </ul>
-        <p className="mt-4 flex flex-row">
+        <p className="flex flex-row">
           <span className="hidden md:block">
-            Made with love &amp; coffee&nbsp;
+            Made with love, coffee & claude code{" "}
           </span>
           {" © "}
           {year} Alfred Jhan-Ren Lin

@@ -1,7 +1,8 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, EB_Garamond } from "next/font/google";
 import Navbar from "./components/nav";
+import { CustomCursor } from "./components/custom-cursor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
@@ -47,24 +48,33 @@ const manrope = Manrope({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  variable: "--font-eb-garamond",
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
+    // bg color bg-[#fafcfd]
     <html
       lang="en"
       className={cx(
-        "text-gray-600 bg-[#fafcfd] font-medium",
+        "text-gray-600 bg-white font-medium",
+        manrope.variable,
+        ebGaramond.variable,
         manrope.className,
       )}
     >
       <body className="antialiased" suppressHydrationWarning>
-        <main className="flex-auto min-w-0 flex flex-col bg-[#fafcfd]">
-          <div className="max-w-[1440px] w-full md:mx-auto px-4 md:px-16">
-            <Navbar />
-          </div>
+        <CustomCursor />
+        <main className="flex-auto min-w-0 flex flex-col">
+          <Navbar />
           {children}
           <Footer />
           <Analytics />

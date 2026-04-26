@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-family-serif: var(--font-eb-garamond);
+}
+
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;
@@ -20,6 +24,14 @@
 html {
   min-width: 360px;
   background-color: #fefefe;
+}
+
+.cursor-tag {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  left: -200px;
+  top: -200px;
 }
 
 .prose .anchor {
@@ -106,7 +118,7 @@ html {
 
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
+  margin-top: 0 !important;
   margin-bottom: 1.25em !important;
 }
 
@@ -145,8 +157,8 @@ table {
 @keyframes blur-in {
   from {
     opacity: 0;
-    filter: blur(8px);
-    transform: translateY(24px);
+    filter: blur(4px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -156,7 +168,7 @@ table {
 }
 
 .animate-blur-in {
-  animation: blur-in 0.3s ease-out both;
+  animation: blur-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 /* markdown */
