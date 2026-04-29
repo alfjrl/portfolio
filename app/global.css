@@ -154,21 +154,56 @@ table {
   text-wrap: balance;
 }
 
-@keyframes blur-in {
+@-webkit-keyframes blur-in {
   from {
     opacity: 0;
+    -webkit-filter: blur(4px);
     filter: blur(4px);
+    -webkit-transform: translateY(10px);
     transform: translateY(10px);
   }
   to {
     opacity: 1;
+    -webkit-filter: blur(0px);
     filter: blur(0px);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 
 .animate-blur-in {
+  -webkit-animation: blur-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: blur-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  will-change: opacity, transform, filter;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blur-in {
+    -webkit-animation: none;
+    animation: none;
+    opacity: 1;
+    -webkit-filter: none;
+    filter: none;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
 /* markdown */

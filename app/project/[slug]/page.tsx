@@ -212,7 +212,7 @@ export default async function ProjectPage({ params }) {
         </div>
       </div>
       {/* MDX content */}
-      <div className="max-w-[1280px] w-full md:mx-auto p-4 md:py-16 border-x border-gray-200">
+      <div className="max-w-[1280px] w-full md:mx-auto p-4 md:py-16 md:px-8 border-x border-gray-200">
         <article
           className="prose animate-blur-in leading-relaxed"
           style={{ animationDelay: "0.45s" }}

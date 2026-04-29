@@ -82,7 +82,7 @@ export const education: Education[] = [
   },
   {
     years: "2012 – 2017",
-    school: { en: "Nation Chung Hsing University", zh: "國立中興大學" },
+    school: { en: "National Chung Hsing University", zh: "國立中興大學" },
     degree: { en: "Bachelor of Business Administration", zh: "" },
     majors: [
       { en: "B.B.A. Business Administration", zh: "企業管理學士" },
