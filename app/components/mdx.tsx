@@ -149,6 +149,69 @@ function LinkCard({
   );
 }
 
+function Highlight({
+  children,
+  variant = "yellow",
+  ...props
+}: {
+  children: React.ReactNode;
+  variant?: "yellow" | "blue" | "green" | "pink";
+}) {
+  const variants = {
+    yellow: "bg-yellow-200",
+    blue: "bg-blue-200",
+    green: "bg-green-200",
+    pink: "bg-pink-200",
+  };
+  return (
+    <mark
+      className={`${variants[variant]} px-1 py-0.5 rounded text-black`}
+      {...props}
+    >
+      {children}
+    </mark>
+  );
+}
+
+function TextCallOut({
+  children,
+  variant = "default",
+  ...props
+}: {
+  children: React.ReactNode;
+  variant?: "default" | "hmw";
+}) {
+  return (
+    <div
+      className="text-callout border-l-2 border-gray-700 bg-gray-50 pl-4 font-bold text-lg text-gray-900 py-6 my-6"
+      {...props}
+    >
+      {variant === "hmw" && (
+        <div className="font-black text-gray-900 pb-4">How Might We</div>
+      )}
+      {children}
+    </div>
+  );
+}
+
+function Container({ children }) {
+  return <div className="container bg-[#fafcfd] p-4">{children}</div>;
+}
+
+function Layout({
+  children,
+  variant = "col",
+}: {
+  children: React.ReactNode;
+  variant?: "row" | "col";
+}) {
+  return (
+    <div className={`layout flex flex-col md:flex-${variant} gap-8`}>
+      {children}
+    </div>
+  );
+}
+
 function slugify(str) {
   return str
     .toString()
@@ -196,6 +259,10 @@ let components = {
   code: Code,
   Table,
   LinkCard,
+  Highlight,
+  TextCallOut,
+  Container,
+  Layout,
 };
 
 export function CustomMDX(props) {

@@ -1,6 +1,6 @@
 ---
-title: "Bridging Catalog and Discovery — A Unified Search for UMD Libraries"
-summary: "Reimagined library's search experience by implementing intuitive catalog navigation, transforming how students and faculty access research resources."
+title: "Fixing the Default, Not the Interface — A Multi-Source Search Redesign"
+summary: "Owned and redesigned the UMD Libraries' public search experience across multiple systems, lifting search success from 22% to 81% on a platform serving 60,000+ annual queries and 800,000+ visits."
 publishedAt: "2026"
 category: "Work Experience"
 coverImage: "/project/search-experience.png"
@@ -8,29 +8,211 @@ role: "UX/UI Designer, Frontend Engineer"
 year: "2023 - 2024"
 releaseYear: "2024"
 status: "Shipped"
-team: "2 Product Managers, and 1 Senior Software Engineer"
+team: "Solo"
 platform: "Web Application"
-glanceTitle: "Reimagining library search to simplify access to academic resources"
-glanceSummary: "The UMD Libraries' catalog system migration necessitated updates to the search experience on the main website. User research revealed that the existing bento-style search results created confusion among users. Based on these findings, the redesign focused on streamlining the search journey and restructuring result presentation to align with user needs and research patterns."
+glanceTitle: "Reimagining search experience to simplify access to academic resources"
+glanceSummary: "The UMD Libraries' catalog system migration necessitated updates to the search experience on the main website. User research revealed that the existing bento-style search results (Search All)  created confusion among users. Based on these findings, the redesign focused on streamlining the search journey and restructuring result presentation to align with user needs and research patterns."
 problem: "Multiple search tools with overlapping functionality created cognitive overload, while the bento-style results layout fragmented the user experience and hindered efficient resource discovery."
-problemLink: ""
+problemLink: "#problem-the-search-experience-gap"
 solution: "A unified search interface serves as the intuitive entry point on the homepage, maintaining the bento-style results while changing the default search to the new catalog system. This adjustment reduces cognitive load and guides users more effectively through their research process."
-solutionLink: ""
+solutionLink: "#solution"
 impact: "Increased search success rate from 22% to 81% and improved user satisfaction by over 60%."
-impactLink: ""
+impactLink: "#results"
 ---
 
-## Poject detail
+## Overview
 
-For a detailed look at the design process, research findings, and implementation, checkout the case study design deck below.
+The libraries' website is where users begin their research and access academic resources. The homepage search box plays a central role, directly shaping the entire search experience.
 
-<LinkCard
-  href="https://www.figma.com/deck/g5C7iukOOAzT7FEepVCH3a/"
-  label="Figma Slide"
-  title="Case Study Design Deck"
+<Image
+  src="/project/search/overview.png"
+  alt="UMD Libraries main website homepage."
+  width="auto"
+  height="auto"
 />
 
-The libraries search redesign is now live. Explore the search interface and functionality.
+I owned this project end-to-end — from user research and synthesis through interaction design, prototyping, and frontend implementation of the new search interface.
+
+## Problem — The Search Experience Gap
+
+The UMD Libraries provide a wealth of valuable resources, but each lives behind its own search tool. Navigating between them often leaves users frustrated and unable to find what they came for.
+
+<TextCallOut>
+  User research revealed that only 22% of users find what they are looking for
+  when visiting the libraries' websites.
+</TextCallOut>
+
+<Image
+  src="/project/search/all-resources.png"
+  alt="All of the research available from the UMD Libraries."
+  width="auto"
+  height="auto"
+/>
+
+## Research
+
+<TextCallOut variant="hmw">
+  How might we simplify the search experience to help users find and access the
+  exact resources they need quickly and confidently?
+</TextCallOut>
+
+I wanted to understand users — how they do research, how they interact with search tools, and how they access materials. To capture a representative range of needs and behaviors, I recruited students, faculty, and staff across multiple disciplines.
+
+I triangulated three methods to surface pain points: user interviews for depth, surveys for breadth, and web analytics for behavioral signal at scale.
+
+<Image
+  src="/project/search/research-methods.png"
+  alt="I conducted user interviews and surveys, and analyzed web analytics."
+  width="auto"
+  height="auto"
+/>
+
+## Key Findings
+
+One number cut through everything else and became the spine of the redesign:
+
+<TextCallOut>
+  Over 90% of search interactions happened with results from the catalog — yet
+  the catalog wasn't the default search tool on the homepage.
+</TextCallOut>
+
+The two pain points users surfaced were symptoms of the same root cause: the system was organized around how the libraries are structured internally, not around how people actually search.
+
+<Layout variant="row">
+  <Container>
+    ### Complicated search process <br />
+    Extra steps and navigation through multiple interfaces increased complexity
+    and drove abandonment.
+    <Image
+      src="/project/search/search-journey.png"
+      alt="Top - ideal search user journey, Bottom - actual search user journey."
+      width="auto"
+      height="auto"
+    />
+  </Container>
+  <Container>
+    ### Ineffective search functionality <br />
+    Unclear search scope and irrelevant results created confusion and eroded
+    trust in the tools.
+    <Image
+      src="/project/search/search-scope.png"
+      alt="Confusing search scope across different holdings."
+      width="auto"
+      height="auto"
+    />
+  </Container>
+</Layout>
+
+## Building the Case
+
+Acting on these findings meant changing the default search — and that wasn't an interface decision, it was a political one. Demoting "Search All," a long-standing institutional default, required convincing library administration to overrule a deeply familiar arrangement. I made the case in a formal research report walking through the behavioral data, user pain points, and operational implications of the switch.
+
+<LinkCard
+  href="https://docs.google.com/document/d/16eTb1WrDyJlYQMNna-i0MSYvX1qX8h-pqWuQ8az0KHg/edit?usp=sharing"
+  label="Research Report"
+  title="Search Experience Research & Recommendation"
+/>
+
+## Solution
+
+The redesign came down to three changes — but they weren't equal in impact. Switching the homepage default to the catalog did most of the work; expanding catalog scope and adding inline guidance reduced the friction users still encountered after that first click.
+
+### 1. Simplify the path to information
+
+The highest-leverage change was the smallest: I added the catalog search (UMD Discover) to the homepage search box and replaced the resource overview search (Search All) as the default. This shifted the user journey from an overview-first flow to a direct catalog-first flow, aligned with the 90% behavioral signal from research.
+
+<Image
+  src="/project/search/search-box-comparison.png"
+  alt="Left: Iteration #1 single search box design; Right: Iteration #2 tab design with UMD Discover (catalog search) as the default."
+  width="auto"
+  height="auto"
+/>
+
+See how the user journey changed:
+
+  <Layout variant="row">
+    <Container>
+     #### Before <br />
+      The original user journey directs users to an overview of all resources (Search All)
+      before they can dive into a specific search tool.
+     <Image
+      src="/project/search/old-journey.png"
+      alt="Original user journey showing overview-first search flow."
+      width="auto"
+      height="auto"
+     />
+    </Container>
+
+    <Container>
+     #### After <br />
+      The updated user journey gives users two entry points and changes the
+      default tool from resource overview (Search All) to catalog (UMD
+      Discover).
+     <Image
+      src="/project/search/new-journey.png"
+      alt="Updated user journey showing direct catalog-first search flow."
+      width="auto"
+      height="auto"
+     />
+    </Container>
+
+  </Layout>
+
+### 2. Update scope
+
+Resources were previously divided by holdings from different institutions and academic alliances. But users don't care where a resource comes from — they care whether they can find it and access it. I expanded the catalog's search coverage to include all holdings, paired with clear availability labels, so users see the full picture of what's available.
+
+<Image
+  src="/project/search/search-scope-updated.png"
+  alt="Updated search scope to include all holdings."
+  width="auto"
+  height="auto"
+/>
+
+### 3. Provide instructions
+
+Library terminology is dense and consistently confused users. I added inline explanations across the interface to help users understand and navigate — for example, a short description under the tabs clarifying the difference between the two major search tools.
+
+<Image
+  src="/project/search/instruction.png"
+  alt="Example of inline descriptions added to the search interface."
+  width="auto"
+  height="auto"
+/>
+
+## Design
+
+The final designs span the homepage entry point, the two main search interfaces, and the mobile adaptation — each surface applied the same principle: surface the catalog by default, label availability clearly, and keep guidance close at hand.
+
+<Image
+  src="/project/search/design-search-box.png"
+  alt="Left: Two-tab pattern keeps cognitive load low (only two options), and the description beneath updates per tab so users always know which tool they're using. Right: Quick-actions dropdown on focus surfaces the catalog's distinct resource types — addressing user research showing demand for fast, direct access."
+  width="auto"
+  height="auto"
+/>
+
+<Image
+  src="/project/search/design-search-all.png"
+  alt="Updated Search All aligned to the design system. Catalog results remain visible alongside other holdings, with explicit scope labels and inline descriptions throughout so users always know where each result comes from."
+  width="auto"
+  height="auto"
+/>
+
+<Image
+  src="/project/search/design-umd-discover.png"
+  alt="UMD Discover interface — Primo-based, customized to match the UMD Libraries design system. Deeper interface customization sat outside this project's scope."
+  width="auto"
+  height="auto"
+/>
+
+<Image
+  src="/project/search/design-mobile.png"
+  alt="Left: Mobile search box keeps the two-tab pattern; resource shortcuts expand into tappable buttons for direct access to specific tools. Right: Mobile Search All keeps the same functionality as desktop, with facets collapsed by default so results surface immediately on small screens."
+  width="auto"
+  height="auto"
+/>
+
+The redesign is now live — explore the interface in context below.
 
 <LinkCard
   href="https://www.lib.umd.edu"
@@ -38,9 +220,31 @@ The libraries search redesign is now live. Explore the search interface and func
   title="UMD Libraries Homepage"
 />
 
+## Results
+
+<TextCallOut>The search success rate increased from 22% to 81%</TextCallOut>
+
+### Impact
+
+1. **Shorter user journey**<br />
+   Users reach the resources they need faster, without navigating across several interfaces.
+2. **Clearer guidance**<br />
+   Inline descriptions give users a clear understanding of which tool or resource they're using.
+3. **Lower learning curve**<br />
+   Removing the need to navigate between interfaces makes the library website more approachable for first-time users.
+
+## Reflection
+
+1. **The biggest UX wins aren't always visual.**<br />
+   The single most impactful change in this redesign wasn't a new component or a new layout — it was making the catalog the default search tool. A configuration decision outperformed every interface change I considered. The instinct to redesign the surface is often worth resisting until you've ruled out the simpler lever underneath.
+2. **Design around user mental models, not institutional ones.**<br />
+   Holdings, alliances, and consortia matter to librarians; they don't matter to patrons. Mirroring the org chart in the UI created friction no amount of polish could hide — the scope expansion only worked because I stopped treating institutional boundaries as user-facing categories.
+3. **Frame the problem before solving it.**<br />
+   When the work first landed, it looked like an interface problem — the bento layout was confusing, the tools were unclear, the terminology was dense. Triangulating interviews, surveys, and analytics reframed it as a _defaults_ problem, and the right framing made the solution nearly obvious.
+
 ## Upcoming Updates
 
-The new design system is aimed to release mid-2026 — the interface may be updated, but the overall search experience and user flow will remain the same.
+The new design system is set to release in mid-2026 — the interface will be refreshed, but the overall search experience and user flow will remain the same.
 
 <Image
   src="/project/search-experience-new.png"

@@ -61,7 +61,7 @@ export default function Page() {
             >
               Currently{" "}
               <span className="font-black text-gray-900">
-                leading the entire public-facing ecosystem design
+                leading the public-facing ecosystem design
               </span>{" "}
               at University of Maryland Libraries. 5+ years experiences across
               hardware-adjacent software, e-commerce, and higher education.

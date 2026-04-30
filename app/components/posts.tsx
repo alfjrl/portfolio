@@ -45,7 +45,7 @@ function PostsList({ posts }: { posts: PostItem[] }) {
           className="text-2xl md:text-3xl text-gray-900 font-black mb-4 md:mb-8 animate-blur-in"
           style={{ animationDelay: "0.3s" }}
         >
-          Featured
+          Selected Works
         </h2>
         <ul className="flex flex-col md:grid md:grid-cols-2 gap-4">
           {posts.map((post, index) => {
@@ -64,7 +64,7 @@ function PostsList({ posts }: { posts: PostItem[] }) {
                 {/* card */}
                 <Link
                   href={post.href}
-                  className="p-4 block w-full overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-gray-200 rounded-md bg-white"
+                  className="p-4 block w-full h-fit overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-gray-200 rounded-md bg-white"
                 >
                   {/* Content */}
                   <div className="h-full w-full flex flex-col">
@@ -76,14 +76,15 @@ function PostsList({ posts }: { posts: PostItem[] }) {
                           viewTransitionName: `project-cover-${post.slug}`,
                         }}
                       >
-                        <Image
-                          src={coverImage}
-                          alt={post.metadata.title}
-                          width={0}
-                          height={0}
-                          sizes="100vw"
-                          className="w-full h-auto transition-transform ease-in bg-white"
-                        />
+                        <div className="relative w-full aspect-[16/9]">
+                          <Image
+                            src={coverImage}
+                            alt={post.metadata.title}
+                            fill
+                            sizes="(min-width: 768px) 50vw, 100vw"
+                            className="object-cover transition-transform ease-in bg-white"
+                          />
+                        </div>
                       </div>
                     )}
                     <div
@@ -109,13 +110,13 @@ function PostsList({ posts }: { posts: PostItem[] }) {
                         {post.metadata.title}
                       </h2>
                       {/* Description & image */}
-                      <div>
+                      {/* <div>
                         <p
                           className={`text-gray-500 leading-relaxed group-hover:text-gray-900 transition ease-in`}
                         >
                           {post.metadata.summary}
                         </p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </Link>

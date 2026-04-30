@@ -86,10 +86,10 @@ export default function Footer() {
           </li>
         </ul>
         <p className="flex flex-row">
-          <span className="hidden md:block">
-            Made with love, coffee & claude code{" "}
+          <span className="hidden md:block md:mr-1">
+            Made with love & coffee
           </span>
-          {" © "}
+          {"  © "}
           {year} Alfred Jhan-Ren Lin
         </p>
       </div>
