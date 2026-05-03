@@ -1,6 +1,5 @@
-import { PostsList } from "app/components/posts";
+import { PostsList, OtherProjectsList } from "app/components/posts";
 import { getProjects } from "app/project/utils";
-import { getBlogPosts } from "app/article/utils";
 
 export default function Page() {
   const projects = getProjects().map((p) => ({
@@ -9,23 +8,18 @@ export default function Page() {
     href: `/project/${p.slug}`,
   }));
 
-  const blogs = getBlogPosts().map((b) => ({
-    ...b,
-    type: "blog" as const,
-    href: `/article/${b.slug}`,
-  }));
+  const byOrder = (
+    a: { metadata: { order?: number } },
+    b: { metadata: { order?: number } },
+  ) => (a.metadata.order ?? Infinity) - (b.metadata.order ?? Infinity);
 
-  const all = [...projects, ...blogs].sort(
-    (a, b) =>
-      new Date(b.metadata.publishedAt).getTime() -
-      new Date(a.metadata.publishedAt).getTime(),
-  );
+  const featuredProjects = projects
+    .filter((p) => p.metadata.featured)
+    .sort(byOrder);
 
-  const sortedProjects = [...projects].sort(
-    (a, b) =>
-      new Date(b.metadata.publishedAt).getTime() -
-      new Date(a.metadata.publishedAt).getTime(),
-  );
+  const otherProjects = projects
+    .filter((p) => !p.metadata.featured)
+    .sort(byOrder);
 
   return (
     <section>
@@ -103,7 +97,8 @@ export default function Page() {
         </p> */}
         </div>
       </div>
-      <PostsList posts={sortedProjects} />
+      <PostsList posts={featuredProjects} />
+      <OtherProjectsList posts={otherProjects} />
     </section>
   );
 }

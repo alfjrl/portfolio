@@ -34,6 +34,15 @@ export const workExperience: WorkExperience[] = [
     ],
   },
   {
+    years: "2022 – 2023",
+    title: "Product Designer",
+    company: { en: "Obran Cooperative", zh: "" },
+    description: [
+      // "Led end-to-end design for core product features across web and mobile, from discovery through to shipping.",
+      // "Partnered with engineering and product management to define requirements and translate user insights into scalable solutions.",
+    ],
+  },
+  {
     years: "2022 – 2022",
     title: "Product Design Intern",
     company: { en: "Nakamoto & Turing Labs", zh: "" },

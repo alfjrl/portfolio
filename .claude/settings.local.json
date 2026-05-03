@@ -9,7 +9,10 @@
       "WebFetch(domain:www.rachelchen.tech)",
       "Bash(node -e \"const {Source_Serif_4} = require\\('next/font/google'\\); console.log\\('Source_Serif_4 exists'\\)\")",
       "Bash(pnpm dev *)",
-      "Bash(curl -s http://localhost:3000/about)"
+      "Bash(curl -s http://localhost:3000/about)",
+      "Bash(npm view *)",
+      "Bash(npm -v)",
+      "Bash(npx tsc *)"
     ],
     "deny": [],
     "ask": []

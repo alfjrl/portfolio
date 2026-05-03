@@ -4,6 +4,7 @@ import path from 'path'
 type Metadata = {
   title: string
   summary: string
+  cardDescription: string
   publishedAt: string
   category: string
   coverImage: string
@@ -21,6 +22,8 @@ type Metadata = {
   solutionLink: string
   impact: string
   impactLink: string
+  featured: boolean
+  order: number
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -33,9 +36,17 @@ function parseFrontmatter(fileContent: string) {
 
   frontMatterLines.forEach((line) => {
     let [key, ...valueArr] = line.split(': ')
+    let rawKey = key.trim() as keyof Metadata
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1')
-    metadata[key.trim() as keyof Metadata] = value
+
+    if (rawKey === 'featured') {
+      ;(metadata as Metadata).featured = value === 'true'
+    } else if (rawKey === 'order') {
+      ;(metadata as Metadata).order = Number(value)
+    } else {
+      ;(metadata as any)[rawKey] = value
+    }
   })
 
   return { metadata: metadata as Metadata, content }

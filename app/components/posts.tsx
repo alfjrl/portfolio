@@ -7,6 +7,7 @@ import { useCallback } from "react";
 type PostMeta = {
   title: string;
   summary: string;
+  cardDescription?: string;
   publishedAt: string;
   coverImage?: string;
   platform?: string;
@@ -38,14 +39,14 @@ function PostsList({ posts }: { posts: PostItem[] }) {
   return (
     <div className="w-full bg-[#fafcfd] border-t border-gray-200" id="project">
       <div
-        aria-label="Work and writing"
+        aria-label="Selected work"
         className="p-4 md:py-16  max-w-[1280px] w-full md:mx-auto border-x border-gray-200 "
       >
         <h2
           className="text-2xl md:text-3xl text-gray-900 font-black mb-4 md:mb-8 animate-blur-in"
           style={{ animationDelay: "0.3s" }}
         >
-          Selected Works
+          Selected Work
         </h2>
         <ul className="flex flex-col md:grid md:grid-cols-2 gap-4">
           {posts.map((post, index) => {
@@ -64,7 +65,7 @@ function PostsList({ posts }: { posts: PostItem[] }) {
                 {/* card */}
                 <Link
                   href={post.href}
-                  className="p-4 block w-full h-fit overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-gray-200 rounded-md bg-white"
+                  className="p-4 block w-full h-full overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-gray-200 rounded-md bg-white"
                 >
                   {/* Content */}
                   <div className="h-full w-full flex flex-col">
@@ -110,13 +111,15 @@ function PostsList({ posts }: { posts: PostItem[] }) {
                         {post.metadata.title}
                       </h2>
                       {/* Description & image */}
-                      {/* <div>
-                        <p
-                          className={`text-gray-500 leading-relaxed group-hover:text-gray-900 transition ease-in`}
-                        >
-                          {post.metadata.summary}
-                        </p>
-                      </div> */}
+                      {post.metadata.cardDescription && (
+                        <div>
+                          <p
+                            className={`text-gray-500 leading-relaxed group-hover:text-gray-900 transition ease-in`}
+                          >
+                            {post.metadata.cardDescription}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </Link>
@@ -129,4 +132,86 @@ function PostsList({ posts }: { posts: PostItem[] }) {
   );
 }
 
-export { PostsList };
+function OtherProjectsList({ posts }: { posts: PostItem[] }) {
+  const onEnter = useCallback((lbl: string, e: React.MouseEvent) => {
+    window.dispatchEvent(
+      new CustomEvent("cursor:expand", {
+        detail: { label: lbl, x: e.clientX, y: e.clientY },
+      }),
+    );
+  }, []);
+
+  const onLeave = useCallback(() => {
+    window.dispatchEvent(new CustomEvent("cursor:collapse"));
+  }, []);
+
+  if (posts.length === 0) return null;
+
+  return (
+    <div className="w-full border-t border-gray-200">
+      <div
+        aria-label="More work"
+        className="p-4 md:py-16 max-w-[1280px] w-full md:mx-auto border-x border-gray-200"
+      >
+        <h2
+          className="text-2xl md:text-3xl text-gray-900 font-black mb-4 md:mb-8 animate-blur-in"
+          style={{ animationDelay: "0.3s" }}
+        >
+          More Work
+        </h2>
+        <ul className="flex flex-col md:grid md:grid-cols-2 gap-4">
+          {posts.map((post, index) => {
+            const { coverImage } = post.metadata;
+            return (
+              <li
+                key={`other-${post.slug}`}
+                className="animate-blur-in group"
+                style={{ animationDelay: `${0.4 + index * 0.08}s` }}
+                onMouseEnter={(e) => onEnter("VIEW CASE STUDY", e)}
+                onMouseLeave={onLeave}
+              >
+                <Link
+                  href={post.href}
+                  className="p-4 block w-full h-full overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-gray-200 rounded-md bg-white"
+                >
+                  <div className="h-full w-full flex flex-col">
+                    {coverImage && (
+                      <div
+                        className="md:basis-3/4 overflow-hidden"
+                        style={{
+                          viewTransitionName: `project-cover-${post.slug}`,
+                        }}
+                      >
+                        <div className="relative w-full aspect-[16/9]">
+                          <Image
+                            src={coverImage}
+                            alt={post.metadata.title}
+                            fill
+                            sizes="(min-width: 768px) 50vw, 100vw"
+                            className="object-cover transition-transform ease-in bg-white"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    <div className="flex flex-col pt-4 basis-full md:basis-1/4">
+                      <h3 className="text-xl md:text-2xl font-bold text-black mb-2">
+                        {post.metadata.title}
+                      </h3>
+                      {post.metadata.cardDescription && (
+                        <p className="text-gray-500 leading-relaxed group-hover:text-gray-900 transition ease-in">
+                          {post.metadata.cardDescription}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export { PostsList, OtherProjectsList };
