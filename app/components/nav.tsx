@@ -1,14 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { RiMenuFill, RiCloseFill } from "react-icons/ri";
-import { FiArrowUpRight } from "react-icons/fi";
+import {
+  getLocaleFromPath,
+  swapLocaleInPath,
+  type Locale,
+} from "app/lib/i18n";
+import { getDictionary } from "app/lib/dictionaries";
 
 export default function Navbar() {
   const resume = "https://drive.proton.me/urls/2MFFH0QYWW#FdUWt8ABQq2e";
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const locale = getLocaleFromPath(pathname);
+  const dict = getDictionary(locale);
+  const otherLocale: Locale = locale === "en" ? "zh" : "en";
+  const otherHref = swapLocaleInPath(pathname, otherLocale);
+  const workHref = locale === "zh" ? "/zh#project" : "/#project";
+  const aboutHref = locale === "zh" ? "/zh/about" : "/about";
+  const homeHref = locale === "zh" ? "/zh" : "/";
+
+  // Keep <html lang> in sync with the active locale. The root layout renders a
+  // static lang="en"; this nudges it whenever the locale changes on the client.
+  useEffect(() => {
+    document.documentElement.lang = locale === "zh" ? "zh-Hant" : "en";
+  }, [locale]);
 
   function ArrowIcon() {
     return (
@@ -27,28 +47,52 @@ export default function Navbar() {
     );
   }
 
+  function LanguageToggle({ className = "" }: { className?: string }) {
+    return (
+      <Link
+        href={otherHref}
+        aria-label={dict.languageToggle.switchTo}
+        className={`font-bold text-base text-gray-600 hover:text-black flex items-center gap-1 ${className}`}
+      >
+        <span
+          className={locale === "en" ? "text-black" : ""}
+          aria-current={locale === "en" ? "true" : undefined}
+        >
+          {dict.languageToggle.enLabel}
+        </span>
+        <span aria-hidden="true">/</span>
+        <span
+          className={locale === "zh" ? "text-black" : ""}
+          aria-current={locale === "zh" ? "true" : undefined}
+        >
+          {dict.languageToggle.zhLabel}
+        </span>
+      </Link>
+    );
+  }
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
       {/* desktop navbar */}
       <div className="p-4 md:py-6  max-w-[1280px] w-full md:mx-auto hidden sm:flex sm:items-center sm:justify-between">
-        <Link href="/">
+        <Link href={homeHref}>
           <Image src="/Al.svg" alt="Alfred Lin logo" width={32} height={18} />
         </Link>
         <ul className="flex flex-row items-center">
           <li>
             <Link
-              href="/#project"
+              href={workHref}
               className="flex font-bold text-base text-gray-600 hover:text-black"
             >
-              <span className="h-7">WORK</span>
+              <span className="h-7">{dict.nav.work}</span>
             </Link>
           </li>
           <li>
             <Link
-              href="/about"
+              href={aboutHref}
               className="flex font-bold text-base text-gray-600 hover:text-black ml-12"
             >
-              <span className="h-7">ABOUT</span>
+              <span className="h-7">{dict.nav.about}</span>
             </Link>
           </li>
           <li>
@@ -59,15 +103,18 @@ export default function Navbar() {
               className="font-bold text-base text-gray-600 hover:text-black flex items-center bottom gap-2 ml-12"
             >
               <ArrowIcon />
-              <span className="h-7">RESUME</span>
+              <span className="h-7">{dict.nav.resume}</span>
             </Link>
+          </li>
+          <li className="ml-12">
+            <LanguageToggle />
           </li>
         </ul>
       </div>
 
       {/* mobile hamburger button */}
       <div className="p-4 flex items-center justify-between sm:hidden">
-        <Link href="/">
+        <Link href={homeHref}>
           <Image src="/Al.svg" alt="Alfred Lin logo" width={32} height={18} />
         </Link>
         <button
@@ -88,29 +135,29 @@ export default function Navbar() {
         <ul className="w-screen h-screen grid content-center">
           <li className="mx-8 my-6">
             <Link
-              href="/"
+              href={homeHref}
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              HOME
+              {dict.nav.home}
             </Link>
           </li>
           <li className="mx-8 my-6">
             <Link
-              href="/#project"
+              href={workHref}
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              WORK
+              {dict.nav.work}
             </Link>
           </li>
           <li className="mx-8 my-6">
             <Link
-              href="/about"
+              href={aboutHref}
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              ABOUT
+              {dict.nav.about}
             </Link>
           </li>
           <li className="mx-8 my-6 flex items-center gap-2">
@@ -120,9 +167,12 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="font-medium text-base"
             >
-              <span className="h-7">RESUME</span>
+              <span className="h-7">{dict.nav.resume}</span>
             </Link>
             <ArrowIcon />
+          </li>
+          <li className="mx-8 my-6">
+            <LanguageToggle />
           </li>
         </ul>
       </div>
