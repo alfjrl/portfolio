@@ -1,25 +1,25 @@
 ---
-title: "Unifying Internal Software Tools for an E-bike Company"
-summary: "Designed a new service center feature integrated into the existing bike service tool, streamlining e-bike configuration and laying the foundation for future product development."
+title: "A Service-Center Tool to Identify, Connect, and Configure E-bikes"
+summary: "Designed a new service-center feature inside the existing bike service tool so regional centers could identify, connect to, configure, and update e-bikes in a single flow."
 cardDescription: "A service-center feature integrated into existing e-bike software, halving servicing time by extending tooling rather than rebuilding."
-featured: false
-order: 5
+featured: true
+order: 4
 publishedAt: "2021"
 category: "Work Experience"
-coverImage: "/project/hyena.png"
+coverImage: "/project/hyena/hero.png"
 role: "Product Designer, Product Manager"
 year: "2020 - 2021"
 releaseYear: "2021"
 status: "Shipped"
 team: "1 UI Designer, 1 Product Manager, and 10 Software Engineers"
 platform: "Desktop Application"
-glanceTitle: "Building a new feature to fit in the existing software system to create a consistent user experience."
-glanceSummary: "The regional service center needed a new feature to support their daily task including checking the e-bike status and updating the e-bike configuration fast and efficiently. The original proposal was to customize one of the internal applications, however, after user interviews and system evaluation, we came up with a new design to provide an easy-to-use solution integrated into the existing application for users and lay the foundation for future product development."
-problem: "The initial design decision led to not only bad user experiences, but also a complicated product design for maintaining, and adding new features."
+glanceTitle: "Designing the end-to-end service flow — identify, connect, configure, update — inside the tool technicians already used."
+glanceSummary: "Regional service centers needed a fast, reliable way to check an e-bike's status and re-configure it after sales. Instead of customizing the factory assembly tool, we designed a new feature inside the existing bike service tool that walked technicians from bike identification through Bluetooth connection to configuration and update — collapsing a multi-app workflow into a single screen sequence."
+problem: "Service centers had no first-class tool for their job. The existing options forced technicians to cross-reference bike data across multiple applications before they could touch a single setting."
 problemLink: "#the-problem"
-solution: "A new product design concept for the internal system to streamline workflows and a new user flow and new interfaces in the existing bike service tool."
-solutionLink: "#system-level-redesign"
-impact: "Reduced e-bike servicing time by 50% and delivered the feature within 2 months by integrating into an existing tool rather than building from scratch."
+solution: "A guided service-center feature inside the existing bike service tool — bike identification, Bluetooth pairing, status review, and configuration update in one continuous flow."
+solutionLink: "#designing-the-service-center-feature"
+impact: "Cut e-bike servicing time by 50% and shipped in 2 months by extending an existing tool rather than building from scratch."
 impactLink: "#impact"
 ---
 
@@ -32,17 +32,17 @@ impactLink: "#impact"
   height="auto"
 />
 
-Hyena split its software into several separate applications to demo ideas faster and offer customizable client solutions. By 2020, the strategy had run its course — the fragmented system created a steep learning curve for users and an unsustainable maintenance burden for engineering.
+Hyena split its software into several separate applications to demo ideas faster and offer customizable client solutions. By 2020, the strategy had run its course — the fragmented system created a steep learning curve for users and an unsustainable maintenance burden for engineering. Regional service centers, in particular, had no application built for the work they actually did day-to-day.
 
 ## My Role
 
-I led design for all software systems except the rider mobile app, working alongside a senior PM, a firmware manager, and ten engineers. For the service center feature specifically, I owned user flows and wireframes through handoff; a collaborating designer applied visual design to bring it to production.
+I led design for all software systems except the rider mobile app, working alongside a senior PM, a firmware manager, and ten engineers. For the service-center feature specifically, I owned the end-to-end design — research, user flows, and interaction design through handoff — partnering with a visual designer on production polish.
 
 ## The Problem
 
-The task: **find a solution for regional service centers to update e-bike configurations for after-sales services**. The original proposal — giving service centers access to BTS, the factory assembly tool — would have required heavy customization and training we couldn't deliver in time.
+The task: **give regional service centers a reliable way to identify, configure, and update e-bikes after sale**. The original proposal — granting service centers access to BTS, the factory assembly tool — would have required heavy customization and training we couldn't deliver in time, and would have exposed manufacturing-only controls to a much broader audience.
 
-We audited the existing system and interviewed 6 users across departments. Two findings stood out: e-bike information and management functions were scattered across separate applications, and there was no reliable way to identify a bike's model and settings from the bike itself.
+We audited the existing system and interviewed 6 users across departments. Two findings stood out: **e-bike information and management functions were scattered across separate applications**, and there was **no reliable way to identify a bike's model and settings from the bike itself**.
 
 <Image
   src="/project/hyena-workflow.png"
@@ -51,46 +51,22 @@ We audited the existing system and interviewed 6 users across departments. Two f
   height="auto"
 />
 
-Sequence modeling exposed the bottleneck: **80% of setup time was spent manually cross-checking the same information across multiple applications** before any settings could be applied.
+Sequence modeling exposed the bottleneck: **80% of setup time was spent manually cross-checking the same information across multiple applications** before any settings could be applied. Technicians needed a single flow that handled identification, connection, and configuration end-to-end — without leaving the tool they already worked in.
 
-What looked like a feature request required rethinking the system's foundation — without it, any new feature would inherit the same fragmentation.
+## Designing the Service-Center Feature
 
-## System-Level Redesign
+The feature lives inside the existing bike service tool, accessed from a top-left menu icon. Rather than introduce a new application, we built a guided sequence — **login → identify → connect → review → update** — that mirrored the technician's physical workflow at the service bench.
 
-### Product Architecture
-
-<Image
-  src="/project/hyena-newsd.png"
-  alt="Hyena new system design plan"
-  width="auto"
-  height="auto"
-/>
-
-We consolidated from 3 applications to 2 — **Hyena Management Tool** and **Hyena Manufacturing Tool** — eliminating duplicated functions and creating a single source of truth for bike information. Engineering no longer had to maintain the same logic across multiple codebases, and the consolidated structure became the foundation for the product roadmap.
-
-### Bike Model Data Structure
-
-<Image
-  src="/project/hyena-bikemodel.png"
-  alt="Hyena new bike model data structure design"
-  width="auto"
-  height="auto"
-/>
-
-A unified bike model structure serves as the data backbone — performing validation system-wide so assembly and service operations always reference consistent, accurate information.
-
-## The Shipped Feature
-
-### Access the Service Center Feature
+### Accessing the Feature
 
 <Image
   src="/project/hyena-ui-home.png"
-  alt="HST Homepage"
+  alt="HST Homepage with the new Service Center feature accessible as the first item from the top right menu."
   width="auto"
   height="auto"
 />
 
-The service center feature is integrated directly into the existing bike service tool via a top-left menu icon. A login gate enforces local regulatory constraints and lets us track service histories per regional center.
+A login gate enforces local regulatory constraints — only authorized regional centers can re-configure bikes — and lets us track service histories per center.
 
 <Image
   src="/project/hyena-ui-login.png"
@@ -99,7 +75,7 @@ The service center feature is integrated directly into the existing bike service
   height="auto"
 />
 
-### Select the Bike Model
+### Identifying the Bike
 
 <Image
   src="/project/hyena-ui-connect.png"
@@ -108,9 +84,15 @@ The service center feature is integrated directly into the existing bike service
   height="auto"
 />
 
-Users select the bike model — by brand, name, or frame number — connect to the e-bike, and the system handles the rest.
+Technicians select the bike model by brand, name, or frame number. The search-first approach was deliberate: in interviews, technicians told us they almost always had at least one of these data points in hand from the work order, but never a consistent one — so the same field had to accept any of them.
 
-### Service the Bike
+### Connecting Over Bluetooth
+
+The pairing handshake spans both hardware and software: the technician double-clicks the power button on the bike's HMI to enter pairing mode, then clicks **Connect** in the service tool. The tool scans for nearby bikes, and once paired the HMI flashes its indicator light to confirm the right bike is on the bench. The bike's live data populates the next screen automatically — no manual entry of identifiers, no jumping between apps.
+
+We surface a single visible connection indicator at the top of the workflow so technicians can always tell at a glance whether the tool is still talking to the bike — particularly important once an update is in progress.
+
+### Reviewing Bike Status
 
 <Image
   src="/project/hyena-ui-bikestatus.png"
@@ -119,7 +101,11 @@ Users select the bike model — by brand, name, or frame number — connect to t
   height="auto"
 />
 
-Once connected, the system surfaces full bike details — part numbers, firmware version, and whether re-configuration is needed.
+Once connected, the system surfaces the full bike details — part numbers, firmware version, current configuration — and flags whether re-configuration is needed. Everything the technician used to gather from three separate applications now loads on one screen, sourced directly from the bike.
+
+We also redesigned the bike status diagnosis workflow as part of this effort — outside the scope of this case study, but happy to walk through it if you're curious; feel free to reach out.
+
+### Updating the Configuration
 
 <Image
   src="/project/hyena-ui-update.png"
@@ -128,7 +114,7 @@ Once connected, the system surfaces full bike details — part numbers, firmware
   height="auto"
 />
 
-Progress and status display throughout the update, with a warning to keep the bike connected until complete.
+Progress and status display throughout the update, with a persistent warning to keep the bike connected until complete — interrupting an in-progress update can leave the controller in an unrecoverable state, so the action becomes non-cancellable past a certain threshold.
 
 <Image
   src="/project/hyena-ui-complete.png"
@@ -137,11 +123,26 @@ Progress and status display throughout the update, with a warning to keep the bi
   height="auto"
 />
 
+A clear completion state closes the loop and writes the service event to the bike's history.
+
+## The Bike Model Data Structure
+
+The feature's flow — search by brand, name, or frame number; pair; auto-populate live bike data — assumes one thing the existing system couldn't provide: that any reference to a bike resolves to the same canonical record.
+
+<Image
+  src="/project/hyena-bikemodel.png"
+  alt="Hyena new bike model data structure design"
+  width="auto"
+  height="auto"
+/>
+
+So we shipped a unified bike model structure as the data backbone alongside the feature — performing validation system-wide so assembly and service operations always reference consistent, accurate information. Without it, "identify the bike" would still have meant cross-checking three sources.
+
 ## Impact
 
 1. Saved **50% of the time** required to service and re-configure an e-bike.
-2. **Delivered within 2 months** by integrating into an existing tool rather than building new software.
-3. **No additional training costs** at regional service centers.
+2. **Delivered within 2 months** by extending an existing tool rather than building new software.
+3. **No additional training costs** at regional service centers — technicians stayed in the application they already knew.
 
 Reorganizing bike model data alone generated immediate positive feedback — users noticed the consistency before any UI changes shipped.
 
@@ -149,7 +150,7 @@ Reorganizing bike model data alone generated immediate positive feedback — use
 
 ### Observing the Root Cause
 
-Software-hardware research requires following how users actually move through a physical workflow, not just observing interface interactions. The root cause here was never the UI — it was fragmented data.
+Software-hardware research requires following how users actually move through a physical workflow, not just observing interface interactions. The root cause here was never the UI — it was fragmented data and a missing end-to-end flow.
 
 ### The Best Solution
 

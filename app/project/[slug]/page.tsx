@@ -100,7 +100,7 @@ export default async function ProjectPage({ params }) {
             src={coverImage}
             alt={`${title} cover`}
             fill
-            className="object-contain"
+            className="object-cover"
             priority
           />
         </div>

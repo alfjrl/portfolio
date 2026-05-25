@@ -72,25 +72,21 @@ function PostsList({ posts }: { posts: PostItem[] }) {
                     {/* Cover image — projects only */}
                     {coverImage && (
                       <div
-                        className="md:basis-3/4 overflow-hidden"
+                        className="relative w-full aspect-[16/9] overflow-hidden"
                         style={{
                           viewTransitionName: `project-cover-${post.slug}`,
                         }}
                       >
-                        <div className="relative w-full aspect-[16/9]">
-                          <Image
-                            src={coverImage}
-                            alt={post.metadata.title}
-                            fill
-                            sizes="(min-width: 768px) 50vw, 100vw"
-                            className="object-cover transition-transform ease-in bg-white"
-                          />
-                        </div>
+                        <Image
+                          src={coverImage}
+                          alt={post.metadata.title}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          className="object-cover transition-transform ease-in bg-white"
+                        />
                       </div>
                     )}
-                    <div
-                      className={`flex flex-col pt-4 ${isProject ? "basis-full md:basis-1/4 " : "basis-full"}`}
-                    >
+                    <div className="flex flex-col pt-4">
                       {/* Tags */}
                       {/* <div className="flex flex-wrap gap-2 mb-2">
                       <span className="inline-block text-xs font-medium uppercase p-1 rounded-md tracking-wide bg-gray-100 text-gray-600 group-hover:text-gray-900 transition ease-in">
@@ -177,23 +173,21 @@ function OtherProjectsList({ posts }: { posts: PostItem[] }) {
                   <div className="h-full w-full flex flex-col">
                     {coverImage && (
                       <div
-                        className="md:basis-3/4 overflow-hidden"
+                        className="relative w-full aspect-[16/9] overflow-hidden"
                         style={{
                           viewTransitionName: `project-cover-${post.slug}`,
                         }}
                       >
-                        <div className="relative w-full aspect-[16/9]">
-                          <Image
-                            src={coverImage}
-                            alt={post.metadata.title}
-                            fill
-                            sizes="(min-width: 768px) 50vw, 100vw"
-                            className="object-cover transition-transform ease-in bg-white"
-                          />
-                        </div>
+                        <Image
+                          src={coverImage}
+                          alt={post.metadata.title}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          className="object-cover transition-transform ease-in bg-white"
+                        />
                       </div>
                     )}
-                    <div className="flex flex-col pt-4 basis-full md:basis-1/4">
+                    <div className="flex flex-col pt-4">
                       <h3 className="text-xl md:text-2xl font-bold text-black mb-2">
                         {post.metadata.title}
                       </h3>

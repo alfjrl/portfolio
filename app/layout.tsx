@@ -14,15 +14,33 @@ export const metadata: Metadata = {
     default: "Alfred J. Lin | Portfolio",
     template: "%s | Alfred J. Lin",
   },
-  description: "This is my portfolio.",
+  description:
+    "Welcome to Alfred's product design portfolio. Alfred is a a product designer who turns research into accessible, considered interfaces for complex information systems.",
   openGraph: {
     title: "Alfred J. Lin | Portfolio",
     description:
-      "Welcome to Alfred's product design portfolio. Alfred is a data-driven product designer, who loves working on complex systems and creating user-centered & ethically humane design.",
+      "Welcome to Alfred's product design portfolio. Alfred is a a product designer who turns research into accessible, considered interfaces for complex information systems.",
     url: baseUrl,
     siteName: "Alfred J. Lin | Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `${baseUrl}/og?title=${encodeURIComponent("Alfred J. Lin | Portfolio")}`,
+        width: 1200,
+        height: 630,
+        alt: "Alfred J. Lin | Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alfred J. Lin | Portfolio",
+    description:
+      "Welcome to Alfred's product design portfolio. Alfred is a a product designer who turns research into accessible, considered interfaces for complex information systems.",
+    images: [
+      `${baseUrl}/og?title=${encodeURIComponent("Alfred J. Lin | Portfolio")}`,
+    ],
   },
   icons: {
     icon: "/favi.png",

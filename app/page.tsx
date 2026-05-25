@@ -25,10 +25,22 @@ export default function Page() {
     <section>
       {/* hero intro */}
       <div className="max-w-[1280px] w-full md:mx-auto border-x border-gray-200">
-        <div className="px-4 py-16 md:py-36 text-gray-500">
+        <div className="px-4 py-16 md:py-48 text-gray-500">
+          <p
+            className="md:pl-24 md:pr-60 mb-6 animate-blur-in"
+            style={{ animationDelay: "0s" }}
+          >
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gray-500">
+              <span className="relative inline-flex w-1.5 h-1.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
+                <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              </span>
+              Open to roles · Taiwan · Jul 2026
+            </span>
+          </p>
           <h1
             className="text-3xl md:text-5xl md:pl-24 md:pr-60 font-serif mb-8 text-gray-900 md:leading-[3.5rem] animate-blur-in"
-            style={{ animationDelay: "0s" }}
+            style={{ animationDelay: "0.1s" }}
           >
             Hi, I'm Alfred, a product designer who turns research into
             accessible, considered interfaces for complex information systems.
@@ -37,7 +49,7 @@ export default function Page() {
           <div className="md:pl-24 md:pr-60 md:text-lg font-semibold">
             <p
               className=" mb-2 animate-blur-in"
-              style={{ animationDelay: "0.1s" }}
+              style={{ animationDelay: "0.2s" }}
             >
               Working end-to-end — from research through production-ready code —
               balancing{" "}
@@ -51,7 +63,7 @@ export default function Page() {
             </p>
             <p
               className="mb-2 animate-blur-in"
-              style={{ animationDelay: "0.2s" }}
+              style={{ animationDelay: "0.3s" }}
             >
               Currently{" "}
               <span className="font-black text-gray-900">

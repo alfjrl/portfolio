@@ -7,7 +7,7 @@ import { RiMenuFill, RiCloseFill } from "react-icons/ri";
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Navbar() {
-  const resume = "https://drive.proton.me/urls/2MFFH0QYWW#FdUWt8ABQq2e";
+  const resume = "https://drive.proton.me/urls/AJ8Z55TWR0#aAKFANmBjwyx";
   const [open, setOpen] = useState(false);
 
   function ArrowIcon() {
@@ -40,7 +40,7 @@ export default function Navbar() {
               href="/#project"
               className="flex font-bold text-base text-gray-600 hover:text-black"
             >
-              <span className="h-7">WORK</span>
+              <span className="h-7">Work</span>
             </Link>
           </li>
           <li>
@@ -48,7 +48,7 @@ export default function Navbar() {
               href="/about"
               className="flex font-bold text-base text-gray-600 hover:text-black ml-12"
             >
-              <span className="h-7">ABOUT</span>
+              <span className="h-7">About</span>
             </Link>
           </li>
           <li>
@@ -59,7 +59,7 @@ export default function Navbar() {
               className="font-bold text-base text-gray-600 hover:text-black flex items-center bottom gap-2 ml-12"
             >
               <ArrowIcon />
-              <span className="h-7">RESUME</span>
+              <span className="h-7">Resume</span>
             </Link>
           </li>
         </ul>
@@ -92,7 +92,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              HOME
+              Home
             </Link>
           </li>
           <li className="mx-8 my-6">
@@ -101,7 +101,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              WORK
+              Work
             </Link>
           </li>
           <li className="mx-8 my-6">
@@ -110,7 +110,7 @@ export default function Navbar() {
               className="font-medium text-base"
               onClick={() => setOpen(false)}
             >
-              ABOUT
+              About
             </Link>
           </li>
           <li className="mx-8 my-6 flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="font-medium text-base"
             >
-              <span className="h-7">RESUME</span>
+              <span className="h-7">Resume</span>
             </Link>
             <ArrowIcon />
           </li>
