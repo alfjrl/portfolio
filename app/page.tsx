@@ -35,7 +35,7 @@ export default function Page() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
                 <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-emerald-500" />
               </span>
-              Open to roles · Taiwan · Jul 2026
+              Open to new opportunities
             </span>
           </p>
           <h1
@@ -47,7 +47,7 @@ export default function Page() {
           </h1>
           {/* description */}
           <div className="md:pl-24 md:pr-60 md:text-lg font-semibold">
-            <p
+            {/* <p
               className=" mb-2 animate-blur-in"
               style={{ animationDelay: "0.2s" }}
             >
@@ -60,10 +60,10 @@ export default function Page() {
                 technical realities
               </span>
               .
-            </p>
+            </p> */}
             <p
               className="mb-2 animate-blur-in"
-              style={{ animationDelay: "0.3s" }}
+              style={{ animationDelay: "0.2s" }}
             >
               Currently{" "}
               <span className="font-black text-gray-900">
