@@ -28,41 +28,43 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
+    <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
       {/* desktop navbar */}
-      <div className="p-4 md:py-6  max-w-[1280px] w-full md:mx-auto hidden sm:flex sm:items-center sm:justify-between">
-        <Link href="/">
-          <Image src="/Al.svg" alt="Alfred Lin logo" width={32} height={18} />
-        </Link>
-        <ul className="flex flex-row items-center">
-          <li>
-            <Link
-              href="/#project"
-              className="flex font-bold text-base text-gray-600 hover:text-black"
-            >
-              <span className="h-7">Work</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/about"
-              className="flex font-bold text-base text-gray-600 hover:text-black ml-12"
-            >
-              <span className="h-7">About</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold text-base text-gray-600 hover:text-black flex items-center bottom gap-2 ml-12"
-            >
-              <ArrowIcon />
-              <span className="h-7">Resume</span>
-            </Link>
-          </li>
-        </ul>
+      <div className="max-w-[1440px] w-full px-4 md:px-16 md:mx-auto hidden sm:flex sm:items-center sm:justify-between">
+        <div className="flex items-center justify-between w-full px-4 py-6">
+          <Link href="/">
+            <Image src="/al.svg" alt="Alfred Lin logo" width={32} height={18} />
+          </Link>
+          <ul className="flex flex-row items-center">
+            <li>
+              <Link
+                href="/#project"
+                className="flex font-black text-gray-700  hover:text-black"
+              >
+                <span className="">Work</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="flex font-black text-gray-700 hover:text-black ml-6"
+              >
+                <span className="">About</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-black text-gray-700 hover:text-black flex items-center bottom gap-2 ml-6"
+              >
+                <ArrowIcon />
+                <span className="">Resume</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* mobile hamburger button */}

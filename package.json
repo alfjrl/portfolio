@@ -12,6 +12,7 @@
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.81",
     "@ai-sdk/react": "^3.0.194",
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/postcss": "4.0.0-alpha.13",
     "@types/node": "20.11.17",
     "@types/react": "18.2.55",
@@ -22,6 +23,7 @@
     "@vercel/speed-insights": "^1.0.9",
     "ai": "^6.0.192",
     "geist": "^1.7.0",
+    "gsap": "^3.15.0",
     "next": "^16.1.1",
     "next-mdx-remote": "^6.0.0",
     "postcss": "^8.4.35",

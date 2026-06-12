@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { useCallback } from "react";
+import ProjectCard from "./project-card";
 
 type PostMeta = {
   title: string;
@@ -24,18 +22,6 @@ type PostItem = {
 };
 
 function PostsList({ posts }: { posts: PostItem[] }) {
-  const onEnter = useCallback((lbl: string, e: React.MouseEvent) => {
-    window.dispatchEvent(
-      new CustomEvent("cursor:expand", {
-        detail: { label: lbl, x: e.clientX, y: e.clientY },
-      }),
-    );
-  }, []);
-
-  const onLeave = useCallback(() => {
-    window.dispatchEvent(new CustomEvent("cursor:collapse"));
-  }, []);
-
   return (
     <div className="w-full bg-[#fafcfd] border-t border-gray-200" id="project">
       <div
@@ -51,74 +37,20 @@ function PostsList({ posts }: { posts: PostItem[] }) {
         <ul className="flex flex-col md:grid md:grid-cols-2 gap-4">
           {posts.map((post, index) => {
             const isProject = post.type === "project";
-            const { coverImage, platform, releaseYear, status } = post.metadata;
-            const lbl = isProject ? "VIEW CASE STUDY" : "READ ARTICLE";
-
             return (
               <li
                 key={`${post.type}-${post.slug}`}
-                className="animate-blur-in group"
+                className="animate-blur-in"
                 style={{ animationDelay: `${0.4 + index * 0.08}s` }}
-                onMouseEnter={(e) => onEnter(lbl, e)}
-                onMouseLeave={onLeave}
               >
-                {/* card */}
-                <Link
+                <ProjectCard
+                  slug={post.slug}
                   href={post.href}
-                  className="p-4 block w-full h-full overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-gray-200 rounded-md bg-white"
-                >
-                  {/* Content */}
-                  <div className="h-full w-full flex flex-col">
-                    {/* Cover image — projects only */}
-                    {coverImage && (
-                      <div
-                        className="relative w-full aspect-[16/9] overflow-hidden"
-                        style={{
-                          viewTransitionName: `project-cover-${post.slug}`,
-                        }}
-                      >
-                        <Image
-                          src={coverImage}
-                          alt={post.metadata.title}
-                          fill
-                          sizes="(min-width: 768px) 50vw, 100vw"
-                          className="object-cover transition-transform ease-in bg-white"
-                        />
-                      </div>
-                    )}
-                    <div className="flex flex-col pt-4">
-                      {/* Tags */}
-                      {/* <div className="flex flex-wrap gap-2 mb-2">
-                      <span className="inline-block text-xs font-medium uppercase p-1 rounded-md tracking-wide bg-gray-100 text-gray-600 group-hover:text-gray-900 transition ease-in">
-                        {isProject ? "Case Study" : "Article"}
-                      </span>
-                      {platform && (
-                        <span className="inline-block text-xs font-medium uppercase p-1  rounded-md tracking-wide bg-gray-100 text-gray-600 group-hover:text-gray-900 transition ease-in">
-                          {platform}
-                        </span>
-                      )}
-                      {releaseYear && (
-                        <span className="inline-block text-xs font-medium uppercase p-1 rounded-md tracking-wide bg-gray-100 text-gray-600 group-hover:text-gray-900 transition ease-in">
-                          {releaseYear} - {status}
-                        </span>
-                      )}
-                    </div> */}
-                      <h2 className="text-xl md:text-2xl font-bold text-black mb-2">
-                        {post.metadata.title}
-                      </h2>
-                      {/* Description & image */}
-                      {post.metadata.cardDescription && (
-                        <div>
-                          <p
-                            className={`text-gray-500 leading-relaxed group-hover:text-gray-900 transition ease-in`}
-                          >
-                            {post.metadata.cardDescription}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </Link>
+                  title={post.metadata.title}
+                  cardDescription={post.metadata.cardDescription}
+                  coverImage={post.metadata.coverImage}
+                  hoverLabel={isProject ? "VIEW CASE STUDY" : "READ ARTICLE"}
+                />
               </li>
             );
           })}
@@ -129,18 +61,6 @@ function PostsList({ posts }: { posts: PostItem[] }) {
 }
 
 function OtherProjectsList({ posts }: { posts: PostItem[] }) {
-  const onEnter = useCallback((lbl: string, e: React.MouseEvent) => {
-    window.dispatchEvent(
-      new CustomEvent("cursor:expand", {
-        detail: { label: lbl, x: e.clientX, y: e.clientY },
-      }),
-    );
-  }, []);
-
-  const onLeave = useCallback(() => {
-    window.dispatchEvent(new CustomEvent("cursor:collapse"));
-  }, []);
-
   if (posts.length === 0) return null;
 
   return (
@@ -156,52 +76,22 @@ function OtherProjectsList({ posts }: { posts: PostItem[] }) {
           More Work
         </h2>
         <ul className="flex flex-col md:grid md:grid-cols-2 gap-4">
-          {posts.map((post, index) => {
-            const { coverImage } = post.metadata;
-            return (
-              <li
-                key={`other-${post.slug}`}
-                className="animate-blur-in group"
-                style={{ animationDelay: `${0.4 + index * 0.08}s` }}
-                onMouseEnter={(e) => onEnter("VIEW CASE STUDY", e)}
-                onMouseLeave={onLeave}
-              >
-                <Link
-                  href={post.href}
-                  className="p-4 block w-full h-full overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-gray-200 rounded-md bg-white"
-                >
-                  <div className="h-full w-full flex flex-col">
-                    {coverImage && (
-                      <div
-                        className="relative w-full aspect-[16/9] overflow-hidden"
-                        style={{
-                          viewTransitionName: `project-cover-${post.slug}`,
-                        }}
-                      >
-                        <Image
-                          src={coverImage}
-                          alt={post.metadata.title}
-                          fill
-                          sizes="(min-width: 768px) 50vw, 100vw"
-                          className="object-cover transition-transform ease-in bg-white"
-                        />
-                      </div>
-                    )}
-                    <div className="flex flex-col pt-4">
-                      <h3 className="text-xl md:text-2xl font-bold text-black mb-2">
-                        {post.metadata.title}
-                      </h3>
-                      {post.metadata.cardDescription && (
-                        <p className="text-gray-500 leading-relaxed group-hover:text-gray-900 transition ease-in">
-                          {post.metadata.cardDescription}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
+          {posts.map((post, index) => (
+            <li
+              key={`other-${post.slug}`}
+              className="animate-blur-in"
+              style={{ animationDelay: `${0.4 + index * 0.08}s` }}
+            >
+              <ProjectCard
+                slug={post.slug}
+                href={post.href}
+                title={post.metadata.title}
+                cardDescription={post.metadata.cardDescription}
+                coverImage={post.metadata.coverImage}
+                headingLevel="h3"
+              />
+            </li>
+          ))}
         </ul>
       </div>
     </div>

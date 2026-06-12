@@ -1,5 +1,11 @@
 import { PostsList, OtherProjectsList } from "app/components/posts";
 import { getProjects } from "app/project/utils";
+import ChatPanel from "app/components/chat/chat-panel";
+import HeroHeadline from "app/components/hero-headline";
+import { PersonalizeProvider } from "app/components/chat/personalize-context";
+import PersonalizedSection from "app/components/chat/personalized-section";
+import LeadershipPrefix from "app/components/leadership-prefix";
+import HeroBackdrop from "app/components/hero-backdrop";
 
 export default function Page() {
   const projects = getProjects().map((p) => ({
@@ -22,32 +28,46 @@ export default function Page() {
     .sort(byOrder);
 
   return (
-    <section>
-      {/* hero intro */}
-      <div className="max-w-[1280px] w-full md:mx-auto border-x border-gray-200">
-        <div className="px-4 py-16 md:py-48 text-gray-500">
-          <p
-            className="md:pl-24 md:pr-60 mb-6 animate-blur-in"
-            style={{ animationDelay: "0s" }}
-          >
+    <PersonalizeProvider>
+      <section>
+        <HeroBackdrop />
+        {/* hero intro */}
+        <div
+          id="hero"
+          className="max-w-[1440px] w-full md:mx-auto px-2 md:px-16"
+        >
+          <div className="px-4 p-8 py-16 md:py-24 text-gray-700">
+            {/* <p className="mb-4 animate-blur-in" style={{ animationDelay: "0s" }}>
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gray-500">
               <span className="relative inline-flex w-1.5 h-1.5">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
                 <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-emerald-500" />
               </span>
-              Open to roles · Taiwan · Jul 2026
+              Open to new roles
             </span>
-          </p>
-          <h1
-            className="text-3xl md:text-5xl md:pl-24 md:pr-60 font-serif mb-8 text-gray-900 md:leading-[3.5rem] animate-blur-in"
-            style={{ animationDelay: "0.1s" }}
-          >
-            Hi, I'm Alfred, a product designer who turns research into
-            accessible, considered interfaces for complex information systems.
-          </h1>
-          {/* description */}
-          <div className="md:pl-24 md:pr-60 md:text-lg font-semibold">
-            <p
+          </p> */}
+            <HeroHeadline className="text-2xl md:text-5xl max-w-2xl font-serif mb-3 md:mb-6 text-gray-900 md:leading-[3.5rem] font-normal" />
+            {/* description */}
+            <div className=" font-semibold mb-6">
+              <p
+                className="animate-blur-in mb-2"
+                style={{ animationDelay: "0.4s" }}
+              >
+                5+ years of experience crafting accessible & human-centered
+                design.
+              </p>
+              <p className="animate-blur-in" style={{ animationDelay: "0.6s" }}>
+                <LeadershipPrefix />
+                <strong className="text-gray-900">
+                  University of Maryland Libraries
+                </strong>
+                .
+              </p>
+              {/* <p
+                5+ years of experience • Hardware-adjacent Software • SaaS •
+                E-Commerce • Information Systems
+              </p>
+              {/* <p
               className=" mb-2 animate-blur-in"
               style={{ animationDelay: "0.2s" }}
             >
@@ -71,14 +91,18 @@ export default function Page() {
               </span>{" "}
               at University of Maryland Libraries. 5+ years experiences across
               hardware-adjacent software, e-commerce, and higher education.
-            </p>
-          </div>
-          {/* <p className="mb-6 animate-blur-in" style={{ animationDelay: "0.2s" }}>
+            </p> */}
+            </div>
+            <ChatPanel
+              className="max-w-3xl animate-blur-in"
+              style={{ animationDelay: "0.8s" }}
+            />
+            {/* <p className="mb-6 animate-blur-in" style={{ animationDelay: "0.2s" }}>
           Design Systems • Accessibility • Enterprise UX • M.S. in
           Human-Computer Interaction
         </p> */}
 
-          {/* <p
+            {/* <p
           className="mb-2 max-w-4xl animate-blur-in"
           style={{ animationDelay: "0.2s" }}
         >
@@ -107,10 +131,14 @@ export default function Page() {
           </span>
           .
         </p> */}
+          </div>
         </div>
-      </div>
-      <PostsList posts={featuredProjects} />
-      <OtherProjectsList posts={otherProjects} />
-    </section>
+        {/* Standalone tailored section — populated from the chat intake; renders
+          nothing until the visitor has a result. */}
+        <PersonalizedSection />
+        <PostsList posts={featuredProjects} />
+        <OtherProjectsList posts={otherProjects} />
+      </section>
+    </PersonalizeProvider>
   );
 }

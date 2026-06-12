@@ -1,34 +1,20 @@
 import { anthropic } from "@ai-sdk/anthropic";
 import { streamText, convertToModelMessages, type UIMessage } from "ai";
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
 import { z } from "zod";
 import { buildPortfolioContext } from "app/lib/portfolio-context";
 import { buildSystemPrompt } from "app/lib/system-prompt";
-import type { ChatRole } from "app/lib/suggested-questions";
+import { makeRatelimit, getClientIp } from "app/lib/ratelimit";
+import type { ChatRole, ChatLanguage } from "app/lib/suggested-questions";
 
 // Node runtime is required: the grounding module reads the filesystem.
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
 const roleSchema = z.enum(["pm", "designer", "engineer"]).catch("designer");
+const languageSchema = z.enum(["en", "zh"]).catch("en");
 
 // Module-level singleton so we don't recreate the limiter per request.
-// Only constructed when Upstash env vars are present.
-const ratelimit =
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-    ? new Ratelimit({
-        redis: Redis.fromEnv(),
-        limiter: Ratelimit.slidingWindow(30, "1 d"),
-        prefix: "chat",
-      })
-    : null;
-
-function getClientIp(req: Request): string {
-  const fwd = req.headers.get("x-forwarded-for");
-  if (fwd) return fwd.split(",")[0].trim();
-  return req.headers.get("x-real-ip") ?? "anonymous";
-}
+const ratelimit = makeRatelimit("chat", 30, "1 d");
 
 export async function POST(req: Request) {
   if (!process.env.ANTHROPIC_API_KEY) {
@@ -46,7 +32,7 @@ export async function POST(req: Request) {
     }
   }
 
-  let body: { messages?: UIMessage[]; role?: string };
+  let body: { messages?: UIMessage[]; role?: string; language?: string };
   try {
     body = await req.json();
   } catch {
@@ -55,11 +41,12 @@ export async function POST(req: Request) {
 
   const messages = Array.isArray(body.messages) ? body.messages : [];
   const role = roleSchema.parse(body.role) as ChatRole;
+  const language = languageSchema.parse(body.language) as ChatLanguage;
 
   // Bound input tokens: only send the most recent turns to the model.
   const recent = messages.slice(-10);
 
-  const system = buildSystemPrompt(role, buildPortfolioContext());
+  const system = buildSystemPrompt(role, buildPortfolioContext(), language);
 
   try {
     const result = streamText({
@@ -78,7 +65,7 @@ export async function POST(req: Request) {
         },
         ...(await convertToModelMessages(recent)),
       ],
-      maxOutputTokens: 700,
+      maxOutputTokens: 300,
       temperature: 0.4,
       abortSignal: req.signal,
     });
