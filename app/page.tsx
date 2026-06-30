@@ -42,7 +42,7 @@ export default function Page() {
             className="text-3xl md:text-5xl md:pl-24 md:pr-60 font-serif mb-8 text-gray-900 md:leading-[3.5rem] animate-blur-in"
             style={{ animationDelay: "0.1s" }}
           >
-            Hey, I'm Alfred, a product designer / UX engineer who turns
+            Hey, I'm Alfred, a product designer who turns
             research into accessible, considered interfaces.
           </h1>
           {/* description */}
