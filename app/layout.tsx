@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     template: "%s | Alfred J. Lin",
   },
   description:
-    "Welcome to Alfred's product design portfolio. Alfred is a a product designer who turns research into accessible, considered interfaces for complex information systems.",
+    "Welcome to Alfred's product design portfolio. Alfred is a product designer who turns research into accessible, considered interfaces for complex information systems.",
   openGraph: {
     title: "Alfred J. Lin | Portfolio",
     description:
-      "Welcome to Alfred's product design portfolio. Alfred is a a product designer who turns research into accessible, considered interfaces for complex information systems.",
+      "Welcome to Alfred's product design portfolio. Alfred is a product designer who turns research into accessible, considered interfaces for complex information systems.",
     url: baseUrl,
     siteName: "Alfred J. Lin | Portfolio",
     locale: "en_US",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alfred J. Lin | Portfolio",
     description:
-      "Welcome to Alfred's product design portfolio. Alfred is a a product designer who turns research into accessible, considered interfaces for complex information systems.",
+      "Welcome to Alfred's product design portfolio. Alfred is a product designer who turns research into accessible, considered interfaces for complex information systems.",
     images: [
       `${baseUrl}/og?title=${encodeURIComponent("Alfred J. Lin | Portfolio")}`,
     ],

@@ -42,8 +42,9 @@ export default function Page() {
             className="text-3xl md:text-5xl md:pl-24 md:pr-60 font-serif mb-8 text-gray-900 md:leading-[3.5rem] animate-blur-in"
             style={{ animationDelay: "0.1s" }}
           >
-            Hi, I'm Alfred, a product designer who turns research into
-            accessible, considered interfaces for complex information systems.
+            Hey, I'm Alfred, a product designer and UX engineer who turns
+            research into accessible, considered interfaces across hardware,
+            software, and complex digital systems.
           </h1>
           {/* description */}
           <div className="md:pl-24 md:pr-60 md:text-lg font-semibold">
@@ -69,8 +70,8 @@ export default function Page() {
               <span className="font-black text-gray-900">
                 leading the public-facing ecosystem design
               </span>{" "}
-              at University of Maryland Libraries. 5+ years experiences across
-              hardware-adjacent software, e-commerce, and higher education.
+              at University of Maryland Libraries. 5+ years across
+              hardware-adjacent software, e-commerce, and digital systems.
             </p>
           </div>
           {/* <p className="mb-6 animate-blur-in" style={{ animationDelay: "0.2s" }}>
