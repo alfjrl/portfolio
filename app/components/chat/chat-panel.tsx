@@ -217,7 +217,7 @@ export default function ChatPanel({
           /* empty state: input on top, suggested questions right beneath it */
           <>
             {formEl}
-            <div className="animate-blur-in flex flex-col gap-4 px-4 py-5">
+            <div className="animate-blur-in flex flex-col gap-4 p-4">
               {SUGGESTED_QUESTIONS.map((q) => (
                 <button
                   key={q}
@@ -239,7 +239,7 @@ export default function ChatPanel({
           <>
             <div
               ref={scrollRef}
-              className="flex-1 overflow-y-auto px-4 py-5 space-y-4 min-h-[18rem]"
+              className="flex-1 overflow-y-auto p-4 space-y-4 min-h-[18rem]"
             >
               {messages.map((m) => (
                 <ChatBubble
@@ -282,7 +282,9 @@ export default function ChatPanel({
       {/* Intake form — starts the customization right here in the chat. The
           result lands in the standalone <PersonalizedSection /> on the page. */}
       {intakeOpen && (
-        <div className="mt-8 border-t border-gray-200 pt-8">
+        <div
+          className={`border-t border-gray-200 ${isEmpty ? "p-4 bg-white input-box border rounded-2xl" : "mt-4 pt-4"}`}
+        >
           <PersonalizeIntake
             defaultRole={role}
             language={language}

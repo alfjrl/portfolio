@@ -43,7 +43,8 @@
       "Bash(/usr/bin/curl -s -A \"Mozilla/5.0\" 'https://fonts.googleapis.com/css2?family=EB%2BGaramond:ital,wght@1,500&text=Test')",
       "Bash(kill 68119)",
       "Bash(/usr/bin/curl -s \"http://localhost:3737/og?title=Alfred%27s%20Product%20Design%20Portfolio\" -o /tmp/og-home.png)",
-      "Bash(kill 78383)"
+      "Bash(kill 78383)",
+      "Bash(npx next *)"
     ],
     "deny": [],
     "ask": []

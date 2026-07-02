@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiArrowRight, FiChevronDown } from "react-icons/fi";
 import { RiSparkling2Fill } from "react-icons/ri";
 import {
@@ -25,88 +25,179 @@ type PersonalizeIntakeProps = {
 
 const CHAT_ROLES: ReadonlySet<string> = new Set(["pm", "designer", "engineer"]);
 
-// Static intake copy in each reply language. The option chips localize via each
-// option's `labelZh` (see personalize-types.ts); everything else lives here.
+// Each question reads as a sentence the dropdown completes ("I'm a ___",
+// "I'm your ___"). `stem` is the lead-in; the option labels (localized via each
+// option's `labelZh` in personalize-types.ts) are the completion. Everything
+// else lives here.
 const COPY = {
   en: {
-    heading: "Let me tailor this to you",
-    sub: "A few quick questions, then I'll put together a short read on how I work plus three case studies picked for you.",
-    roleQ: "What's your role?",
+    heading: "Find what you are interested in, faster",
+    sub: "Answer a few quick questions and I'll tailor this to you — a short take on how I'd work with you, plus the three projects most worth a look, each with project highlights.",
+    roleStem: "I'm", // article ("a" / "an") is appended dynamically
+    rolePlaceholder: "product designer, manager…",
+    lensStem: "I'm your",
+    lensPlaceholder: "mentor, skip-level…",
+    focusStem: "I want to see your",
+    focusPlaceholder: "accessibility, communication…",
+    scopeStem: "I'm open to",
+    scopePlaceholder: "anything, really…",
     other: "Other",
-    rolePlaceholder: "Tell me your role",
-    lensQ: "How are you evaluating me?",
-    lensPlaceholder: "In what capacity?",
-    focusQ: "What do you most want to see?",
-    focusPlaceholder: "What would you like to see?",
-    scopeQ: "What scope interests you?",
-    scopePlaceholder: "What scope are you after?",
     contextLabel: "Anything specific?",
     optional: "(optional)",
     contextPlaceholder: "Industry, team size, a problem space you care about…",
-    submitBusy: "Putting it together…",
-    submit: "Show me my tailored view",
+    submitBusy: "Cooking…",
+    submit: "Cook for me",
     cancel: "Back to chat",
   },
   zh: {
-    heading: "讓我為你量身打造",
-    sub: "幾個簡單的問題，接著我會為你整理一段關於我如何工作的簡介，以及三個為你挑選的案例研究。",
-    roleQ: "你的職位是？",
+    heading: "幫你快速找到重點",
+    sub: "回答幾個簡單問題，我會幫你整理出重點：一段關於我的簡介，加上最值得一看的三個專案及其highlights。",
+    roleStem: "我是",
+    rolePlaceholder: "產品設計師、產品經理…",
+    lensStem: "我是你的",
+    lensPlaceholder: "導師、隔級主管…",
+    focusStem: "我想看你的",
+    focusPlaceholder: "無障礙、溝通技巧…",
+    scopeStem: "我感興趣的是",
+    scopePlaceholder: "任何內容等等…",
     other: "其他",
-    rolePlaceholder: "請告訴我你的職位",
-    lensQ: "你想從什麼角度了解我？",
-    lensPlaceholder: "以什麼身分？",
-    focusQ: "你最想看到什麼？",
-    focusPlaceholder: "你想看到什麼？",
-    scopeQ: "你對什麼樣的職責範圍感興趣？",
-    scopePlaceholder: "想看什麼樣的職責範圍？",
     contextLabel: "有什麼特別想了解的嗎？",
     optional: "（選填）",
-    contextPlaceholder: "產業、團隊規模、你在意的問題領域…",
-    submitBusy: "正在整理…",
-    submit: "顯示為你量身打造的內容",
+    contextPlaceholder: "產業、團隊規模、你在意的問題…",
+    submitBusy: "Cooking…",
+    submit: "Cook for me",
     cancel: "返回對話",
   },
 } as const;
 
-function Dropdown({
+// An editable, in-place combobox. Picking a preset shows it as the sentence's
+// completion; picking "Other" turns the control into a text field you type
+// directly into, while the chevron still reopens the preset menu.
+function Combobox({
   id,
-  label,
+  stem,
   value,
   onChange,
   options,
-  children,
+  otherText,
+  onOtherTextChange,
+  otherPlaceholder,
+  otherId = "other",
 }: {
   id: string;
-  label: string;
+  stem: string;
   value: string;
-  onChange: (value: string) => void;
+  onChange: (id: string) => void;
   options: ReadonlyArray<{ id: string; label: string }>;
-  children?: React.ReactNode;
+  otherText: string;
+  onOtherTextChange: (value: string) => void;
+  otherPlaceholder: string;
+  otherId?: string;
 }) {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const isOther = value === otherId;
+  const selected = options.find((o) => o.id === value);
+
+  // Dismiss the menu on outside click or Escape.
+  useEffect(() => {
+    if (!open) return;
+    const onDocClick = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onDocClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  // Drop focus straight into the text field when "Other" becomes active.
+  useEffect(() => {
+    if (isOther) inputRef.current?.focus();
+  }, [isOther]);
+
+  const choose = (oid: string) => {
+    onChange(oid);
+    setOpen(false);
+    if (oid === otherId) requestAnimationFrame(() => inputRef.current?.focus());
+  };
+
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 px-2">
       <label htmlFor={id} className="text-sm font-semibold text-gray-900">
-        {label}
+        {stem}
       </label>
-      <div className="relative">
-        <select
-          id={id}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="w-full appearance-none rounded-md border border-gray-200 bg-white px-3 py-1.5 pr-9 text-sm text-gray-900 focus:outline-none focus:border-gray-400"
-        >
-          {options.map((o) => (
-            <option key={o.id} value={o.id}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-        <FiChevronDown
-          size={16}
-          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
-        />
+      <div ref={wrapRef} className="relative">
+        <div className="flex items-center border-b border-blue-200">
+          {isOther ? (
+            <input
+              id={id}
+              ref={inputRef}
+              type="text"
+              value={otherText}
+              onChange={(e) => onOtherTextChange(e.target.value)}
+              placeholder={otherPlaceholder}
+              className="w-44 max-w-[60vw] appearance-none border-none bg-transparent px-2 py-1 text-sm font-semibold text-blue-500 placeholder:font-normal placeholder:text-gray-400 focus:outline-none"
+            />
+          ) : (
+            <button
+              id={id}
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="appearance-none px-2 py-1 text-left text-sm font-semibold text-blue-500 focus:outline-none"
+            >
+              {selected?.label}
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Show options"
+            aria-haspopup="listbox"
+            aria-expanded={open}
+            className="px-1 py-1 text-blue-500"
+          >
+            <FiChevronDown
+              size={16}
+              className={`transition-transform ${open ? "rotate-180" : ""}`}
+            />
+          </button>
+        </div>
+
+        {open && (
+          <ul
+            role="listbox"
+            className="absolute left-0 top-full z-20 mt-1 w-max min-w-full max-w-[16rem] overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg"
+          >
+            {options.map((o) => {
+              const active = o.id === value;
+              return (
+                <li key={o.id} role="option" aria-selected={active}>
+                  <button
+                    type="button"
+                    onClick={() => choose(o.id)}
+                    className={`flex w-full items-center px-3 py-1.5 text-left text-sm font-semibold transition-colors ${
+                      active
+                        ? "bg-blue-50 text-blue-600"
+                        : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                    }`}
+                  >
+                    {o.label}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
-      {children}
     </div>
   );
 }
@@ -127,7 +218,7 @@ export default function PersonalizeIntake({
   const [lensNote, setLensNote] = useState("");
 
   // Q3 focus
-  const [focus, setFocus] = useState<FocusId>("craft");
+  const [focus, setFocus] = useState<FocusId>("research");
   const [focusNote, setFocusNote] = useState("");
 
   // Q4 scope
@@ -151,42 +242,51 @@ export default function PersonalizeIntake({
       ? (roleId as ChatRole)
       : defaultRole;
 
+    // Notes only exist in "Other" mode — gate them by id so a value typed and
+    // then abandoned for a preset never leaks into the request.
     onSubmit({
       role,
       language,
       visitorRole: visitorLabel || undefined,
       lens,
-      lensNote:
-        lens === "other" || lensNote.trim()
-          ? lensNote.trim() || undefined
-          : undefined,
+      lensNote: lens === "other" ? lensNote.trim() || undefined : undefined,
       focus,
-      focusNote: focusNote.trim() || undefined,
+      focusNote: focus === "other" ? focusNote.trim() || undefined : undefined,
       scope,
-      scopeNote: scopeNote.trim() || undefined,
+      scopeNote: scope === "other" ? scopeNote.trim() || undefined : undefined,
       context: context.trim() || undefined,
     });
   };
-
-  const textInputClass =
-    "w-full rounded-md border border-gray-200 px-3 py-1.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-400";
 
   const t = COPY[language];
   const optionLabel = (o: { label: string; labelZh: string }) =>
     language === "zh" ? o.labelZh : o.label;
 
+  // Q1 completes "I'm a / an ___": pick the article from the current completion
+  // (live as they type in "Other" mode). Chinese has no article.
+  const roleCompletion =
+    roleId === "other"
+      ? roleOther
+      : (VISITOR_ROLE_OPTIONS.find((o) => o.id === roleId)?.label ?? "");
+  const roleArticle = /^[aeiou]/i.test(roleCompletion.trim()) ? "an" : "a";
+  const roleStem =
+    language === "en" ? `${t.roleStem} ${roleArticle}` : t.roleStem;
+
+  const textInputClass =
+    "border-b-1 border-x-0 border-t-0 border-blue-200 px-2 py-1 mb-4 text-sm font-semibold text-blue-500 placeholder:text-gray-500 placeholder:font-normal focus:outline-none";
+
   return (
-    <div className="animate-blur-in flex flex-col gap-6">
+    <div className="animate-blur-in flex flex-col gap-4 bg-white">
       <div>
-        <h3 className="text-xl md:text-2xl font-serif text-gray-900">
+        <h2 className="text-lg md:text-xl text-gray-900 font-bold mb-2">
           {t.heading}
-        </h3>
-        <p className="text-sm text-gray-500 mt-1">{t.sub}</p>
+        </h2>
+        <p className="text-sm text-gray-500 mb-2">{t.sub}</p>
       </div>
 
-      <Dropdown
+      <Combobox
         id="personalize-role"
-        label={t.roleQ}
+        stem={roleStem}
         value={roleId}
         onChange={setRoleId}
         options={[
@@ -196,79 +296,51 @@ export default function PersonalizeIntake({
           })),
           { id: "other", label: t.other },
         ]}
-      >
-        {roleId === "other" && (
-          <input
-            type="text"
-            value={roleOther}
-            onChange={(e) => setRoleOther(e.target.value)}
-            placeholder={t.rolePlaceholder}
-            className={textInputClass}
-          />
-        )}
-      </Dropdown>
+        otherText={roleOther}
+        onOtherTextChange={setRoleOther}
+        otherPlaceholder={t.rolePlaceholder}
+      />
 
-      <Dropdown
+      <Combobox
         id="personalize-lens"
-        label={t.lensQ}
+        stem={t.lensStem}
         value={lens}
         onChange={(v) => setLens(v as LensId)}
         options={LENS_OPTIONS.map((o) => ({ id: o.id, label: optionLabel(o) }))}
-      >
-        {lens === "other" && (
-          <input
-            type="text"
-            value={lensNote}
-            onChange={(e) => setLensNote(e.target.value)}
-            placeholder={t.lensPlaceholder}
-            className={textInputClass}
-          />
-        )}
-      </Dropdown>
+        otherText={lensNote}
+        onOtherTextChange={setLensNote}
+        otherPlaceholder={t.lensPlaceholder}
+      />
 
-      <Dropdown
+      <Combobox
         id="personalize-focus"
-        label={t.focusQ}
+        stem={t.focusStem}
         value={focus}
         onChange={(v) => setFocus(v as FocusId)}
         options={FOCUS_OPTIONS.map((o) => ({
           id: o.id,
           label: optionLabel(o),
         }))}
-      >
-        {focus === "other" && (
-          <input
-            type="text"
-            value={focusNote}
-            onChange={(e) => setFocusNote(e.target.value)}
-            placeholder={t.focusPlaceholder}
-            className={textInputClass}
-          />
-        )}
-      </Dropdown>
+        otherText={focusNote}
+        onOtherTextChange={setFocusNote}
+        otherPlaceholder={t.focusPlaceholder}
+      />
 
-      <Dropdown
+      <Combobox
         id="personalize-scope"
-        label={t.scopeQ}
+        stem={t.scopeStem}
         value={scope}
         onChange={(v) => setScope(v as ScopeId)}
         options={SCOPE_OPTIONS.map((o) => ({
           id: o.id,
           label: optionLabel(o),
         }))}
-      >
-        {scope === "other" && (
-          <input
-            type="text"
-            value={scopeNote}
-            onChange={(e) => setScopeNote(e.target.value)}
-            placeholder={t.scopePlaceholder}
-            className={textInputClass}
-          />
-        )}
-      </Dropdown>
+        otherText={scopeNote}
+        onOtherTextChange={setScopeNote}
+        otherPlaceholder={t.scopePlaceholder}
+      />
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 px-2">
         <label
           htmlFor="personalize-context"
           className="text-sm font-semibold text-gray-900"
@@ -286,15 +358,16 @@ export default function PersonalizeIntake({
         />
       </div>
 
-      <div className="flex items-center gap-3 pt-1">
+      <div className="flex items-center gap-3">
         <button
           type="button"
           onClick={submit}
           disabled={busy}
-          className="inline-flex items-center gap-2 rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors ease-in-out duration-200"
         >
+          <RiSparkling2Fill />
           {busy ? t.submitBusy : t.submit}
-          {!busy && <FiArrowRight size={16} />}
+          {/* {!busy && <FiArrowRight size={16} />} */}
         </button>
         <button
           type="button"

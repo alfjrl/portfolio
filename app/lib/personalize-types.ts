@@ -8,33 +8,41 @@ import type { ChatRole, ChatLanguage } from "./suggested-questions";
 // label so the intake form can render in whichever reply language is active.
 export const VISITOR_ROLE_OPTIONS = [
   { id: "pm", label: "PM", labelZh: "產品經理" },
-  { id: "designer", label: "Designer", labelZh: "設計師" },
+  { id: "designer", label: "Designer", labelZh: "產品設計師" },
   { id: "engineer", label: "Engineer", labelZh: "工程師" },
-  { id: "recruiter", label: "Recruiter", labelZh: "招募人員" },
+  { id: "recruiter", label: "Recruiter", labelZh: "人資" },
   { id: "founder", label: "Founder / Exec", labelZh: "創辦人 / 主管" },
 ] as const;
 
+// Labels read as the completion of a conversational stem in the intake form
+// (e.g. "I'm your coworker", "I want to see your research depth"), so they're
+// lowercase bare phrases. Only the *id* is sent to /api/personalize — these
+// labels are UI-only — so rewording them never touches the prompt.
 export const LENS_OPTIONS = [
-  { id: "coworker", label: "As a coworker", labelZh: "以同事身分" },
-  { id: "manager", label: "As my manager", labelZh: "以我主管的身分" },
-  { id: "report", label: "As my report", labelZh: "以我下屬的身分" },
+  { id: "coworker", label: "coworker", labelZh: "同事" },
+  { id: "manager", label: "manager", labelZh: "主管" },
+  { id: "report", label: "report", labelZh: "下屬" },
   { id: "other", label: "Other", labelZh: "其他" },
 ] as const;
 
 export const FOCUS_OPTIONS = [
-  { id: "research", label: "Research depth", labelZh: "研究深度" },
-  { id: "craft", label: "Interaction craft", labelZh: "互動細節" },
-  { id: "systems", label: "Design systems", labelZh: "設計系統" },
-  { id: "strategy", label: "Product strategy", labelZh: "產品策略" },
-  { id: "delivery", label: "Shipping & delivery", labelZh: "交付與落地" },
+  { id: "research", label: "user research", labelZh: "user research" },
+  { id: "craft", label: "interaction design", labelZh: "interaction design" },
+  { id: "systems", label: "design systems", labelZh: "design systems" },
+  { id: "strategy", label: "product strategy", labelZh: "product strategy" },
+  {
+    id: "delivery",
+    label: "shipping & delivery",
+    labelZh: "shipping & delivery",
+  },
   { id: "other", label: "Other", labelZh: "其他" },
 ] as const;
 
 export const SCOPE_OPTIONS = [
-  { id: "ic", label: "Hands-on IC craft", labelZh: "親自動手的執行" },
-  { id: "lead", label: "Lead / mentor scope", labelZh: "帶領 / 指導範疇" },
-  { id: "strategic", label: "Strategic / 0→1", labelZh: "策略 / 0→1" },
-  { id: "any", label: "No preference", labelZh: "沒有偏好" },
+  { id: "ic", label: "hands-on IC craft", labelZh: "親自動手的執行" },
+  { id: "lead", label: "lead & mentor scope", labelZh: "帶領 / 指導範疇" },
+  { id: "strategic", label: "strategic 0→1", labelZh: "策略 / 0→1" },
+  { id: "any", label: "any scope", labelZh: "任何範疇" },
   { id: "other", label: "Other", labelZh: "其他" },
 ] as const;
 

@@ -11,6 +11,6 @@ export type ChatLanguage = "en" | "zh";
 // open a substantive conversation for any visitor.
 export const SUGGESTED_QUESTIONS: string[] = [
   "Walk me through your design process.",
-  "How do you approach an ambiguous problem?",
+  // "How do you approach an ambiguous problem?",
   "How do you handle feedback?",
 ];
