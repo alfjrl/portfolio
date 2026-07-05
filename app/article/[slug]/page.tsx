@@ -85,7 +85,7 @@ export default async function Blog({ params }) {
         }}
       />
       <h1
-        className="title font-black text-2xl tracking-tight mt-16 mb-4 text-black animate-blur-in"
+        className="title font-bold text-2xl tracking-tight mt-16 mb-4 text-ink animate-blur-in"
         style={{ animationDelay: "0s" }}
       >
         {post.metadata.title}
@@ -94,7 +94,7 @@ export default async function Blog({ params }) {
         className="flex justify-between items-center mb-8 animate-blur-in"
         style={{ animationDelay: "0.1s" }}
       >
-        <p className="text-gray-600">{formatDate(post.metadata.publishedAt)}</p>
+        <p className="text-muted">{formatDate(post.metadata.publishedAt)}</p>
       </div>
       <article
         className="prose leading-relaxed animate-blur-in"

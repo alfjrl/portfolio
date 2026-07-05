@@ -1,6 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { Manrope, EB_Garamond } from "next/font/google";
+import { Manrope, Newsreader, Libre_Baskerville } from "next/font/google";
 import Navbar from "./components/nav";
 import { CustomCursor } from "./components/custom-cursor";
 import { Analytics } from "@vercel/analytics/react";
@@ -66,10 +66,10 @@ const manrope = Manrope({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-const ebGaramond = EB_Garamond({
+const ebGaramond = Libre_Baskerville({
   subsets: ["latin"],
-  variable: "--font-eb-garamond",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-libre_baskerville",
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -79,11 +79,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // bg color bg-[#fafcfd]
+    // bg color bg-canvas
     <html
       lang="en"
       className={cx(
-        "text-gray-600 bg-white font-medium",
+        // "text-muted bg-[#f6f8fb] font-medium",
         manrope.variable,
         ebGaramond.variable,
         manrope.className,
@@ -91,7 +91,7 @@ export default function RootLayout({
     >
       <body className="antialiased" suppressHydrationWarning>
         <CustomCursor />
-        <main className="flex-auto min-w-0 flex flex-col">
+        <main className="relative flex-auto min-w-0 flex flex-col">
           <Navbar />
           {children}
           <Footer />

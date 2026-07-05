@@ -25,7 +25,7 @@ export type ContactItem = {
 
 export const workExperience: WorkExperience[] = [
   {
-    years: "2023 – Present",
+    years: "2023 – 2026",
     title: "UX/UI Designer",
     company: { en: "University of Maryland Libraries", zh: "" },
     description: [
