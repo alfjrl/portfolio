@@ -1,12 +1,33 @@
 @import "tailwindcss";
 
+/* ── Design tokens ──────────────────────────────────────────────────────────
+   One accent (Zima Blue, cyan hue ~196°) + a cool, blue-tinted neutral ramp
+   (Stripe vibe). Body sits on white / --color-canvas. Hierarchy comes from
+   ink → body → muted (opacity of intent, not new hues) plus font weight.
+   Utilities like text-ink, bg-canvas, border-line, text-accent-strong are
+   generated from these by Tailwind v4. */
 @theme {
   --font-family-serif: var(--font-libre_baskerville);
+
+  /* Accent — blue */
+  --color-accent: #3b82f6; /* brand fills, focus rings, typing dots */
+  --color-accent-strong: #2563eb; /* link/button text & solid buttons (AA on white) */
+  --color-accent-deep: #1d4ed8; /* hover state */
+  --color-accent-soft: #eff6ff; /* tint backgrounds, highlights, selected chips */
+
+  /* Neutrals — cool, blue-tinted. Text uses just two: ink + muted. */
+  --color-ink: #0a2540; /* primary text: headings + body */
+  --color-muted: #5a6b7b; /* secondary text: meta, captions, placeholders */
+  --color-line: #e3e9f0; /* hairline borders */
+  --color-line-strong: #cfd8e3; /* dividers / hover borders */
+  --color-canvas: #fafcfd; /* page background */
+  --color-surface: #ffffff; /* cards */
+  --color-surface-muted: #f1f6fa; /* code blocks, subtle panels */
 }
 
 ::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
+  background-color: var(--color-accent);
+  color: #fff;
 }
 
 :root {
@@ -23,7 +44,6 @@
 
 html {
   min-width: 360px;
-  /* background-color: #f6f8fb; */
 }
 
 .cursor-tag {
@@ -34,6 +54,7 @@ html {
   top: -200px;
 }
 
+/* ── Prose (article + project markdown) ─────────────────────────────────── */
 .prose .anchor {
   @apply absolute invisible no-underline;
 
@@ -48,21 +69,30 @@ html {
   @apply visible;
 }
 
-.prose a {
-  @apply underline transition-all decoration-gray-400 underline-offset-2 decoration-[0.1em];
-}
-
-.prose .anchor:after {
-  @apply text-gray-300;
-  content: "#";
-}
-
 .prose *:hover > .anchor {
   @apply visible;
 }
 
+.prose .anchor:after {
+  @apply text-muted;
+  content: "#";
+}
+
+.prose a {
+  @apply underline transition-all decoration-line-strong underline-offset-2 decoration-[0.1em] text-ink;
+}
+
+.prose a.link-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.prose a:hover p {
+  color: var(--color-ink);
+}
+
 .prose pre {
-  @apply bg-gray-50 rounded-lg overflow-x-auto border border-gray-200 py-2 px-3 text-sm;
+  @apply bg-surface-muted rounded-lg overflow-x-auto border border-line py-2 px-3 text-sm;
 }
 
 .prose code {
@@ -84,28 +114,46 @@ html {
   @apply m-0;
 }
 
+.prose p:has(img) {
+  margin: 2rem 0;
+}
+
+/* Readable measure (~72ch) for running text; figures, layouts, and link
+   cards stay full-width so the images can breathe. */
+.prose p,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose .text-callout {
+  /* max-width: 46rem; */
+}
+
 .prose p {
-  @apply my-4 text-gray-600;
+  @apply my-4 text-ink;
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-4xl font-medium tracking-tight text-ink mt-6 mb-2;
 }
 
 .prose h2 {
-  @apply text-2xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-2xl font-bold tracking-tight text-ink mt-10 mb-2;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-bold tracking-tight text-ink mt-8 mb-2;
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply text-lg font-bold tracking-tight text-ink mt-6 mb-2;
 }
 
 .prose strong {
-  @apply font-medium;
+  @apply font-bold text-ink;
 }
 
 .prose ul {
@@ -116,6 +164,37 @@ html {
   @apply list-decimal pl-6;
 }
 
+.prose hr {
+  margin: 2rem 0;
+  border-color: var(--color-line-strong);
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--color-ink);
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  color: var(--color-ink);
+  margin: 1.25rem 0;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose .link-card p {
+  margin: 0;
+}
+
+.prose .text-callout > * {
+  margin: 0;
+}
+
+.prose .container h2,
+.prose .container h3,
+.prose .container h4,
+.prose .container h5 {
+  margin-top: 0;
+}
+
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
   margin-top: 0 !important;
@@ -123,7 +202,7 @@ html {
 }
 
 .prose .card-title {
-  color: black;
+  color: var(--color-ink);
 }
 
 pre::-webkit-scrollbar {
@@ -247,14 +326,14 @@ table {
 }
 
 .hero-dots-base {
-  --dot: rgba(17, 24, 39, 0.12);
+  --dot: rgba(10, 37, 64, 0.1); /* ink-tinted */
 }
 
 /* Brighter dots, shown only inside a soft circle that follows the cursor
    (--mx/--my, set on pointermove). --spot eases opacity in/out as the pointer
    enters and leaves the field. */
 .hero-dots-spot {
-  --dot: rgba(37, 99, 235, 0.4);
+  --dot: rgba(59, 130, 246, 0.5); /* blue accent */
   opacity: var(--spot, 0);
   transition: opacity 0.45s ease;
   -webkit-mask-image: radial-gradient(
@@ -275,81 +354,7 @@ table {
   }
 }
 
-/* markdown */
-.prose h2 {
-  font-weight: 700;
-  margin-top: 2.5rem;
-  color: black;
-  text-decoration: underline;
-}
-
-.prose h3 {
-  /* font-size: 1.125rem; */
-  font-weight: 700;
-  color: black;
-  margin-top: 2rem;
-}
-
-.prose h4 {
-  font-weight: 700;
-  color: black;
-}
-
-.prose hr {
-  margin: 2rem 0;
-  border-color: #9ca3af;
-}
-
-.prose p:has(img) {
-  margin: 2rem 0;
-}
-
-.prose a {
-  color: black;
-}
-
-.prose a.link-card {
-  text-decoration: none;
-  color: inherit;
-}
-
-.prose strong {
-  font-weight: 700;
-  color: black;
-}
-
-.prose blockquote {
-  border-left: 2px solid #374151;
-  padding: 0.5rem 0rem 0.5rem 1rem;
-  color: #000;
-
-  margin: 1.25rem 0;
-}
-
-.prose blockquote p {
-  margin: 0;
-}
-
-.prose .link-card p {
-  margin: 0;
-}
-
-.prose a:hover p {
-  color: black;
-}
-
-.prose .text-callout > * {
-  margin: 0;
-}
-
-.prose .container h2,
-.prose .container h3,
-.prose .container h4,
-.prose .container h5 {
-  margin-top: 0;
-}
-
-/* chat markdown — tighter than .prose for short streamed answers */
+/* ── Chat markdown — tighter than .prose for short streamed answers ─────── */
 .chat-markdown p {
   @apply my-2 leading-relaxed;
 }
@@ -357,7 +362,7 @@ table {
 .chat-markdown h2,
 .chat-markdown h3,
 .chat-markdown h4 {
-  @apply text-base font-bold text-black mt-3 mb-1;
+  @apply text-base font-bold text-ink mt-3 mb-1;
 }
 
 .chat-markdown ul {
@@ -373,15 +378,15 @@ table {
 }
 
 .chat-markdown a {
-  @apply text-black font-black underline underline-offset-2;
+  @apply text-ink font-bold underline underline-offset-2;
 }
 
 .chat-markdown strong {
-  @apply font-bold text-black;
+  @apply font-bold text-ink;
 }
 
 .chat-markdown code {
-  @apply bg-gray-50 border border-gray-200 rounded px-1 py-0.5 text-xs;
+  @apply bg-surface-muted border border-line rounded px-1 py-0.5 text-xs;
 }
 
 .chat-markdown > :first-child {
@@ -392,7 +397,7 @@ table {
   margin-bottom: 0 !important;
 }
 
-/* input box */
+/* ── Input box ──────────────────────────────────────────────────────────── */
 .input-box {
   border: 1px solid transparent;
   margin: 1px;
@@ -417,7 +422,7 @@ table {
 :root {
   --always-white: 0 0% 100%;
   --always-black: 0 0% 0%;
-  --border-300: 60 2% 12%;
-  --border-200: 60 2% 12%;
-  --border-100: 60 2% 12%;
+  --border-300: 210 24% 16%;
+  --border-200: 210 24% 16%;
+  --border-100: 210 24% 16%;
 }

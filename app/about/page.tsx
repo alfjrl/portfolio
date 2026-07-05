@@ -62,7 +62,7 @@ const activities = [
 export default function AboutPage() {
   return (
     <div className="">
-      <div className="max-w-[1280px] w-full md:mx-auto flex flex-col md:flex-row gap-8 lg:gap-12 p-4 md:py-16 border-x border-gray-200">
+      <div className="max-w-[1280px] w-full md:mx-auto flex flex-col md:flex-row gap-8 lg:gap-12 p-4 md:py-16 border-x border-line">
         <div className="sr-only">
           <h1>About Alfred Lin</h1>
         </div>
@@ -86,17 +86,17 @@ export default function AboutPage() {
           style={{ animationDelay: "0.1s" }}
         >
           {/* Bio */}
-          <div className="text-gray-500 mb-10 md:text-lg font-semibold">
+          <div className="text-muted mb-10 md:text-lg font-semibold">
             <p
               className="mb-2 leading-relaxed animate-blur-in"
               style={{ animationDelay: "0.1s" }}
             >
-              Hey, I'm <span className="text-gray-900">Alfred</span>, go by{" "}
-              <span className="text-gray-900">展任</span>
+              Hey, I'm <span className="text-ink">Alfred</span>, go by{" "}
+              <span className="text-ink">展任</span>
               (Jhan-Ren) in Mandarin.
             </p>
             <p
-              className="mb-2 leading-relaxed font-black text-xl md:text-2xl text-gray-900 animate-blur-in"
+              className="mb-2 leading-relaxed font-bold text-xl md:text-2xl text-ink animate-blur-in"
               style={{ animationDelay: "0.2s" }}
             >
               {/* A Product Designer, A UX Researcher, A Front-End Developer, A
@@ -108,8 +108,8 @@ export default function AboutPage() {
               className="mb-8 leading-relaxed animate-blur-in"
               style={{ animationDelay: "0.3s" }}
             >
-              I have experiences in multiple platforms (web, iOS/Android) for
-              different B2B / B2C products.
+              I&apos;ve shipped products across web, iOS, and Android — on both
+              B2B and B2C sides.
             </p>
             <p
               className="mb-8 leading-relaxed animate-blur-in"
@@ -146,14 +146,14 @@ export default function AboutPage() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white flex flex-row justify-between items-center border border-gray-200 rounded-md p-4 transition ease-in hover:scale-101"
+                  className="group bg-white flex flex-row justify-between items-center border border-line rounded-md p-4 transition ease-in hover:scale-101"
                 >
                   <div className="flex flex-col justify-center">
-                    <div className="pb-2 flex flex-row items-center gap-1 text-gray-500 group-hover:text-gray-700 transition ease-in">
+                    <div className="pb-2 flex flex-row items-center gap-1 text-muted group-hover:text-ink transition ease-in">
                       <p className="text-sm">{item.label}</p>
                       <ExternalLinkIcon />
                     </div>
-                    <p className="font-bold text-gray-900">{item.title}</p>
+                    <p className="font-bold text-ink">{item.title}</p>
                   </div>
                   <div
                     className={`h-14 ${item.wider ? "w-20" : "w-14"} overflow-hidden flex-shrink-0 ml-4`}

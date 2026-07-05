@@ -132,11 +132,11 @@ function Combobox({
 
   return (
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 px-2">
-      <label htmlFor={id} className="text-sm font-semibold text-gray-900">
+      <label htmlFor={id} className="text-sm font-semibold text-ink">
         {stem}
       </label>
       <div ref={wrapRef} className="relative">
-        <div className="flex items-center border-b border-blue-200">
+        <div className="flex items-center border-b border-accent">
           {isOther ? (
             <input
               id={id}
@@ -145,14 +145,14 @@ function Combobox({
               value={otherText}
               onChange={(e) => onOtherTextChange(e.target.value)}
               placeholder={otherPlaceholder}
-              className="w-44 max-w-[60vw] appearance-none border-none bg-transparent px-2 py-1 text-sm font-semibold text-blue-500 placeholder:font-normal placeholder:text-gray-400 focus:outline-none"
+              className="w-44 max-w-[60vw] appearance-none border-none bg-transparent px-2 py-1 text-sm font-semibold text-accent-strong placeholder:font-normal placeholder:text-muted focus:outline-none"
             />
           ) : (
             <button
               id={id}
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="appearance-none px-2 py-1 text-left text-sm font-semibold text-blue-500 focus:outline-none"
+              className="appearance-none px-2 py-1 text-left text-sm font-semibold text-accent-strong focus:outline-none"
             >
               {selected?.label}
             </button>
@@ -163,7 +163,7 @@ function Combobox({
             aria-label="Show options"
             aria-haspopup="listbox"
             aria-expanded={open}
-            className="px-1 py-1 text-blue-500"
+            className="px-1 py-1 text-accent-strong"
           >
             <FiChevronDown
               size={16}
@@ -175,7 +175,7 @@ function Combobox({
         {open && (
           <ul
             role="listbox"
-            className="absolute left-0 top-full z-20 mt-1 w-max min-w-full max-w-[16rem] overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg"
+            className="absolute left-0 top-full z-20 mt-1 w-max min-w-full max-w-[16rem] overflow-hidden rounded-md border border-line bg-white shadow-lg"
           >
             {options.map((o) => {
               const active = o.id === value;
@@ -186,8 +186,8 @@ function Combobox({
                     onClick={() => choose(o.id)}
                     className={`flex w-full items-center px-3 py-1.5 text-left text-sm font-semibold transition-colors ${
                       active
-                        ? "bg-blue-50 text-blue-600"
-                        : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                        ? "bg-accent-soft text-accent-deep"
+                        : "text-ink hover:bg-accent-soft hover:text-accent-deep"
                     }`}
                   >
                     {o.label}
@@ -273,15 +273,15 @@ export default function PersonalizeIntake({
     language === "en" ? `${t.roleStem} ${roleArticle}` : t.roleStem;
 
   const textInputClass =
-    "border-b-1 border-x-0 border-t-0 border-blue-200 px-2 py-1 mb-4 text-sm font-semibold text-blue-500 placeholder:text-gray-500 placeholder:font-normal focus:outline-none";
+    "border-b-1 border-x-0 border-t-0 border-accent px-2 py-1 mb-4 text-sm font-semibold text-accent-strong placeholder:text-muted placeholder:font-normal focus:outline-none";
 
   return (
     <div className="animate-blur-in flex flex-col gap-4 bg-white">
       <div>
-        <h2 className="text-lg md:text-xl text-gray-900 font-bold mb-2">
+        <h2 className="text-lg md:text-xl text-ink font-bold mb-2">
           {t.heading}
         </h2>
-        <p className="text-sm text-gray-500 mb-2">{t.sub}</p>
+        <p className="text-sm text-muted mb-2">{t.sub}</p>
       </div>
 
       <Combobox
@@ -343,10 +343,10 @@ export default function PersonalizeIntake({
       <div className="flex flex-col gap-2 px-2">
         <label
           htmlFor="personalize-context"
-          className="text-sm font-semibold text-gray-900"
+          className="text-sm font-semibold text-ink"
         >
           {t.contextLabel}{" "}
-          <span className="font-normal text-gray-400">{t.optional}</span>
+          <span className="font-normal text-muted">{t.optional}</span>
         </label>
         <input
           id="personalize-context"
@@ -363,7 +363,7 @@ export default function PersonalizeIntake({
           type="button"
           onClick={submit}
           disabled={busy}
-          className="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors ease-in-out duration-200"
+          className="inline-flex items-center gap-2 rounded-xl bg-accent-strong px-4 py-2 text-sm font-semibold text-white hover:bg-accent-deep disabled:opacity-40 disabled:cursor-not-allowed transition-colors ease-in-out duration-200"
         >
           <RiSparkling2Fill />
           {busy ? t.submitBusy : t.submit}
@@ -373,7 +373,7 @@ export default function PersonalizeIntake({
           type="button"
           onClick={onCancel}
           disabled={busy}
-          className="text-sm text-gray-500 hover:text-black disabled:opacity-40 transition-colors"
+          className="text-sm text-muted hover:text-ink disabled:opacity-40 transition-colors"
         >
           {t.cancel}
         </button>

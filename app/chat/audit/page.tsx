@@ -50,13 +50,13 @@ export default function ChatAuditPage() {
 
   return (
     <section>
-      <div className="max-w-[1280px] w-full md:mx-auto border-x border-gray-200">
+      <div className="max-w-[1280px] w-full md:mx-auto border-x border-line">
         <div className="px-4 py-16 md:py-24">
           <header className="mb-12 md:mb-16 md:px-4">
-            <h1 className="text-3xl md:text-4xl font-serif mb-3 text-gray-900">
+            <h1 className="text-3xl md:text-4xl font-serif mb-3 text-ink">
               Chat — Design Audit
             </h1>
-            <p className="text-gray-500 md:text-lg max-w-2xl">
+            <p className="text-muted md:text-lg max-w-2xl">
               Every feature of the Ask&nbsp;Alfred chat, rendered from the live
               components with sample data. Because these are the real components,
               any code change shows up here automatically — each frame lists the

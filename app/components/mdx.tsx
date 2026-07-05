@@ -45,7 +45,13 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props) {
+function RoundedImage({ caption, ...props }) {
+  // Visible caption: explicit `caption` prop, falling back to the alt text.
+  // When it's just the alt echoed, hide it from screen readers so the image
+  // isn't announced twice (alt + identical figcaption).
+  const figcaption = caption ?? props.alt;
+  const hideFromSR = !caption;
+
   // If width/height are not provided or are "auto", make it responsive
   if (
     !props.width ||
@@ -61,9 +67,12 @@ function RoundedImage(props) {
           className="rounded-lg w-full h-auto mb-4 bg-white"
           {...props}
         />
-        {props.alt && (
-          <figcaption className="text-center text-sm text-gray-600 mt-2 italic">
-            {props.alt}
+        {figcaption && (
+          <figcaption
+            aria-hidden={hideFromSR || undefined}
+            className="text-center text-sm text-muted mt-2 italic"
+          >
+            {figcaption}
           </figcaption>
         )}
       </figure>
@@ -72,9 +81,12 @@ function RoundedImage(props) {
   return (
     <figure className="my-4">
       <Image alt={props.alt} className="rounded-lg bg-white" {...props} />
-      {props.alt && (
-        <figcaption className="text-center text-sm text-gray-600 mt-2 italic">
-          {props.alt}
+      {figcaption && (
+        <figcaption
+          aria-hidden={hideFromSR || undefined}
+          className="text-center text-sm text-muted mt-2 italic"
+        >
+          {figcaption}
         </figcaption>
       )}
     </figure>
@@ -137,14 +149,14 @@ function LinkCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="link-card group bg-white flex flex-row min-w-fit w-[360px] justify-between items-center border border-gray-200 rounded-lg p-4 mb-4 transition ease-in hover:border-gray-400"
+      className="link-card group bg-white flex flex-row min-w-fit w-[360px] justify-between items-center border border-line rounded-lg p-4 mb-4 transition ease-in hover:border-line-strong"
     >
       <div className="flex flex-col justify-center">
-        <div className="pb-2 flex flex-row items-center gap-1 text-gray-400 group-hover:text-gray-700 transition ease-in">
+        <div className="pb-2 flex flex-row items-center gap-1 text-muted group-hover:text-ink transition ease-in">
           <p className="text-sm m-0">{label}</p>
           <CardExternalLinkIcon />
         </div>
-        <p className="font-bold text-black card-title">{title}</p>
+        <p className="font-bold text-ink card-title">{title}</p>
       </div>
     </a>
   );
@@ -159,14 +171,14 @@ function Highlight({
   variant?: "yellow" | "blue" | "green" | "pink";
 }) {
   const variants = {
-    yellow: "bg-yellow-200",
-    blue: "bg-blue-200",
-    green: "bg-green-200",
-    pink: "bg-pink-200",
+    yellow: "bg-accent-soft",
+    blue: "bg-accent-soft",
+    green: "bg-accent-soft",
+    pink: "bg-accent-soft",
   };
   return (
     <mark
-      className={`${variants[variant]} px-1 py-0.5 rounded text-black`}
+      className={`${variants[variant]} px-1 py-0.5 rounded text-ink`}
       {...props}
     >
       {children}
@@ -184,11 +196,11 @@ function TextCallOut({
 }) {
   return (
     <div
-      className="text-callout border-l-2 border-gray-700 bg-gray-50 pl-4 font-bold text-lg text-gray-900 py-6 my-6"
+      className="text-callout border-l-2 border-ink bg-surface-muted pl-4 font-bold text-lg text-ink py-6 my-6"
       {...props}
     >
       {variant === "hmw" && (
-        <div className="font-black text-gray-900 pb-4">How Might We</div>
+        <div className="font-bold text-ink pb-4">How Might We</div>
       )}
       {children}
     </div>
@@ -196,7 +208,7 @@ function TextCallOut({
 }
 
 function Container({ children }) {
-  return <div className="container bg-[#fafcfd] p-4">{children}</div>;
+  return <div className="container bg-canvas p-4">{children}</div>;
 }
 
 function Layout({

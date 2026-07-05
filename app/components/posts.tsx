@@ -23,13 +23,13 @@ type PostItem = {
 
 function PostsList({ posts }: { posts: PostItem[] }) {
   return (
-    <div className="w-full bg-[#fafcfd] border-t border-gray-200" id="project">
+    <div className="w-full bg-canvas border-t border-line" id="project">
       <div
         aria-label="Selected work"
-        className="p-4 md:py-16  max-w-[1280px] w-full md:mx-auto border-x border-gray-200 "
+        className="p-4 md:py-16  max-w-[1280px] w-full md:mx-auto border-x border-line "
       >
         <h2
-          className="text-2xl md:text-3xl text-gray-900 font-black mb-4 md:mb-8 animate-blur-in"
+          className="text-2xl md:text-3xl text-ink font-bold mb-4 md:mb-8 animate-blur-in"
           style={{ animationDelay: "0.3s" }}
         >
           Selected Work
@@ -64,13 +64,13 @@ function OtherProjectsList({ posts }: { posts: PostItem[] }) {
   if (posts.length === 0) return null;
 
   return (
-    <div className="w-full border-t border-gray-200">
+    <div className="w-full border-t border-line">
       <div
         aria-label="More work"
-        className="p-4 md:py-16 max-w-[1280px] w-full md:mx-auto border-x border-gray-200"
+        className="p-4 md:py-16 max-w-[1280px] w-full md:mx-auto border-x border-line"
       >
         <h2
-          className="text-2xl md:text-3xl text-gray-900 font-black mb-4 md:mb-8 animate-blur-in"
+          className="text-2xl md:text-3xl text-ink font-bold mb-4 md:mb-8 animate-blur-in"
           style={{ animationDelay: "0.3s" }}
         >
           More Work

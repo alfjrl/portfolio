@@ -25,7 +25,7 @@ export default function TailorOfferButton({
         onClick={onClick}
         aria-label="Get a portfolio tailored to you"
         title="Get a portfolio tailored to you"
-        className={`rounded-xl border border-gray-200 px-2.5 py-1.5 min-h-[2rem] text-gray-800 hover:text-white hover:bg-gray-600 duration-200 hover:border-gray-600 transition-colors ${className}`}
+        className={`rounded-xl border border-line px-2.5 py-1.5 min-h-[2rem] text-ink hover:text-white hover:bg-ink duration-200 hover:border-ink transition-colors ${className}`}
       >
         <RiSparkling2Fill size={15} />
       </button>
@@ -42,7 +42,7 @@ export default function TailorOfferButton({
       <button
         type="button"
         onClick={onClick}
-        className={`inline-flex items-center gap-1 text-sm font-semibold text-blue-500 hover:text-blue-600 ease-in-out duration-200 transition-colors cursor-pointer ${className}`}
+        className={`inline-flex items-center gap-1 text-sm font-semibold text-accent-strong hover:text-accent-deep ease-in-out duration-200 transition-colors cursor-pointer ${className}`}
       >
         <LuCornerDownRight />
         {label}
@@ -55,7 +55,7 @@ export default function TailorOfferButton({
     <button
       type="button"
       onClick={onClick}
-      className={`inline-flex items-center gap-2 self-start rounded-xl bg-blue-500 px-3.5 py-2 text-sm font-semibold text-white hover:bg-blue-600 ease-in-out duration-200 transition-colors ${className}`}
+      className={`inline-flex items-center gap-2 self-start rounded-xl bg-accent-strong px-3.5 py-2 text-sm font-semibold text-white hover:bg-accent-deep ease-in-out duration-200 transition-colors ${className}`}
     >
       <RiSparkling2Fill size={15} />
       {label}

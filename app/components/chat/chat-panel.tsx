@@ -162,7 +162,7 @@ export default function ChatPanel({
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder={isEmpty ? "Ask me everything!" : "What is on your mind?"}
-        className="flex-1 resize-none bg-transparent px-2 py-1.5 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none border-none"
+        className="flex-1 resize-none bg-transparent px-2 py-1.5 text-sm text-ink placeholder:text-muted focus:outline-none border-none"
       />
       {/* Persistent entry to the tailored view during a conversation (the
           empty state has its own larger CTA). */}
@@ -178,7 +178,7 @@ export default function ChatPanel({
           language === "en" ? "English" : "Traditional Chinese"
         }. Tap to switch.`}
         title="Switch reply language"
-        className="rounded-xl border border-gray-200 px-2.5 py-1.5 text-xs min-h-[2rem] font-bold text-gray-700 hover:text-white hover:bg-gray-900 hover:border-gray-900 duration-200 transition-colors"
+        className="rounded-xl border border-line px-2.5 py-1.5 text-xs min-h-[2rem] font-bold text-ink hover:text-white hover:bg-ink hover:border-ink duration-200 transition-colors"
       >
         {language === "en" ? "EN" : "中"}
       </button>
@@ -186,7 +186,7 @@ export default function ChatPanel({
         <button
           type="button"
           onClick={stop}
-          className="rounded-md border border-gray-200 px-3 py-1.5 text-xs font-semibold text-gray-700 hover:text-black"
+          className="rounded-md border border-line px-3 py-1.5 text-xs font-semibold text-ink hover:text-ink"
         >
           Stop
         </button>
@@ -195,7 +195,7 @@ export default function ChatPanel({
           type="submit"
           disabled={!input.trim()}
           aria-label="Send message"
-          className="rounded-xl bg-blue-500 p-2 text-white disabled:opacity-60 disabled:cursor-not-allowed hover:bg-blue-600 transition-colors"
+          className="rounded-xl bg-accent-strong p-2 text-white disabled:opacity-60 disabled:cursor-not-allowed hover:bg-accent-deep transition-colors"
         >
           <FiArrowUp size={16} />
         </button>
@@ -207,7 +207,7 @@ export default function ChatPanel({
     <div
       id={CHAT_ANCHOR_ID}
       className={`flex flex-col scroll-mt-20 ${
-        isEmpty ? "pb-8" : "p-4 border border-gray-200 bg-white"
+        isEmpty ? "pb-8" : "p-4 border border-line bg-white"
       } ${className}`}
       style={style}
     >
@@ -223,7 +223,7 @@ export default function ChatPanel({
                   key={q}
                   type="button"
                   onClick={() => send(q)}
-                  className="text-sm text-gray-700 hover:text-black transition-colors text-left flex flex-row items-center gap-1 cursor-pointer"
+                  className="text-sm text-ink hover:text-ink transition-colors text-left flex flex-row items-center gap-1 cursor-pointer"
                 >
                   <LuCornerDownRight />
                   {q}
@@ -266,7 +266,7 @@ export default function ChatPanel({
               {status === "submitted" && <TypingIndicator />}
 
               {error && (
-                <div className="rounded-md border border-gray-200 bg-gray-50 px-3.5 py-2.5 text-sm text-gray-700">
+                <div className="rounded-md border border-line bg-surface-muted px-3.5 py-2.5 text-sm text-ink">
                   {rateLimited
                     ? "This has been a great, long chat — thanks for sticking around! We've hit today's message limit, but if you'd like to know more, I'd love to hear from you directly at alfred.jr.lin@gmail.com."
                     : "Something went wrong on my end. Please try again in a moment."}
@@ -283,7 +283,7 @@ export default function ChatPanel({
           result lands in the standalone <PersonalizedSection /> on the page. */}
       {intakeOpen && (
         <div
-          className={`border-t border-gray-200 ${isEmpty ? "p-4 bg-white input-box border rounded-2xl" : "mt-4 pt-4"}`}
+          className={`border-t border-line ${isEmpty ? "p-4 bg-white input-box border rounded-2xl" : "mt-4 pt-4"}`}
         >
           <PersonalizeIntake
             defaultRole={role}
@@ -293,7 +293,7 @@ export default function ChatPanel({
             onCancel={cancel}
           />
           {(phase === "error" || phase === "ratelimited") && (
-            <div className="mt-4 rounded-md border border-gray-200 bg-gray-50 px-3.5 py-2.5 text-sm text-gray-700">
+            <div className="mt-4 rounded-md border border-line bg-surface-muted px-3.5 py-2.5 text-sm text-ink">
               {phase === "ratelimited"
                 ? "We've hit today's limit for tailored views — but I'd love to hear from you directly at alfred.jr.lin@gmail.com."
                 : "Something went wrong putting that together. Please try again in a moment."}

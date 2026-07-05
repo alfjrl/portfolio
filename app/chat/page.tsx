@@ -13,13 +13,13 @@ export default function ChatPage() {
   return (
     <PersonalizeProvider>
       <section>
-        <div className="max-w-[1280px] w-full md:mx-auto border-x border-gray-200">
+        <div className="max-w-[1280px] w-full md:mx-auto border-x border-line">
           <div className="px-4 py-16 md:py-24">
             <div className="md:px-24">
-              <h1 className="text-3xl md:text-4xl font-serif mb-3 text-gray-900">
+              <h1 className="text-3xl md:text-4xl font-serif mb-3 text-ink">
                 Ask me anything about my work.
               </h1>
-              <p className="text-gray-500 mb-8 md:text-lg">
+              <p className="text-muted mb-8 md:text-lg">
                 A chat trained on my portfolio — projects, process, and
                 background. Choose the lens that fits you and start asking.
               </p>

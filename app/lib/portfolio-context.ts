@@ -12,8 +12,8 @@ import { workExperience, education, contact } from "app/data/cv";
 const BIO = `Alfred Lin (展任 / Jhan-Ren) is a product designer and front-end developer.
 He turns research into accessible, considered interfaces for complex information systems,
 working end-to-end — from research through production-ready code — balancing user needs,
-business goals, and technical realities. He is currently leading the public-facing ecosystem
-design at the University of Maryland Libraries, with 5+ years of experience across
+business goals, and technical realities. He most recently led the public-facing ecosystem
+design at the University of Maryland Libraries (2023–2026), with 5+ years of experience across
 hardware-adjacent software, e-commerce, and higher education. He has a M.S. in Human-Computer
 Interaction. Outside of work he reads, cycles, and explores trails in the mountains.
 He is open to product design roles based in Taiwan starting July 2026.`;
@@ -33,7 +33,8 @@ function projectsSection(): string {
         m.category && `Category: ${m.category}`,
         m.status && `Status: ${m.status}`,
         m.summary && `Summary: ${cap(m.summary)}`,
-        m.glanceSummary && `Overview: ${cap(m.glanceSummary)}`,
+        m.problem && `Problem: ${cap(m.problem)}`,
+        m.solution && `Solution: ${cap(m.solution)}`,
         m.impact && `Impact: ${cap(m.impact)}`,
       ].filter(Boolean);
       return lines.join("\n");

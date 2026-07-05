@@ -71,14 +71,14 @@ export async function GET(request: Request) {
           alignItems: "center",
           justifyContent: "space-between",
           paddingBottom: 20,
-          borderBottom: "1px solid #e5e7eb",
+          borderBottom: "1px solid #E3E9F0",
         }}
       >
         <div
           style={{
             fontSize: 16,
             letterSpacing: 6,
-            color: "#6b7280",
+            color: "#5A6B7B",
             fontWeight: 700,
           }}
         >
@@ -87,7 +87,7 @@ export async function GET(request: Request) {
         <div
           style={{
             fontSize: 16,
-            color: "#9ca3af",
+            color: "#9BA8B6",
             letterSpacing: 1,
           }}
         >
@@ -110,7 +110,7 @@ export async function GET(request: Request) {
             fontWeight: 500,
             fontSize: titleSize,
             lineHeight: 1.08,
-            color: "#111827",
+            color: "#0A2540",
             letterSpacing: "-0.01em",
           }}
         >
@@ -122,14 +122,14 @@ export async function GET(request: Request) {
         style={{
           display: "flex",
           flexDirection: "column",
-          borderTop: "1px solid #e5e7eb",
+          borderTop: "1px solid #E3E9F0",
           paddingTop: 20,
         }}
       >
-        <div style={{ fontSize: 26, color: "#111827", fontWeight: 700 }}>
+        <div style={{ fontSize: 26, color: "#0A2540", fontWeight: 700 }}>
           {name}
         </div>
-        <div style={{ fontSize: 20, color: "#6b7280", marginTop: 4 }}>
+        <div style={{ fontSize: 20, color: "#5A6B7B", marginTop: 4 }}>
           {role}
         </div>
       </div>

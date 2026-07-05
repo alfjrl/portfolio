@@ -31,20 +31,20 @@ function Frame({
   return (
     <section className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900">{title}</h2>
-        {note && <p className="text-sm text-gray-500 max-w-2xl">{note}</p>}
-        <p className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray-400 font-mono">
+        <h2 className="text-xl md:text-2xl font-bold text-ink">{title}</h2>
+        {note && <p className="text-sm text-muted max-w-2xl">{note}</p>}
+        <p className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-muted font-mono">
           {sources.map((s) => (
             <code
               key={s}
-              className="bg-gray-50 border border-gray-200 rounded px-1.5 py-0.5"
+              className="bg-surface-muted border border-line rounded px-1.5 py-0.5"
             >
               {s}
             </code>
           ))}
         </p>
       </div>
-      <div className="rounded-lg border border-dashed border-gray-300 bg-white p-4 md:p-6">
+      <div className="rounded-lg border border-dashed border-line-strong bg-white p-4 md:p-6">
         {children}
       </div>
     </section>
@@ -121,19 +121,19 @@ export default function AuditGallery({ reco }: { reco: PersonalizeResponse }) {
       >
         <div className="flex flex-wrap items-center gap-6">
           <div className="flex flex-col items-start gap-2">
-            <span className="text-xs uppercase tracking-wide text-gray-400">
+            <span className="text-xs uppercase tracking-wide text-muted">
               hero
             </span>
             <TailorOfferButton variant="hero" onClick={noop} />
           </div>
           <div className="flex flex-col items-start gap-2">
-            <span className="text-xs uppercase tracking-wide text-gray-400">
+            <span className="text-xs uppercase tracking-wide text-muted">
               inline
             </span>
             <TailorOfferButton variant="inline" onClick={noop} />
           </div>
           <div className="flex flex-col items-start gap-2">
-            <span className="text-xs uppercase tracking-wide text-gray-400">
+            <span className="text-xs uppercase tracking-wide text-muted">
               icon
             </span>
             <TailorOfferButton variant="icon" onClick={noop} />

@@ -48,7 +48,7 @@ export default function ProjectCard({
     <div className="group h-full" onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <Link
         href={href}
-        className="p-4 block w-full h-full overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-gray-200 rounded-md bg-white"
+        className="p-4 block w-full h-full overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-line rounded-md bg-white"
       >
         <div className="h-full w-full flex flex-col">
           {coverImage && (
@@ -66,11 +66,11 @@ export default function ProjectCard({
             </div>
           )}
           <div className="flex flex-col pt-4">
-            <Heading className="text-xl md:text-2xl font-bold text-black mb-2">
+            <Heading className="text-xl md:text-2xl font-bold text-ink mb-2">
               {title}
             </Heading>
             {cardDescription && (
-              <p className="text-gray-500 leading-relaxed group-hover:text-gray-900 transition ease-in">
+              <p className="text-muted leading-relaxed group-hover:text-ink transition ease-in">
                 {cardDescription}
               </p>
             )}

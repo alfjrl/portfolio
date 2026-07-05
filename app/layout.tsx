@@ -79,11 +79,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // bg color bg-[#fafcfd]
+    // bg color bg-canvas
     <html
       lang="en"
       className={cx(
-        // "text-gray-600 bg-[#f6f8fb] font-medium",
+        // "text-muted bg-[#f6f8fb] font-medium",
         manrope.variable,
         ebGaramond.variable,
         manrope.className,

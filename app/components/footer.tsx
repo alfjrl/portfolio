@@ -27,7 +27,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gray-900 text-gray-200">
+    <footer className="bg-[#0a2540] text-gray-200">
       <div className="max-w-[1280px] md:mx-auto p-4 md:py-8 border-x border-gray-700">
         <div className="mb-16 max-w-2xl">
           <p className="leading-relaxed font-manrope">
@@ -39,7 +39,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <ul className="flex flex-col space-x-0 space-y-2 text-gray-200 md:flex-row md:space-x-4 md:space-y-0 mb-4">
+        <ul className="flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 mb-4">
           <li>
             <a
               className="flex items-center transition-all hover:text-white"

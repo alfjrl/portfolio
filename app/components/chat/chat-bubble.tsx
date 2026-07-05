@@ -17,7 +17,7 @@ export function ChatBubble({
   if (role === "user") {
     return (
       <div className="animate-blur-in flex justify-end">
-        <div className="max-w-[85%] rounded-md bg-blue-500 text-white px-3.5 py-2 text-sm">
+        <div className="max-w-[85%] rounded-md bg-accent-strong text-white px-3.5 py-2 text-sm">
           {text}
         </div>
       </div>
@@ -25,7 +25,7 @@ export function ChatBubble({
   }
   return (
     <div className="animate-blur-in flex justify-start">
-      <div className="chat-markdown max-w-[85%] text-gray-900 text-sm">
+      <div className="chat-markdown max-w-[85%] text-ink text-sm">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{text}</ReactMarkdown>
       </div>
     </div>
@@ -50,7 +50,7 @@ export function FollowupChips({
           key={q}
           type="button"
           onClick={() => onSelect(q)}
-          className="text-sm text-gray-500 hover:text-black transition-colors text-left flex flex-row items-center gap-1 cursor-pointer"
+          className="text-sm text-muted hover:text-ink transition-colors text-left flex flex-row items-center gap-1 cursor-pointer"
         >
           <LuCornerDownRight />
           {q}
@@ -63,10 +63,10 @@ export function FollowupChips({
 // The "Alfred is typing" three-dot indicator.
 export function TypingIndicator() {
   return (
-    <div className="flex items-center gap-1 text-gray-400">
-      <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-bounce [animation-delay:-0.3s]" />
-      <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-bounce [animation-delay:-0.15s]" />
-      <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-bounce" />
+    <div className="flex items-center gap-1 text-muted">
+      <span className="w-1.5 h-1.5 rounded-full bg-accent animate-bounce [animation-delay:-0.3s]" />
+      <span className="w-1.5 h-1.5 rounded-full bg-accent animate-bounce [animation-delay:-0.15s]" />
+      <span className="w-1.5 h-1.5 rounded-full bg-accent animate-bounce" />
     </div>
   );
 }
