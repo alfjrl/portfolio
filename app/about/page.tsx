@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CVSection from "app/components/cv-section";
+import HeroBackdrop from "app/components/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "About",
@@ -62,9 +63,13 @@ const activities = [
 export default function AboutPage() {
   return (
     <div className="">
-      <div className="max-w-[1280px] w-full md:mx-auto flex flex-col md:flex-row gap-8 lg:gap-12 p-4 md:py-16 border-x border-line">
+      <HeroBackdrop />
+      <div
+        id="hero"
+        className="max-w-[1440px] w-full md:mx-auto px-2 md:px-16 flex flex-col md:flex-row gap-8 lg:gap-12 p-4 md:py-16"
+      >
         <div className="sr-only">
-          <h1>About Alfred Lin</h1>
+          <h1>About Alfred J Lin</h1>
         </div>
         {/* Profile image */}
         <div
@@ -86,13 +91,13 @@ export default function AboutPage() {
           style={{ animationDelay: "0.1s" }}
         >
           {/* Bio */}
-          <div className="text-muted mb-10 md:text-lg font-semibold">
+          <div className="text-ink mb-10 md:text-lg">
             <p
               className="mb-2 leading-relaxed animate-blur-in"
               style={{ animationDelay: "0.1s" }}
             >
-              Hey, I'm <span className="text-ink">Alfred</span>, go by{" "}
-              <span className="text-ink">展任</span>
+              Hey, I'm <span className="text-ink font-semibold">Alfred</span>,
+              go by <span className="text-ink font-semibold">展任</span>
               (Jhan-Ren) in Mandarin.
             </p>
             <p

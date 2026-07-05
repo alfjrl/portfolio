@@ -8,6 +8,7 @@ type Metadata = {
   publishedAt: string
   category: string
   coverImage: string
+  gradientPreset: string
   role: string
   year: string
   team: string

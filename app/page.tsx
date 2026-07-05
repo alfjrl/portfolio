@@ -50,7 +50,7 @@ export default function Page() {
             </p>
             <HeroHeadline className="text-2xl md:text-5xl max-w-2xl font-serif mb-3 md:mb-6 text-ink md:leading-[3.5rem] font-normal" />
             {/* description */}
-            <div className=" font-semibold mb-6">
+            <div className="mb-6 md:text-lg">
               <p
                 className="animate-blur-in mb-2"
                 style={{ animationDelay: "0.4s" }}

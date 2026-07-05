@@ -69,7 +69,10 @@
       "Bash(git commit --no-verify -m ' *)",
       "Bash(gh pr *)",
       "Bash(git ls-tree *)",
-      "Bash(grep -iE '\\\\.svg$')"
+      "Bash(grep -iE '\\\\.svg$')",
+      "Bash(echo \"---exit:$?---\")",
+      "Bash(echo \"---- tsc exit: $? ----\")",
+      "Bash(echo \"exit: $?\")"
     ],
     "deny": [],
     "ask": []

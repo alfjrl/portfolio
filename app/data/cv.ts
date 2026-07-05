@@ -85,7 +85,7 @@ export const workExperience: WorkExperience[] = [
 export const education: Education[] = [
   {
     years: "2021 – 2023",
-    school: { en: "University of Maryland", zh: "" },
+    school: { en: "University of Maryland, College Park", zh: "" },
     degree: { en: "Master of Science" },
     majors: [{ en: "M.S. Human-Computer Interaction", zh: "" }],
   },

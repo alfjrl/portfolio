@@ -71,10 +71,7 @@ function EducationEntry({ entry, delay }: { entry: Education; delay: number }) {
         </p>
         <ul className="mt-2 space-y-1">
           {entry.majors.map((major, i) => (
-            <li
-              key={i}
-              className="text-md font-bold text-muted mb-2 last:mb-0"
-            >
+            <li key={i} className="text-md font-bold text-muted mb-2 last:mb-0">
               {major.en}
               {major.zh && <span className="text-sm"> · {major.zh}</span>}
             </li>
@@ -121,29 +118,31 @@ export default function CVSection() {
 
   return (
     <div className="border-t border-line space-y-12 bg-canvas">
-      <div className="max-w-[1280px] w-full md:mx-auto p-4 md:py-16 border-x border-line">
-        <div className="flex flex-col lg:flex-row lg:gap-12 pb-4 md:pb-8">
-          <SectionLabel delay={workLabelDelay}>Work Experience</SectionLabel>
-          <div className="min-w-0 md:basis-3/4 md:mt-1">
-            {workExperience.map((entry, i) => (
-              <WorkEntry key={i} entry={entry} delay={workDelays[i]} />
-            ))}
+      <div className="px-2 md:px-16 max-w-[1440px] w-full md:mx-auto">
+        <div className="p-4 md:py-16 border-x border-line">
+          <div className="flex flex-col lg:flex-row lg:gap-12 pb-4 md:pb-8">
+            <SectionLabel delay={workLabelDelay}>Work Experience</SectionLabel>
+            <div className="min-w-0 md:basis-3/4 md:mt-1">
+              {workExperience.map((entry, i) => (
+                <WorkEntry key={i} entry={entry} delay={workDelays[i]} />
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col lg:flex-row lg:gap-12 pb-4 md:pb-8">
-          <SectionLabel delay={eduLabelDelay}>Education</SectionLabel>
-          <div className="min-w-0 md:basis-3/4 md:mt-1">
-            {education.map((entry, i) => (
-              <EducationEntry key={i} entry={entry} delay={eduDelays[i]} />
-            ))}
+          <div className="flex flex-col lg:flex-row lg:gap-12 pb-4 md:pb-8">
+            <SectionLabel delay={eduLabelDelay}>Education</SectionLabel>
+            <div className="min-w-0 md:basis-3/4 md:mt-1">
+              {education.map((entry, i) => (
+                <EducationEntry key={i} entry={entry} delay={eduDelays[i]} />
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col lg:flex-row lg:gap-12 pb-4 md:pb-8">
-          <SectionLabel delay={contactLabelDelay}>Contact</SectionLabel>
-          <div className="min-w-0 md:basis-3/4 md:mt-1">
-            {contact.map((item, i) => (
-              <ContactEntry key={i} item={item} delay={contactDelays[i]} />
-            ))}
+          <div className="flex flex-col lg:flex-row lg:gap-12 pb-4 md:pb-8">
+            <SectionLabel delay={contactLabelDelay}>Contact</SectionLabel>
+            <div className="min-w-0 md:basis-3/4 md:mt-1">
+              {contact.map((item, i) => (
+                <ContactEntry key={i} item={item} delay={contactDelays[i]} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

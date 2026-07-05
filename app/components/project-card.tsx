@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useCallback } from "react";
+import GradientBackground from "./gradient-background";
+import { useRandomizedGradient } from "./use-randomized-gradient";
 
 export type ProjectCardProps = {
   slug: string;
@@ -10,6 +12,8 @@ export type ProjectCardProps = {
   title: string;
   cardDescription?: string;
   coverImage?: string;
+  // Named gradient preset painted behind the cover image (see GRADIENT_PRESETS).
+  gradientPreset?: string;
   // Label shown in the custom expanding cursor on hover.
   hoverLabel?: string;
   // h2 (default) for the homepage's main grid, h3 for secondary lists.
@@ -24,9 +28,14 @@ export default function ProjectCard({
   title,
   cardDescription,
   coverImage,
+  gradientPreset,
   hoverLabel = "VIEW CASE STUDY",
-  headingLevel = "h2",
+  headingLevel = "h3",
 }: ProjectCardProps) {
+  // Preset supplies colors/grain/blend/blur (jittered per load); every card
+  // renders it as a mesh.
+  const gradient = useRandomizedGradient(gradientPreset);
+
   const onEnter = useCallback(
     (e: React.MouseEvent) => {
       window.dispatchEvent(
@@ -48,7 +57,7 @@ export default function ProjectCard({
     <div className="group h-full" onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <Link
         href={href}
-        className="p-4 block w-full h-full overflow-hidden transition-all duration-200 ease-in group-hover:scale-101 border border-line rounded-md bg-white"
+        className="block w-full h-full overflow-hidden transition-all duration-200 ease-in"
       >
         <div className="h-full w-full flex flex-col">
           {coverImage && (
@@ -56,12 +65,18 @@ export default function ProjectCard({
               className="relative w-full aspect-[16/9] overflow-hidden"
               style={{ viewTransitionName: `project-cover-${slug}` }}
             >
+              <GradientBackground
+                {...gradient}
+                variant="mesh"
+                style={{ position: "absolute", inset: 0 }}
+                className="rounded-xl"
+              />
               <Image
                 src={coverImage}
                 alt={title}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover transition-transform ease-in bg-white"
+                className="object-cover transition-transform duration-300 ease-in group-hover:scale-[1.01]"
               />
             </div>
           )}

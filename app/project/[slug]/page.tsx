@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import HeroCover from "app/components/hero-cover";
 import { CustomMDX } from "app/components/mdx";
 import { getProjects } from "app/project/utils";
 import { baseUrl } from "app/sitemap";
@@ -71,6 +71,7 @@ export default async function ProjectPage({ params }) {
     summary,
     category,
     coverImage,
+    gradientPreset,
     role,
     year,
     team,
@@ -85,21 +86,19 @@ export default async function ProjectPage({ params }) {
 
   return (
     <div className="w-full">
-      <div className="max-w-[1280px] w-full md:mx-auto p-4 md:pb-16 border-x border-line">
+      <div className="max-w-[1440px] w-full md:mx-auto px-2 md:px-16 md:py-16">
         {/* Hero image */}
         <div
-          className="relative aspect-16/9 w-full mb-16 bg-white rounded-xl overflow-hidden animate-blur-in"
+          className="relative aspect-16/9 w-full mb-8 rounded-xl overflow-hidden animate-blur-in"
           style={{
             animationDelay: "0s",
             viewTransitionName: `project-cover-${slug}`,
           }}
         >
-          <Image
-            src={coverImage}
-            alt={`${title} cover`}
-            fill
-            className="object-cover"
-            priority
+          <HeroCover
+            coverImage={coverImage}
+            title={title}
+            gradientPreset={gradientPreset}
           />
         </div>
 
@@ -151,7 +150,7 @@ export default async function ProjectPage({ params }) {
           </dl>
 
           {/* Problem → Solution → Impact, anchored into the story below */}
-          <div
+          {/* <div
             className="grid md:grid-cols-3 gap-4 w-full animate-blur-in"
             style={{ animationDelay: "0.3s" }}
           >
@@ -193,18 +192,20 @@ export default async function ProjectPage({ params }) {
                 <p className="text-muted text-sm leading-relaxed">{impact}</p>
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
       {/* MDX content */}
       <div className="w-full border-t border-line">
-        <div className="max-w-[1280px] w-full md:mx-auto p-4 md:py-16 md:px-8 border-x border-line">
-          <article
-            className="prose animate-blur-in leading-relaxed"
-            style={{ animationDelay: "0.45s" }}
-          >
-            <CustomMDX source={project.content} />
-          </article>
+        <div className="px-2 md:px-16 max-w-[1440px] w-full md:mx-auto">
+          <div className="p-8 md:py-16 border-x border-line">
+            <article
+              className="prose animate-blur-in leading-relaxed"
+              style={{ animationDelay: "0.45s" }}
+            >
+              <CustomMDX source={project.content} />
+            </article>
+          </div>
         </div>
       </div>
     </div>

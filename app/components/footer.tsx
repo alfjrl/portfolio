@@ -28,70 +28,72 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#0a2540] text-gray-200">
-      <div className="max-w-[1280px] md:mx-auto p-4 md:py-8 border-x border-gray-700">
-        <div className="mb-16 max-w-2xl">
-          <p className="leading-relaxed font-manrope">
-            On the side, I always think about how design influences our daily
-            lives and why things are designed that way, which is fascinating to
-            me. I enjoy talking to random people and learning something new from
-            them, whether it's their life experiences or tips for finding a
-            parking space in an overly crowded city.
+      <div className="px-2 md:px-16 max-w-[1440px] w-full md:mx-auto">
+        <div className="p-4 md:py-8 border-x border-gray-700">
+          <div className="mb-16 max-w-2xl">
+            <p className="leading-relaxed font-manrope">
+              On the side, I always think about how design influences our daily
+              lives and why things are designed that way, which is fascinating
+              to me. I enjoy talking to random people and learning something new
+              from them, whether it's their life experiences or tips for finding
+              a parking space in an overly crowded city.
+            </p>
+          </div>
+
+          <ul className="flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 mb-4">
+            <li>
+              <a
+                className="flex items-center transition-all hover:text-white"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="mailto:alfred.jr.lin@gmail.com"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">Email</p>
+              </a>
+            </li>
+            <li className="md:ml-6">
+              <a
+                className="flex items-center transition-all hover:text-white"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.linkedin.com/in/alfredjrlin/"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">LinkedIn</p>
+              </a>
+            </li>
+            <li className="md:ml-6">
+              <a
+                className="flex items-center transition-all hover:text-white"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://medium.com/@alfredjlin"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">Medium</p>
+              </a>
+            </li>
+            <li className="md:ml-6">
+              <a
+                className="flex items-center transition-all hover:text-white"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/alfjrl"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">GitHub</p>
+              </a>
+            </li>
+          </ul>
+          <p className="flex flex-row">
+            <span className="hidden md:block md:mr-1">
+              Made with love & coffee
+            </span>
+            {"  © "}
+            {year} Alfred Jhan-Ren Lin
           </p>
         </div>
-
-        <ul className="flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 mb-4">
-          <li>
-            <a
-              className="flex items-center transition-all hover:text-white"
-              rel="noopener noreferrer"
-              target="_blank"
-              href="mailto:alfred.jr.lin@gmail.com"
-            >
-              <ArrowIcon />
-              <p className="ml-2 h-7">Email</p>
-            </a>
-          </li>
-          <li className="md:ml-6">
-            <a
-              className="flex items-center transition-all hover:text-white"
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.linkedin.com/in/alfredjrlin/"
-            >
-              <ArrowIcon />
-              <p className="ml-2 h-7">LinkedIn</p>
-            </a>
-          </li>
-          <li className="md:ml-6">
-            <a
-              className="flex items-center transition-all hover:text-white"
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://medium.com/@alfredjlin"
-            >
-              <ArrowIcon />
-              <p className="ml-2 h-7">Medium</p>
-            </a>
-          </li>
-          <li className="md:ml-6">
-            <a
-              className="flex items-center transition-all hover:text-white"
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://github.com/alfjrl"
-            >
-              <ArrowIcon />
-              <p className="ml-2 h-7">GitHub</p>
-            </a>
-          </li>
-        </ul>
-        <p className="flex flex-row">
-          <span className="hidden md:block md:mr-1">
-            Made with love & coffee
-          </span>
-          {"  © "}
-          {year} Alfred Jhan-Ren Lin
-        </p>
       </div>
     </footer>
   );
