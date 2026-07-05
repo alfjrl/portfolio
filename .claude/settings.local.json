@@ -60,7 +60,16 @@
       "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code}\\\\n\" http://localhost:3000)",
       "Bash(lsof -i :3000 -sTCP:LISTEN)",
       "Bash(curl -s -o /private/tmp/claude-501/-Users-alfredlin-Documents-code-portfolio-portfolio/53c4d963-463b-432c-9b55-60159142ef8d/scratchpad/ds.html -w '%{http_code}' http://localhost:3000/project/umdlib-design-system)",
-      "Bash(curl -s -o /private/tmp/claude-501/-Users-alfredlin-Documents-code-portfolio-portfolio/53c4d963-463b-432c-9b55-60159142ef8d/scratchpad/home.html -w '%{http_code}' http://localhost:3000/)"
+      "Bash(curl -s -o /private/tmp/claude-501/-Users-alfredlin-Documents-code-portfolio-portfolio/53c4d963-463b-432c-9b55-60159142ef8d/scratchpad/home.html -w '%{http_code}' http://localhost:3000/)",
+      "Bash(git fetch *)",
+      "Bash(git rev-list *)",
+      "Bash(git merge *)",
+      "Bash(xargs git log -1 --format='%h %ci %s')",
+      "Bash(node -e \"const s=require\\('./package.json'\\).scripts||{}; console.log\\(Object.entries\\(s\\).map\\(\\([k,v]\\)=>k+': '+v\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(git commit --no-verify -m ' *)",
+      "Bash(gh pr *)",
+      "Bash(git ls-tree *)",
+      "Bash(grep -iE '\\\\.svg$')"
     ],
     "deny": [],
     "ask": []
