@@ -80,7 +80,7 @@ function RoundedImage({ caption, ...props }) {
   }
   return (
     <figure className="my-4">
-      <Image alt={props.alt} className="rounded-lg bg-white" {...props} />
+      <Image alt={props.alt} src={props.src} className="rounded-lg bg-white" {...props} />
       {figcaption && (
         <figcaption
           aria-hidden={hideFromSR || undefined}
