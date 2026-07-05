@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="max-w-[1440px] w-full px-4 md:px-16 md:mx-auto hidden sm:flex sm:items-center sm:justify-between">
         <div className="flex items-center justify-between w-full px-4 py-6">
           <Link href="/">
-            <Image src="/al.svg" alt="Alfred Lin logo" width={32} height={18} />
+            <Image src="/AL.svg" alt="Alfred Lin logo" width={32} height={18} />
           </Link>
           <ul className="flex flex-row items-center">
             <li>
