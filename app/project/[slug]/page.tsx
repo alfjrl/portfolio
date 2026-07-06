@@ -86,10 +86,10 @@ export default async function ProjectPage({ params }) {
 
   return (
     <div className="w-full">
-      <div className="max-w-[1440px] w-full md:mx-auto px-2 md:px-16 md:py-16">
+      <div className="max-w-[1440px] w-full md:mx-auto p-4 md:p-16">
         {/* Hero image */}
         <div
-          className="relative aspect-16/9 w-full mb-8 rounded-xl overflow-hidden animate-blur-in"
+          className="relative aspect-16/9 w-full mb-4 md:mb-8 rounded-xl overflow-hidden animate-blur-in"
           style={{
             animationDelay: "0s",
             viewTransitionName: `project-cover-${slug}`,
@@ -198,7 +198,7 @@ export default async function ProjectPage({ params }) {
       {/* MDX content */}
       <div className="w-full border-t border-line">
         <div className="px-2 md:px-16 max-w-[1440px] w-full md:mx-auto">
-          <div className="p-8 md:py-16 border-x border-line">
+          <div className="p-4 md:py-16 border-x border-line">
             <article
               className="prose animate-blur-in leading-relaxed"
               style={{ animationDelay: "0.45s" }}

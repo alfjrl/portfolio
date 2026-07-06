@@ -66,7 +66,7 @@ export default function AboutPage() {
       <HeroBackdrop />
       <div
         id="hero"
-        className="max-w-[1440px] w-full md:mx-auto px-2 md:px-16 flex flex-col md:flex-row gap-8 lg:gap-12 p-4 md:py-16"
+        className="max-w-[1440px] w-full md:mx-auto p-6 md:p-16 flex flex-col md:flex-row gap-8 lg:gap-12"
       >
         <div className="sr-only">
           <h1>About Alfred J Lin</h1>
@@ -84,7 +84,6 @@ export default function AboutPage() {
             className="rounded-full aspect-square object-cover object-top bg-white"
           />
         </div>
-
         {/* Content */}
         <div
           className="flex flex-col  md:basis-3/4 animate-blur-in"
