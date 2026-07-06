@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }) {
 
   return (
     <div className="w-full">
-      <div className="max-w-[1440px] w-full md:mx-auto p-4 md:p-16">
+      <div className="max-w-[1440px] w-full md:mx-auto p-4 md:p-16 md:pt-8">
         {/* Hero image */}
         <div
           className="relative aspect-16/9 w-full mb-4 md:mb-8 rounded-xl overflow-hidden animate-blur-in"

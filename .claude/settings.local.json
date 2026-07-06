@@ -72,7 +72,12 @@
       "Bash(grep -iE '\\\\.svg$')",
       "Bash(echo \"---exit:$?---\")",
       "Bash(echo \"---- tsc exit: $? ----\")",
-      "Bash(echo \"exit: $?\")"
+      "Bash(echo \"exit: $?\")",
+      "Bash(read p *)",
+      "Bash([ -f \"public$p\" ])",
+      "Bash(curl -s -o /tmp/hyena.html -w \"%{http_code}\" http://localhost:3000/project/hyena)",
+      "Read(//tmp/**)",
+      "Bash(grep *)"
     ],
     "deny": [],
     "ask": []

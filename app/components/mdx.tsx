@@ -4,6 +4,9 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 import remarkGfm from "remark-gfm";
 import React from "react";
+import GradientBackground, {
+  resolveGradientPreset,
+} from "./gradient-background";
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -45,7 +48,7 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage({ caption, ...props }) {
+function RoundedImage({ caption, variant, ...props }) {
   // Visible caption: explicit `caption` prop, falling back to the alt text.
   // When it's just the alt echoed, hide it from screen readers so the image
   // isn't announced twice (alt + identical figcaption).
@@ -53,34 +56,42 @@ function RoundedImage({ caption, ...props }) {
   const hideFromSR = !caption;
 
   // If width/height are not provided or are "auto", make it responsive
-  if (
+  const responsive =
     !props.width ||
     !props.height ||
     props.width === "auto" ||
-    props.height === "auto"
-  ) {
-    return (
-      <figure className="my-4">
-        <img
-          alt={props.alt}
-          src={props.src}
-          className="rounded-lg w-full h-auto mb-4 bg-white"
-          {...props}
-        />
-        {figcaption && (
-          <figcaption
-            aria-hidden={hideFromSR || undefined}
-            className="text-center text-sm text-muted mt-2 italic"
-          >
-            {figcaption}
-          </figcaption>
-        )}
-      </figure>
-    );
-  }
+    props.height === "auto";
+
+  // `variant` (a gradient preset name) swaps the flat white mat for a gradient
+  // backdrop framing the image; without it the image keeps its plain bg-white.
+  const image = responsive ? (
+    <img
+      alt={props.alt}
+      src={props.src}
+      className={`rounded-lg w-full h-auto ${variant ? "" : "mb-4 bg-white"}`}
+      {...props}
+    />
+  ) : (
+    <Image
+      alt={props.alt}
+      src={props.src}
+      className={`rounded-lg ${variant ? "block mx-auto" : "bg-white"}`}
+      {...props}
+    />
+  );
+
   return (
     <figure className="my-4">
-      <Image alt={props.alt} src={props.src} className="rounded-lg bg-white" {...props} />
+      {variant ? (
+        <GradientBackground
+          {...resolveGradientPreset(variant)}
+          className="rounded-lg"
+        >
+          {image}
+        </GradientBackground>
+      ) : (
+        image
+      )}
       {figcaption && (
         <figcaption
           aria-hidden={hideFromSR || undefined}
