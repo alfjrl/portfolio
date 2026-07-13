@@ -57,9 +57,13 @@ export default function HeroHeadline({
   );
 
   return (
+    // <h1 ref={ref} className={`hero-reveal ${className}`}>
+    //   I'm Alfred, a product designer who{" "}
+    //   <span className="italic">engineers</span>.
+    // </h1>
     <h1 ref={ref} className={`hero-reveal ${className}`}>
-      I'm Alfred, a product designer who{" "}
-      <span className="italic">engineers</span>.
+      I'm Alfred, a <span className="italic">data-driven</span> product
+      designer.
     </h1>
   );
 }

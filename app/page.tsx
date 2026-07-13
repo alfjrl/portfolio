@@ -55,8 +55,7 @@ export default function Page() {
                 className="animate-blur-in mb-2"
                 style={{ animationDelay: "0.4s" }}
               >
-                I turn research into accessible, considered interfaces — and
-                ship them in production code.
+                I turn complex problems into accessible, considered interfaces.
               </p>
               <p
                 className="animate-blur-in mb-2"
